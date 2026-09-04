@@ -1,0 +1,25 @@
+{
+  "name": "BimaCompass — Interactive Insurance Advisor",
+  "short_name": "BimaCompass",
+  "description": "Interactive, offline-supported insurance buyer's policy handbook and educational diagnostic advisor.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#1e1b4b",
+  "categories": ["finance", "education", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "128x128 192x192 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

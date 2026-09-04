@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="COYFmNGG8WpxFaucBEHep73mH5m-UKq35Xjzx2Yowvg" />
+    <meta name="google-site-verification" content="COYFmNGG8WpxFaucBEHep73mH0m-UKq35Xjzx2Yowvg" />
+    <meta name="theme-color" content="#1e1b4b" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>BimaCompass — Interactive Insurance Buyer's Handbook & Advisor</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('✅ [PWA Core] Service Worker registered safely with scope:', registration.scope);
+            })
+            .catch((error) => {
+              console.error('❌ [PWA Core] Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
+

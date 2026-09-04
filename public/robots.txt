@@ -1,0 +1,7 @@
+# BimaCompass Robots Configuration for SEO Integrity
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://bimacompass.cloud/sitemap.xml
+Sitemap: https://ais-pre-bphsocvxeuiwm6ly2tawr3-624312432955.asia-southeast1.run.app/sitemap.xml

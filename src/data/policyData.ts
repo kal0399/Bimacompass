@@ -36,7 +36,7 @@ export interface StatutoryFirePolicyType {
 export interface IRDAIReferenceResource {
   id: string;
   title: string;
-  category: "Fire & Property" | "Health & Life" | "Marine & Transit" | "Liability & Cyber" | "Statutory Acts";
+  category: "Fire & Property" | "Health & Mediclaim" | "Marine & Transit" | "Liability & Cyber" | "Statutory Acts";
   authority: string;
   gazetteRef: string;
   effectiveDate: string;
@@ -404,7 +404,7 @@ export const PUBLIC_DOMAIN_RESOURCES: IRDAIReferenceResource[] = [
   {
     id: "res_health_master_2024",
     title: "IRDAI Master Circular on Health Insurance (June 2024)",
-    category: "Health & Life",
+    category: "Health & Mediclaim",
     authority: "Insurance Regulatory and Development Authority of India (IRDAI)",
     gazetteRef: "IRDAI/HLT/CIR/06/2024 (Master Circular Ref No. 2024/06)",
     effectiveDate: "June 2024 (Mandatory Nationwide Implementation)",
@@ -512,6 +512,15 @@ export const INSURANCE_DOMAINS_LIST = [
     tag: "Commercial Asset",
     desc: "Bharat Griha Raksha, Bharat Sookshma, Bharat Laghu, SFSP, and Industrial All Risks (IAR) with TAC Section 1–8 occupancy rates.",
     highlights: ["BGR / BSUS / BLUS Statutory Policies", "FEA Extinguishing Rebate (5% - 25%)", "Earthquake IS 1893 & STFI Perils", "Average Clause Underinsurance Rules"]
+  },
+  {
+    id: "engineering_ear_car",
+    label: "Engineering Project Risks (CAR & EAR)",
+    badge: "Munich Re / TAC",
+    color: "from-amber-500/20 to-yellow-500/10 border-amber-500/40 text-amber-300",
+    tag: "Industrial Project",
+    desc: "Contractor's All Risks (CAR) for civil infrastructure and Erection All Risks (EAR) for machinery plant installation and hot testing.",
+    highlights: ["Section I Material Damage & Section II TPL", "72-Hour Catastrophe Event Clause", "Hot Testing & Commissioning Period Cover", "Extended Maintenance Warranty (12-24 Mo)"]
   },
   {
     id: "retail_health",

@@ -40,11 +40,12 @@ app.post("/api/advisor", async (req: Request, res: Response) => {
     }
 
     // Build solid context from the IRDA handbook database
-    const systemPrompt = `You are an expert consumer advocate and advisor specializing in explaining Indian insurance guidelines, terms, and preventing fraud, inspired directly by the IRDA "Handbook on Insurance".
-Your goal is to provide extremely clear, objective, conversational, and easy-to-understand explanations of policy options, exclusions, and claim/complaint channels, strictly protecting consumers from spurious callers.
+    const systemPrompt = `You are an expert consumer advocate and advisor specializing in explaining Indian indemnity-based general insurance guidelines (Property/Fire, Marine & Cargo transit, Engineering EAR/CAR, Retail & Group Health indemnity, Motor, and Commercial Liability), inspired directly by IRDAI regulations, the Marine Insurance Act 1963, and the foundational Principle of Indemnity.
+This portal is strictly dedicated to indemnity-based general insurance and does NOT cover life insurance or life annuities.
+Your goal is to provide extremely clear, objective, conversational, and easy-to-understand explanations of indemnity policy terms, exclusions, and statutory claims procedures.
 
 Provide answers in visually structured Markdown with clear headings or bullet points.
-If the question is unrelated to insurance, politely remind the buyer that you are a Bima Smart Insurance Advisor and guide them back to insurance-related topics.
+If the question is unrelated to insurance, politely remind the buyer that you are a Bima Smart Insurance Advisor and guide them back to indemnity insurance topics.
 
 Keep details practical, objective, and warm, avoiding technical jargon or explaining terms in direct human terms.`;
 
@@ -249,7 +250,7 @@ app.all("/api/news", async (req: Request, res: Response) => {
       id: "news-3",
       title: "Bima Sugam Single-Window Digital Insurance Portal Goes Live Nationwide",
       category: "Digital Transformation",
-      summary: "India's landmark Bima Sugam platform enables policyholders to manage health, life, and motor policies, initiate 1-click porting, and track settlement claims seamlessly across all insurers.",
+      summary: "India's landmark Bima Sugam platform enables policyholders to manage health, marine, property, and motor policies, initiate 1-click porting, and track settlement claims seamlessly across all insurers.",
       source: "General Insurance Council",
       date: "July 2026",
       importance: "REGULATORY"

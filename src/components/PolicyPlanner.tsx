@@ -42,6 +42,7 @@ import {
 
 type ProtectionDomain = 
   | "commercial_fire" 
+  | "engineering_ear_car"
   | "retail_health" 
   | "marine_transit" 
   | "workmen_comp" 
@@ -111,6 +112,44 @@ export const ADDON_OPTIONS: Record<ProtectionDomain, { id: string; label: string
       label: "Spontaneous Combustion & Self-Heating Peril Extension", 
       desc: "Covers organic raw materials (coal, cotton, oilseeds, grain) that catch fire spontaneously without external ignition sources.",
       statutoryRef: "AIFT Section 4 Category B Special Peril"
+    }
+  ],
+  engineering_ear_car: [
+    { 
+      id: "testing_period_ext", 
+      label: "Testing & Commissioning Period Extension (Cold & Hot Runs)", 
+      desc: "Crucial extension covering mechanical and electrical breakdown hazards during machinery startup and trial load tests.",
+      statutoryRef: "TAC EAR Standard Testing Regulations"
+    },
+    { 
+      id: "cat_72hr_clause", 
+      label: "72-Hour Catastrophe / Continuous Event Aggregation Clause", 
+      desc: "Treats all storm, flood, inundation, or earthquake losses occurring within 72 consecutive hours as a single deductible event.",
+      statutoryRef: "Munich Re / TAC CAR/EAR Standard Clause"
+    },
+    { 
+      id: "surrounding_property", 
+      label: "Surrounding Property & Existing Structures Endorsement (Endorsement 001)", 
+      desc: "Protects existing adjacent buildings, factory sheds, and switchyards owned by the principal not included in the contract works.",
+      statutoryRef: "CAR/EAR Endorsement 001"
+    },
+    { 
+      id: "clearance_debris_car", 
+      label: "Clearance & Removal of Burnt or Collapsed Debris (Endorsement 002)", 
+      desc: "Reimburses heavy site clearance, demolition rubble hauling, and crane excavation required following collapse or storm damage.",
+      statutoryRef: "CAR Endorsement 002"
+    },
+    { 
+      id: "extended_maintenance", 
+      label: "Extended Maintenance Warranty Guarantee (12 - 24 Months)", 
+      desc: "Protects contractors against damage arising during the defects liability maintenance period and rectifying pre-handover workmanship defects.",
+      statutoryRef: "Munich Re Maintenance Standard"
+    },
+    { 
+      id: "cross_liability", 
+      label: "Cross Liability Clause (Section II Third-Party Protection)", 
+      desc: "Applies third-party liability indemnity separately to each insured party as if a distinct policy had been issued to each contractor.",
+      statutoryRef: "CAR Section II Cross-Liability Clause"
     }
   ],
   retail_health: [
@@ -271,7 +310,7 @@ export const ADDON_OPTIONS: Record<ProtectionDomain, { id: string; label: string
     { 
       id: "child_education", 
       label: "Dependent Child Education Tuition Assistance Fund", 
-      desc: "Provides a guaranteed lump sum educational grant for up to 2 dependent children in the tragic event of accidental demise.",
+      desc: "Provides a guaranteed lump sum educational grant for up to 2 dependent children in the tragic event of fatal accident or permanent total disablement.",
       statutoryRef: "Welfare Education Endorsement"
     }
   ]
@@ -376,11 +415,11 @@ export default function PolicyPlanner() {
   const getRecommendation = () => {
     const { domain, step1, step2_insurer, step2_addons, assetSumInsuredCrores } = answers;
 
-    let title = "Standard Integrated Risk Protection Package";
-    let planType = "Term Plan & Commercial General Coverage";
+    let title = "Comprehensive Indemnity Risk Protection Package";
+    let planType = "Statutory General Indemnity Coverage";
     let themeColor = "#0f172a";
     let statutoryStandard = "IRDAI / Public Domain Regulatory Reference";
-    let explanation = "Our diagnostic underwriting engine mapped your requirements against public domain regulatory standards and statutory baseline guidelines.";
+    let explanation = "Our diagnostic underwriting engine mapped your requirements against public domain regulatory standards, indemnity principles, and statutory baseline guidelines.";
     let checklist: string[] = [];
     let suitabilityScore = 94;
     let aiftDetails: { policyName?: string; irdaiRef?: string; feaDiscount?: string; avgClauseWaiver?: string } = {};
@@ -441,6 +480,31 @@ export default function PolicyPlanner() {
         "Reinstatement Value Clause (RVC): Ensure Building and Plant & Machinery are declared at current replacement cost (not book/depreciated value) to avoid average clause deductions.",
         "Underinsurance Vigilance: Conduct annual structural and equipment re-valuations to ensure values remain above the 85% statutory threshold.",
         "Fire Extinguishing Appliances (FEA): Maintain valid ISI-marked fire extinguishers (IS 2190) and hydrant test logs to secure up to 25% statutory premium rebates."
+      ];
+    } else if (domain === "engineering_ear_car") {
+      themeColor = "#d97706"; // amber-600
+      statutoryStandard = "Munich Re / TAC Standard Engineering Tariff (CAR/EAR)";
+      planType = "Combined Section I Material Damage + Section II TPL Project Policy";
+
+      const isCar = step1 === "civil_construction";
+      const isEar = step1 === "plant_machinery";
+
+      if (isCar) {
+        title = "Contractor's All Risks (CAR) Civil Infrastructure Suite";
+        explanation = "For civil construction works (commercial buildings, bridges, metro corridors, highway flyovers), Contractor's All Risks (CAR) is the statutory engineering benchmark. Section I indemnifies material damage caused by flood, inundation, earthquake, landslide, and site structural collapse. Section II wraps comprehensive Third-Party Liability (TPL) defending against cross-liability suits, neighbor property subsidence, and public roadway injury.";
+      } else if (isEar) {
+        title = "Erection All Risks (EAR) Plant & Machinery Installation Suite";
+        explanation = "For heavy industrial machinery assembly, electrical turbines, power plants, and automated conveyor lines, Erection All Risks (EAR) provides indispensable project protection. Coverage begins upon equipment unloading at the jobsite, continues through intermediate storage and crane lifting, and critically protects through the cold and hot testing & commissioning phase where breakdown and electrical fire hazards peak.";
+      } else {
+        title = "Turnkey EPC Infrastructure CAR / EAR Hybrid Treaty";
+        explanation = "For integrated EPC infrastructure works combining both extensive civil engineering structures and heavy electro-mechanical plant erection, a blended CAR/EAR package prevents inter-contractor coverage disputes and guarantees seamless protection under a single 72-hour catastrophe aggregation clause and extended defects maintenance period.";
+      }
+
+      checklist = [
+        "Testing & Commissioning Period: Verify that the testing period endorsement strictly mirrors the mechanical cold/hot trial schedule (typically 4 to 12 weeks).",
+        "72-Hour Catastrophe Event Clause: Confirm that storm, flood, and earthquake occurrences within 72 consecutive hours are aggregated into a single deductible.",
+        "Surrounding Property (Endorsement 001): Ensure pre-existing facilities or nearby owner-owned installations are insured against crane collapse and excavation damage.",
+        "Cross-Liability Extension: Verify that each contractor, sub-contractor, and the project principal are treated as separate insureds under Section II TPL."
       ];
     } else if (domain === "retail_health") {
       themeColor = "#059669"; // emerald-600
@@ -964,16 +1028,22 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                         Intelligent Policy Matchmaker & Statutory Underwriting Advisor
                       </h4>
                       <p className="text-slate-600 dark:text-zinc-400 text-xs leading-relaxed font-sans">
-                        Discover the exact policy structure, statutory riders, and carrier suitability tailored to your unique risks. Grounded directly in the <strong>Tariff Advisory Committee (TAC) All India Fire Tariff (AIFT)</strong>, the <strong>IRDAI 2024 Master Circular on Health</strong>, <strong>Institute Cargo Clauses (ICC)</strong>, and the <strong>Employee's Compensation Act</strong>.
+                        Discover the exact policy structure, statutory riders, and carrier suitability tailored to your unique risks. Grounded directly in the <strong>Tariff Advisory Committee (TAC) All India Fire Tariff (AIFT)</strong>, <strong>Engineering All Risks (CAR/EAR)</strong>, the <strong>IRDAI 2024 Master Circular on Health</strong>, <strong>Institute Cargo Clauses (ICC)</strong>, and the <strong>Employee's Compensation Act</strong>.
                       </p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
                     <div className="bg-white dark:bg-zinc-950 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1">
                       <span className="text-[10px] font-bold font-mono text-orange-600 dark:text-orange-400 uppercase">🏢 AIFT Fire Standard</span>
                       <p className="text-[11px] text-slate-600 dark:text-zinc-400">
                         Automatic mapping to Bharat Griha Raksha, Bharat Sookshma, Bharat Laghu, SFSP & IAR with FEA discount logic.
+                      </p>
+                    </div>
+                    <div className="bg-white dark:bg-zinc-950 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1">
+                      <span className="text-[10px] font-bold font-mono text-amber-600 dark:text-amber-400 uppercase">⚙️ Engineering All Risks</span>
+                      <p className="text-[11px] text-slate-600 dark:text-zinc-400">
+                        Contractor's (CAR) & Erection All Risks (EAR) with hot testing, 72-hr CAT clause, and surrounding property.
                       </p>
                     </div>
                     <div className="bg-white dark:bg-zinc-950 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1">
@@ -983,7 +1053,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       </p>
                     </div>
                     <div className="bg-white dark:bg-zinc-950 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1">
-                      <span className="text-[10px] font-bold font-mono text-blue-600 dark:text-blue-400 uppercase">🚢 Commercial Logistics</span>
+                      <span className="text-[10px] font-bold font-mono text-blue-600 dark:text-blue-400 uppercase">🚢 Cargo & Transit</span>
                       <p className="text-[11px] text-slate-600 dark:text-zinc-400">
                         Institute Cargo Clauses (A) All-Risks, Warehouse-to-Warehouse, 110% CIF valuation & WC Table A/B compliance.
                       </p>
@@ -1061,6 +1131,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
               <div className="space-y-4 animate-fade-in" id="matchmaker-question-2">
                 <h4 className="text-sm font-extrabold text-slate-900 dark:text-zinc-100 font-sans tracking-tight">
                   {answers.domain === "commercial_fire" && "2. Identify your property type and approximate total asset value (Building + Plant + Machinery + Stocks):"}
+                  {answers.domain === "engineering_ear_car" && "2. Identify your project scope, civil engineering class, or plant installation phase:"}
                   {answers.domain === "retail_health" && "2. Select target demographic age group to optimize retail health premium and PED clauses:"}
                   {answers.domain === "marine_transit" && "2. Identify the core transit shipping mode used:"}
                   {answers.domain === "workmen_comp" && "2. Identify workplace physical hazard level and labor workforce structure:"}
@@ -1088,6 +1159,25 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                         <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
                       <ChevronRight className="w-4 h-4 text-orange-500 shrink-0 ml-3" />
+                    </button>
+                  ))}
+
+                  {answers.domain === "engineering_ear_car" && [
+                    { value: "civil_construction", label: "🏗️ Civil Construction Project (Bridges, Highways, Commercial Buildings - CAR)", desc: "Contractor's All Risks (CAR) Section I Material Damage + Section II Third-Party Liability (TPL) covering structural collapse, flood, and subsidence." },
+                    { value: "plant_machinery", label: "⚙️ Industrial Machinery & Plant Erection (Turbines, Assembly Lines - EAR)", desc: "Erection All Risks (EAR) covering assembly, wiring, and high-risk mechanical/electrical hot testing and commissioning trial runs." },
+                    { value: "hybrid_turnkey", label: "🌐 Turnkey EPC Infrastructure Complex (Blended CAR + EAR Package)", desc: "Combined civil engineering works and heavy plant erection with synchronized 72-hour CAT clause and extended maintenance warranty." }
+                  ].map(opt => (
+                    <button
+                      key={opt.value}
+                      onClick={() => handleSelectStep1(opt.value)}
+                      type="button"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                    >
+                      <div>
+                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-amber-500 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-amber-500 shrink-0 ml-3" />
                     </button>
                   ))}
 
@@ -1467,7 +1557,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
             <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-4">
               {/* Category Filter Pills */}
               <div className="flex flex-wrap gap-1.5">
-                {["All", "Fire & Property", "Health & Life", "Marine & Transit", "Liability & Cyber", "Statutory Acts"].map(cat => (
+                {["All", "Fire & Property", "Health & Mediclaim", "Marine & Transit", "Liability & Cyber", "Statutory Acts"].map(cat => (
                   <button
                     key={cat}
                     onClick={() => setMatrixCategory(cat)}

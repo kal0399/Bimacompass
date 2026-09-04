@@ -10,15 +10,13 @@ interface BookDictionaryProps {
 const CATEGORIES = [
   "ALL",
   "General",
-  "Life",
-  "Health",
-  "Motor",
-  "Regulation",
-  "Property/Home",
   "Fire (Commercial)",
   "Marine Insurance",
   "Business",
-  "Annuities",
+  "Health",
+  "Motor",
+  "Property/Home",
+  "Regulation",
   "Disability",
   "Advanced Topics"
 ];
@@ -97,28 +95,6 @@ export default function BookDictionary({ isAdminLoggedIn }: BookDictionaryProps)
       
       localStorage.setItem("bima_custom_glossary", JSON.stringify(mergedGlossary));
       setCustomGlossary(mergedGlossary);
-
-      // Programmatically sync frauds in standard web background
-      const localFraudsRaw = localStorage.getItem("bima_custom_frauds");
-      let currentLocalFrauds: any[] = [];
-      if (localFraudsRaw) {
-        try { currentLocalFrauds = JSON.parse(localFraudsRaw); } catch(e) {}
-      }
-      
-      const newFraudItems = data.fraudUpdates || [];
-      const mergedFrauds = [...currentLocalFrauds];
-      newFraudItems.forEach((item: any) => {
-        const alreadyExists = mergedFrauds.some(x => x.pattern.toLowerCase() === item.pattern.toLowerCase());
-        if (!alreadyExists) {
-          const nextId = Math.min(-1, ...mergedFrauds.map(x => x.id || -1)) - 1;
-          mergedFrauds.push({
-            ...item,
-            id: nextId,
-            isWebUpdate: true
-          });
-        }
-      });
-      localStorage.setItem("bima_custom_frauds", JSON.stringify(mergedFrauds));
 
       // Trigger standard storage event to sync all browser screens instantly
       window.dispatchEvent(new Event("storage"));

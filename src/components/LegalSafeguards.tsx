@@ -21,13 +21,13 @@ import {
   Activity,
   RefreshCw
 } from "lucide-react";
-import { glossaryDatabase, fraudsDatabase } from "../data/databaseContents";
+import { glossaryDatabase } from "../data/databaseContents";
 
 export default function LegalSafeguards() {
   const [isAdmin, setIsAdmin] = useState<boolean>(() => !!sessionStorage.getItem("bima_sec_session_token"));
   const [activeSubTab, setActiveSubTab] = useState<
     "charter" | "shield" | "affidavit" | "safeharbor" | "freehosting" |
-    "spam_editor" | "glossary_editor" | "release_editor" | "passcode_mgr" | "diagnostics" | "system_config"
+    "glossary_editor" | "release_editor" | "passcode_mgr" | "diagnostics" | "system_config"
   >("charter");
   const [adminError, setAdminError] = useState<string>("");
   const [copiedShieldMessage, setCopiedShieldMessage] = useState<boolean>(false);
@@ -41,7 +41,6 @@ export default function LegalSafeguards() {
   const [activeDocSection, setActiveDocSection] = useState<"privacy" | "copyright" | "safeharbor">("privacy");
 
   // Advanced Dynamic Databases Overrides States (Revamped Admin Controls)
-  const [customSpamList, setCustomSpamList] = useState<any[]>([]);
   const [customGlossaryList, setCustomGlossaryList] = useState<any[]>([]);
   const [customReleasesList, setCustomReleasesList] = useState<any[]>([]);
 
@@ -49,13 +48,6 @@ export default function LegalSafeguards() {
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [passSuccess, setPassSuccess] = useState("");
-
-  // Spam input states
-  const [spamPattern, setSpamPattern] = useState("");
-  const [spamSigns, setSpamSigns] = useState("");
-  const [spamCounter, setSpamCounter] = useState("");
-  const [spamSeverity, setSpamSeverity] = useState<"CRITICAL" | "HIGH" | "MODERATE">("CRITICAL");
-  const [spamClaimType, setSpamClaimType] = useState("");
 
   // Glossary input states
   const [termName, setTermName] = useState("");
@@ -72,10 +64,6 @@ export default function LegalSafeguards() {
 
   // Load custom lists from localStorage on mount and whenever tabs change
   useEffect(() => {
-    const savedSpam = localStorage.getItem("bima_custom_frauds");
-    if (savedSpam) {
-      try { setCustomSpamList(JSON.parse(savedSpam)); } catch(e) {}
-    }
     const savedGlossary = localStorage.getItem("bima_custom_glossary");
     if (savedGlossary) {
       try { setCustomGlossaryList(JSON.parse(savedGlossary)); } catch(e) {}
@@ -174,48 +162,6 @@ export default function LegalSafeguards() {
   }, [isAdmin]);
 
   // --- REVAMPED ADMIN DYNAMIC CRUD HANDLERS ---
-  const handleAddSpam = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!spamPattern || !spamClaimType || !spamCounter) {
-      setAdminError("Please fill out all required spam pattern inputs.");
-      return;
-    }
-    const newId = Date.now();
-    const parsedSigns = spamSigns.split("\n").map(s => s.trim()).filter(Boolean);
-    const newRow = {
-      id: newId,
-      pattern: spamPattern,
-      warning_signs: parsedSigns.length > 0 ? parsedSigns : ["Unverified call requests with suspicious callback demands."],
-      countermeasure: spamCounter,
-      severity: spamSeverity,
-      caller_claim_type: spamClaimType
-    };
-    const updated = [newRow, ...customSpamList];
-    setCustomSpamList(updated);
-    localStorage.setItem("bima_custom_frauds", JSON.stringify(updated));
-    setSpamPattern("");
-    setSpamSigns("");
-    setSpamCounter("");
-    setSpamClaimType("");
-    setAdminError("");
-
-    setSecurityLogs(prev => [
-      { time: new Date().toLocaleTimeString(), event: `Spam campaign created: id [${newId}] pattern [${spamPattern}]`, status: "success" },
-      ...prev
-    ]);
-  };
-
-  const handleDeleteSpam = (id: number) => {
-    const updated = customSpamList.filter(item => item.id !== id);
-    setCustomSpamList(updated);
-    localStorage.setItem("bima_custom_frauds", JSON.stringify(updated));
-
-    setSecurityLogs(prev => [
-      { time: new Date().toLocaleTimeString(), event: `Spam campaign deleted: id [${id}]`, status: "success" },
-      ...prev
-    ]);
-  };
-
   const handleAddGlossary = (e: React.FormEvent) => {
     e.preventDefault();
     if (!termName || !termDesc || !termExplanation) {
@@ -349,12 +295,12 @@ export default function LegalSafeguards() {
     { code: "H-03", type: "Health", pseudonym: "Anonymized Standalone Health Insurer (H-03)", actual: "Niva Specialized Health Insurers", baseline: "OPD clinic & ICU room-rent limits" },
     { code: "H-04", type: "Health", pseudonym: "Anonymized Standalone Health Insurer (H-04)", actual: "Birla Private Health Insurers", baseline: "Sub-limit caps & diagnostic criteria" },
     { code: "H-05", type: "Health", pseudonym: "Anonymized Standalone Health Insurer (H-05)", actual: "Manipal Specialized Health Insurers", baseline: "Ancillary nursing & bedside cash" },
-    { code: "L-01", type: "Life", pseudonym: "Anonymized Life Insurer (L-01)", actual: "State Life Insurers Corporation", baseline: "Grace period & standard suicide exclusions" },
-    { code: "L-02", type: "Life", pseudonym: "Anonymized Life Insurer (L-02)", actual: "Private Life Insurers Group", baseline: "Non-linked terminal illness indices" },
-    { code: "L-03", type: "Life", pseudonym: "Anonymized Life Insurer (L-03)", actual: "State Allied Life Insurers Ltd.", baseline: "Welfare protection table declarations" },
-    { code: "L-04", type: "Life", pseudonym: "Anonymized Life Insurer (L-04)", actual: "Prudential Private Life Insurers", baseline: "Mortality charges & rider exclusions" },
-    { code: "L-05", type: "Life", pseudonym: "Anonymized Life Insurer (L-05)", actual: "Maximized Capital Life Insurers", baseline: "Critical premium relief clauses" },
-    { code: "L-06", type: "Life", pseudonym: "Anonymized Life Insurer (L-06)", actual: "Progressive Multi-Life Insurers", baseline: "Endowments & premium default waivers" }
+    { code: "M-01", type: "Marine", pseudonym: "Anonymized Marine Underwriter (M-01)", actual: "National Maritime & Cargo Insurers", baseline: "Inland Transit Clauses (ITC-A/B/C) wordings" },
+    { code: "M-02", type: "Marine", pseudonym: "Anonymized Marine Freight Syndicate (M-02)", actual: "Oriental Marine & Transit Insurers", baseline: "Ocean ICC Cargo Clauses & subrogation protocols" },
+    { code: "E-01", type: "Engineering", pseudonym: "Anonymized Engineering Underwriter (E-01)", actual: "Industrial Infrastructure & Works Insurers", baseline: "CAR Section I Material Damage & TPL limits" },
+    { code: "E-02", type: "Engineering", pseudonym: "Anonymized Plant & Erection Insurer (E-02)", actual: "Machinery Erection & Testing All Risks Co.", baseline: "Testing period endorsements & 72-hour CAT clauses" },
+    { code: "L-01", type: "Liability", pseudonym: "Anonymized Commercial Liability Insurer (L-01)", actual: "Corporate General Liability & D&O Insurers", baseline: "Commercial general liability indemnity tariffs" },
+    { code: "L-02", type: "Liability", pseudonym: "Anonymized Cyber & Indemnity Insurer (L-02)", actual: "Cyber Risk & Business Interruption Insurers", baseline: "First-party indemnity & forensic expense coverage" }
   ];
 
   const handleCopyCodeSnippet = () => {
@@ -479,18 +425,6 @@ export default function LegalSafeguards() {
             <span className="text-[9px] font-extrabold text-slate-400 font-mono uppercase tracking-wider pl-1.5 shrink-0">
               🛠️ Registry Editors:
             </span>
-            <button
-              onClick={() => setActiveSubTab("spam_editor")}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition duration-150 flex items-center gap-1.5 cursor-pointer ${
-                activeSubTab === "spam_editor"
-                  ? "bg-emerald-600 text-white shadow-sm"
-                  : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-              }`}
-            >
-              <AlertTriangle className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-              <span>Spam Registry CRUD</span>
-            </button>
-
             <button
               onClick={() => setActiveSubTab("glossary_editor")}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition duration-150 flex items-center gap-1.5 cursor-pointer ${
@@ -713,7 +647,7 @@ export default function LegalSafeguards() {
                     </ul>
 
                     <p>
-                      <strong>2.4 Nominal Trademark Fair Use & Anonymization Safe Harbor:</strong> By law, trademarks may be cited to accurately describe a physical or economic relationship without implying sponsorship or endorsement. To fully immunize this citizen initiative against arbitrary commercial complaints, all audited general, health, and life insurers are listed under standardized, protective pseudonyms (such as <em>"Anonymized Standalone Health Insurer H-03"</em>). The raw, unmodified trade names exist solely in the administrator's security verification status console matching the 72-hour crawling logic. No corporate trademarks are commercialized, advertised, or defamed on this domain.
+                      <strong>2.4 Nominal Trademark Fair Use & Anonymization Safe Harbor:</strong> By law, trademarks may be cited to accurately describe a physical or economic relationship without implying sponsorship or endorsement. To fully immunize this citizen initiative against arbitrary commercial complaints, all audited general, property, marine, engineering, and health indemnity insurers are listed under standardized, protective pseudonyms (such as <em>"Anonymized Standalone Health Insurer H-03"</em>). The raw, unmodified trade names exist solely in the administrator's security verification status console matching the 72-hour crawling logic. No corporate trademarks are commercialized, advertised, or defamed on this domain.
                     </p>
                   </div>
 
@@ -1017,7 +951,7 @@ export default function LegalSafeguards() {
             <div className="space-y-1">
               <h4 className="font-extrabold text-slate-900 text-sm font-sans">Anonymized Underwriters Safe-Harbor Ledger</h4>
               <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                Full list of all 20 Indian general insurers, standalone health insurers, and life insurers monitored under our 72-hour automated policy wording deviation crawler.
+                Full list of all 20 Indian general insurers, standalone health indemnity insurers, marine cargo syndicates, and engineering risk underwriters monitored under our 72-hour automated policy wording deviation crawler.
               </p>
             </div>
 
@@ -1027,7 +961,7 @@ export default function LegalSafeguards() {
                   <div className="space-y-1 overflow-hidden">
                     <div className="flex items-center gap-2">
                       <span className={`px-1.5 py-0.5 rounded text-[8px] font-extrabold font-mono uppercase tracking-wider leading-none ${
-                        ins.type === "General" ? "bg-red-100 text-red-950" : ins.type === "Health" ? "bg-amber-100 text-amber-950" : "bg-indigo-100 text-indigo-950"
+                        ins.type === "General" ? "bg-red-100 text-red-950" : ins.type === "Health" ? "bg-emerald-100 text-emerald-950" : ins.type === "Marine" ? "bg-cyan-100 text-cyan-950" : ins.type === "Engineering" ? "bg-amber-100 text-amber-950" : "bg-indigo-100 text-indigo-950"
                       }`}>
                         {ins.type}
                       </span>
@@ -1297,151 +1231,7 @@ export default function LegalSafeguards() {
           </motion.div>
         )}
 
-        {/* TAB 6: SPAM REGISTRY CRUD */}
-        {isAdmin && activeSubTab === "spam_editor" && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-5"
-          >
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
-              <span className="text-[10px] font-extrabold text-amber-605 block tracking-widest uppercase font-mono">Registry Editors</span>
-              <h3 className="font-extrabold text-slate-900 text-sm font-sans tracking-tight">Spam & Spurious Call Campaigns Database Console</h3>
-              <p className="text-xs text-slate-655 leading-relaxed font-sans">
-                Below is the registry console for the <strong>FraudShield Call Verifier wizard</strong>. Items added here are compiled down to live memory and will instantly match user inquiries, enabling the smart complaint draft generator to construct automated reporting emails.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-              {/* Add form */}
-              <form onSubmit={handleAddSpam} className="bg-white border border-slate-200 p-5 rounded-2xl space-y-4">
-                <h4 className="text-xs font-extrabold text-slate-900 uppercase font-sans tracking-wider border-b pb-2 flex items-center gap-1.5">
-                  <Plus className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Register New Caller Campaign</span>
-                </h4>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wide font-mono">Modus Operandi / Claim Name:</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Premium Share Rebate Scheme"
-                      value={spamPattern}
-                      onChange={(e) => setSpamPattern(e.target.value)}
-                      className="w-full text-xs p-2.5 border border-slate-350 bg-slate-50/50 rounded-lg focus:outline-none focus:ring-1 focus:ring-emerald-500 font-sans"
-                    />
-                  </div>
-
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-505 uppercase tracking-wide font-mono">Caller Impersonation / Claim Type:</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Central Registry Commissioner"
-                      value={spamClaimType}
-                      onChange={(e) => setSpamClaimType(e.target.value)}
-                      className="w-full text-xs p-2.5 border border-slate-350 bg-slate-50/50 rounded-lg focus:outline-none focus:ring-1 focus:ring-emerald-500 font-sans font-medium"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wide font-mono">Warning Severity Level:</label>
-                    <select
-                      value={spamSeverity}
-                      onChange={(e: any) => setSpamSeverity(e.target.value)}
-                      className="w-full text-xs p-2.5 border border-slate-350 bg-slate-50/50 rounded-lg focus:outline-none focus:ring-1 focus:ring-emerald-500"
-                    >
-                      <option value="CRITICAL">CRITICAL</option>
-                      <option value="HIGH">HIGH</option>
-                      <option value="MODERATE">MODERATE</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-505 uppercase tracking-wide font-mono">Specific Warning Signs (1 Per Line):</label>
-                    <textarea
-                      rows={2}
-                      placeholder="e.g. Urgently demands couriering of blank sheets&#10;Asks for cash verification"
-                      value={spamSigns}
-                      onChange={(e) => setSpamSigns(e.target.value)}
-                      className="w-full text-xs p-2 border border-slate-350 bg-slate-50/50 rounded-lg focus:outline-none focus:ring-1 focus:ring-emerald-500 font-mono"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <label className="text-[10px] font-bold text-slate-505 uppercase tracking-wide font-mono font-sans font-sans">Regulatory Action Countermeasures:</label>
-                  <textarea
-                    rows={2}
-                    required
-                    placeholder="Provide actionable guidance for consumers (e.g. hang up instantly and register grievance at complaints@irda.gov.in)..."
-                    value={spamCounter}
-                    onChange={(e) => setSpamCounter(e.target.value)}
-                    className="w-full text-xs p-2 border border-slate-350 bg-slate-50/50 rounded-lg focus:outline-none focus:ring-1 focus:ring-emerald-500 font-sans"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 py-2.5 rounded-xl transition cursor-pointer select-none flex items-center justify-center gap-1.5"
-                >
-                  <Plus className="w-4 h-4 shrink-0" />
-                  <span>Commit Campaign to Database</span>
-                </button>
-              </form>
-
-              {/* View/Delete Active custom records list */}
-              <div className="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between">
-                <div className="space-y-4">
-                  <h4 className="text-xs font-extrabold text-slate-900 uppercase font-sans tracking-wide border-b pb-2 flex items-center justify-between">
-                    <span>Active Custom Overrides ({customSpamList.length})</span>
-                    <span className="text-[9px] bg-slate-100 text-slate-505 font-mono px-2 py-0.5 rounded uppercase tracking-widest font-bold">Modifiable</span>
-                  </h4>
-
-                  {customSpamList.length === 0 ? (
-                    <div className="text-center py-10 text-slate-400 text-xs font-sans space-y-1.5">
-                      <AlertTriangle className="w-8 h-8 text-slate-300 mx-auto" />
-                      <p className="font-bold text-slate-500">No Custom Spam Bulletins Active</p>
-                      <p className="text-[10.5px] max-w-xs mx-auto text-slate-400 leading-normal">Please add campaign records using the left register form to inject real-time security overrides.</p>
-                    </div>
-                  ) : (
-                    <div className="space-y-3 max-h-[290px] overflow-y-auto pr-1">
-                      {customSpamList.map((spam) => (
-                        <div key={spam.id} className="p-3 border border-slate-100 rounded-xl bg-slate-50/60 flex items-start justify-between gap-3 text-xs">
-                          <div className="space-y-1.5">
-                            <div className="flex items-center gap-2">
-                              <span className="text-[8px] bg-rose-100 text-rose-800 px-1.5 py-0.5 rounded font-mono font-bold tracking-wider">{spam.severity}</span>
-                              <strong className="text-slate-900 font-bold font-sans">{spam.pattern}</strong>
-                            </div>
-                            <p className="text-[11px] text-slate-505 leading-relaxed font-sans font-medium"><strong className="font-bold text-slate-800 font-sans">Claimant:</strong> {spam.caller_claim_type}</p>
-                            <p className="text-[10.5px] italic text-slate-500 leading-normal">Required Action: "{spam.countermeasure}"</p>
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => handleDeleteSpam(spam.id)}
-                            className="p-1 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition cursor-pointer shrink-0"
-                            title="Delete campaign"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <div className="text-[10px] text-slate-404 italic font-sans pt-3 border-t border-slate-100 font-medium">
-                  * All changes are persisted locally inside the browser's persistent key-value assembly dockets on save.
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* TAB 7: GLOSSARY EDITOR */}
+        {/* GLOSSARY EDITOR */}
         {isAdmin && activeSubTab === "glossary_editor" && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -1484,7 +1274,7 @@ export default function LegalSafeguards() {
                       onChange={(e) => setTermCat(e.target.value)}
                       className="w-full text-xs p-2.5 border border-slate-355 bg-slate-50/50 rounded-lg focus:outline-none focus:ring-1 focus:ring-emerald-500 font-bold font-sans"
                     >
-                      {["General", "Life", "Health", "Motor", "Regulation", "Property/Home", "Fire (Commercial)", "Marine Insurance", "Business", "Annuities", "Disability", "Advanced Topics"].map(cat => (
+                      {["General", "Fire (Commercial)", "Marine Insurance", "Business", "Health", "Motor", "Property/Home", "Regulation", "Disability", "Advanced Topics"].map(cat => (
                         <option key={cat} value={cat}>{cat}</option>
                       ))}
                     </select>
@@ -2092,58 +1882,10 @@ export default function LegalSafeguards() {
                 </h4>
                 
                 <p className="text-[11px] text-slate-500 leading-normal font-sans">
-                  Quickly inject mock-free realistic analytical data records to test the FraudShield and Dictionary modules without manual database configuration.
+                  Quickly inject realistic analytical data records to test the Dictionary modules without manual database configuration.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      // Seed custom frauds
-                      const standardSeeds = [
-                        {
-                          id: 991,
-                          pattern: "IRDAI Verification Bonus Call Expose",
-                          warning_signs: ["Caller claims to be officer at IRDAI audit branch", "Asks for Rs. 54,000 security fee to release accumulated loyalty bonus points", "Demands immediate deposit in a private account"],
-                          countermeasure: "Do not transfer money. IRDAI has no such scheme and never calls looking for agent commission checks. Report to cyber crime immediately.",
-                          severity: "CRITICAL",
-                          caller_claim_type: "Administrative Auditor"
-                        },
-                        {
-                          id: 992,
-                          pattern: "Deceptive Free Health Checkup Scheme",
-                          warning_signs: ["Asks to courier blank sheets signed with finger print for medical assessment", "Asks to courier existing medical histories in original", "Will refuse standard diagnostics check"],
-                          countermeasure: "Hang up. Corporate diagnostic centers never demand signed blank paperwork or original physical record folders.",
-                          severity: "HIGH",
-                          caller_claim_type: "Diagnostic Center Associate"
-                        },
-                        {
-                          id: 993,
-                          pattern: "Lapsed Endowment Revival Scam",
-                          warning_signs: ["Claims to revive a policy lapsed 8 years ago without standard health declaration", "Asks pay money directly to agent online portfolio", "Demands transaction screenshots over chat"],
-                          countermeasure: "Re-checks lapse status inside official underwriter portal. Agents are prohibited from collecting cashless payments into personal savings accounts.",
-                          severity: "CRITICAL",
-                          caller_claim_type: "Revival Officer"
-                        }
-                      ];
-                      localStorage.setItem("bima_custom_frauds", JSON.stringify(standardSeeds));
-                      setCustomSpamList(standardSeeds);
-                      setSecurityLogs(prev => [
-                        { time: new Date().toLocaleTimeString(), event: "[seeding] Deployed 3 bulk caller campaigns to active FraudShield registry memory.", status: "success" },
-                        ...prev
-                      ]);
-                      alert("Successfully injected 3 caller campaigns into FraudShield registry memories!");
-                    }}
-                    className="p-3 bg-slate-50 border border-slate-200 hover:border-emerald-300 text-slate-800 rounded-xl text-left hover:bg-slate-100 transition space-y-1 cursor-pointer select-none"
-                  >
-                    <div className="flex items-center gap-1.5 font-bold text-slate-900 text-xs font-sans">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                      <span>Seed Core Fraud Campaigns</span>
-                    </div>
-                    <p className="text-[10px] text-slate-500 leading-normal">
-                      Saves 3 elite telemetry profiles directly into user FraudShield memory registers.
-                    </p>
-                  </button>
 
                   <button
                     type="button"
@@ -2227,39 +1969,18 @@ export default function LegalSafeguards() {
                         localStorage.setItem("bima_custom_glossary", JSON.stringify(mergedGlossary));
                         setCustomGlossaryList(mergedGlossary);
 
-                        // Sync Frauds
-                        const savedSpam = localStorage.getItem("bima_custom_frauds");
-                        let currentSpam: any[] = [];
-                        if (savedSpam) {
-                          try { currentSpam = JSON.parse(savedSpam); } catch(e) {}
-                        }
-                        const newFraudItems = data.fraudUpdates || [];
-                        const mergedSpam = [...currentSpam];
-                        let spamAdded = 0;
-                        newFraudItems.forEach((item: any) => {
-                          const alreadyExists = mergedSpam.some(x => x.pattern.toLowerCase() === item.pattern.toLowerCase()) ||
-                            fraudsDatabase.some(x => x.pattern.toLowerCase() === item.pattern.toLowerCase());
-                          if (!alreadyExists) {
-                            const nextId = Math.min(-1, ...mergedSpam.map(x => x.id || -1)) - 1;
-                            mergedSpam.push({ ...item, id: nextId, isWebUpdate: true });
-                            spamAdded++;
-                          }
-                        });
-                        localStorage.setItem("bima_custom_frauds", JSON.stringify(mergedSpam));
-                        setCustomSpamList(mergedSpam);
-
                         // Dispatch standard storage event
                         window.dispatchEvent(new Event("storage"));
 
                         setSecurityLogs(prev => [
                           { 
                             time: new Date().toLocaleTimeString(), 
-                            event: `[wsr-sync] Success. Handled active sync. Added ${glossaryAdded} terms and ${spamAdded} fraud alerts.`, 
+                            event: `[wsr-sync] Success. Handled active sync. Added ${glossaryAdded} terms.`, 
                             status: "success" 
                           },
                           ...prev
                         ]);
-                        alert(`Regulatory Sync Successful!\nAdded ${glossaryAdded} new definitions.\nAdded ${spamAdded} brand new fraud alerts.`);
+                        alert(`Regulatory Sync Successful!\nAdded ${glossaryAdded} new definitions.`);
                       } catch (err: any) {
                         console.warn("WSR-Sync failure:", err);
                         setSecurityLogs(prev => [
@@ -2305,7 +2026,6 @@ export default function LegalSafeguards() {
                         signed_by: userName || "Kalyanjit Naik",
                         designation: userRole || "Consumer Advocate",
                         security_strictness: localStorage.getItem("bima_sec_strictness") || "4",
-                        custom_fraud_registry: customSpamList,
                         custom_glossary_dictionary: customGlossaryList,
                         custom_releases_telemetry: customReleasesList,
                         security_event_logs: securityLogs
@@ -2331,7 +2051,7 @@ export default function LegalSafeguards() {
                   <button
                     type="button"
                     onClick={() => {
-                      const confirmation1 = window.confirm("⚠️ WARNING: This will immediately delete all manually added fraud call signs, glossary definitions, compiled release notes, customized advocate signatures, and restore standard passwords. This process is irreversible.\n\nAre you sure you want to perform a full system purge?");
+                      const confirmation1 = window.confirm("⚠️ WARNING: This will immediately delete all manually added glossary definitions, compiled release notes, customized advocate signatures, and restore standard passwords. This process is irreversible.\n\nAre you sure you want to perform a full system purge?");
                       if (!confirmation1) return;
                       
                       const confirmation2 = window.confirm("Double Confirmation: Confirm complete sandbox caches destroy? All browser state data will be wiped.");
@@ -2344,7 +2064,6 @@ export default function LegalSafeguards() {
                       // Rollback local state
                       setUserName("Kalyanjit Naik");
                       setUserRole("Lead Developer & Citizen Advocate");
-                      setCustomSpamList([]);
                       setCustomGlossaryList([]);
                       setCustomReleasesList([]);
                       setIsAdmin(false);

@@ -95,7 +95,7 @@ export default function RetailHealthHandbook() {
 
   const exclusionsList = [
     { name: "Cosmetic & Aesthetic Surgery", type: "Standard Exclusion", details: "Plastic surgeries, hair transplants, or Botox unless required due to major accidental trauma reconstruction." },
-    { name: "Weight Loss Procedures", type: "Conditional Exclusion", details: "Bariatric surgery is excluded unless it satisfies strict medical criteria (BMI > 40 and physician-certified life hazard)." },
+    { name: "Weight Loss Procedures", type: "Conditional Exclusion", details: "Bariatric surgery is excluded unless it satisfies strict medical criteria (BMI > 40 and physician-certified critical health hazard)." },
     { name: "Maternity & Newborn Expenses", type: "Standard Exclusion", details: "Excluded in base retail health policies unless specifically opted via custom premium Add-ons (usually carries a 2-4 year waiting timeline)." },
     { name: "Dental, Eye Care & Outpatient", type: "Standard Exclusion", details: "OPD consultations, spectacles, and dental fillings are excluded unless requiring actual 24-hr in-patient hospitalization due to injury." },
     { name: "Self-Inflicted Injury", type: "Strict Exclusion", details: "Treatment for suicide attempts, self-inflicted wounds, or injuries sustained under the active influence of alcohol or narcotic substances." }
@@ -225,7 +225,7 @@ export default function RetailHealthHandbook() {
                   Unlike ordinary consumer inflation (which hovers around 5-6%), <strong>Indian healthcare costs hike by 14% every single year</strong>. An unexpected major treatment (e.g., intensive cardiac surgery, oncology care, or long-term organ support) can demand ₹8 Lakhs to ₹15 Lakhs instantly. 
                 </p>
                 <p className="text-slate-500 text-[11px] leading-normal italic bg-slate-50 border-l-2 border-rose-400 p-2 rounded-r-lg">
-                  💡 <strong>Critical Takeaway:</strong> A personal retail health cover secures your hard-earned life savings, guaranteeing that a medical crisis doesn't spiral into physical bankruptcy or debt traps.
+                  💡 <strong>Critical Takeaway:</strong> A personal retail health cover secures your hard-earned family savings, guaranteeing that a medical crisis doesn't spiral into physical bankruptcy or debt traps.
                 </p>
               </div>
             </>

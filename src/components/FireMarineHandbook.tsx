@@ -2889,7 +2889,7 @@ export default function FireMarineHandbook() {
             </div>
 
             <p className="text-xs text-slate-600 leading-relaxed font-sans">
-              While a base GPA policy compensates only for basic physical loss of life or specific dismemberment tables, corporate risk managers can attach standardized market extensions. Below is the comprehensive master suite of <strong>all 10 GPA Add-ons</strong> offered by top commercial insurance providers, detailing their statutory purposes, sub-limits, and underwriting implications:
+              While a base GPA policy compensates only for accidental death or specific dismemberment tables, corporate risk managers can attach standardized market extensions. Below is the comprehensive master suite of <strong>all 10 GPA Add-ons</strong> offered by top commercial insurance providers, detailing their statutory purposes, sub-limits, and underwriting implications:
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5 text-xs font-sans">

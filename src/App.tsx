@@ -31,8 +31,8 @@ import {
   Timer
 } from "lucide-react";
 import BookDictionary from "./components/BookDictionary";
-import FraudShield from "./components/FraudShield";
-import BookBuyerRights from "./components/BookBuyerRights";
+import MarineInsurance from "./components/MarineInsurance";
+import EarCarInsurance from "./components/EarCarInsurance";
 import BookHelplineHub from "./components/BookHelplineHub";
 import PolicyPlanner from "./components/PolicyPlanner";
 import BimaIconLogo from "./components/BimaIconLogo";
@@ -42,6 +42,7 @@ import RetailHealthHandbook from "./components/RetailHealthHandbook";
 import SitemapPage from "./components/SitemapPage";
 import HomeDashboard from "./components/HomeDashboard";
 import PyrametricTab from "./components/PyrametricTab";
+import ParametricRepository from "./components/ParametricRepository";
 
 interface ReleaseLogItem {
   label: string;
@@ -51,7 +52,7 @@ interface ReleaseLogItem {
   dateStr: string;
 }
 
-type TabId = "home" | "dictionary" | "handbook" | "retail_health" | "fraud" | "rights" | "helplines" | "planner" | "legal" | "sitemap" | "pyrametric";
+type TabId = "home" | "dictionary" | "handbook" | "retail_health" | "marine" | "ear_car" | "helplines" | "planner" | "legal" | "sitemap" | "pyrametric" | "parametric";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>("home");
@@ -436,10 +437,10 @@ export default function App() {
                 Active Section: <strong className="text-zinc-900 dark:text-zinc-100 font-bold">
                   {activeTab === "retail_health" 
                     ? "Retail Health Insurance" 
-                    : activeTab === "fraud" 
-                    ? "Phone-Scam Guard" 
-                    : activeTab === "rights" 
-                    ? "Smart-Buyer Rights" 
+                    : activeTab === "marine" 
+                    ? "Marine Cargo & Transit Insurance" 
+                    : activeTab === "ear_car" 
+                    ? "EAR & CAR Engineering Insurance" 
                     : activeTab === "helplines" 
                     ? "Redressal Helplines" 
                     : activeTab === "planner" 
@@ -452,6 +453,8 @@ export default function App() {
                     ? "PWA Sitemap" 
                     : activeTab === "pyrametric"
                     ? "PyraMetric™ Actuarial Underwriter"
+                    : activeTab === "parametric"
+                    ? "Parametric Policy Repository (Swiss Re)"
                     : "Commercial Lines Handbook"}
                 </strong>
               </span>
@@ -469,13 +472,14 @@ export default function App() {
             {activeTab === "dictionary" && <BookDictionary isAdminLoggedIn={isAdminLoggedIn} />}
             {activeTab === "handbook" && <FireMarineHandbook />}
             {activeTab === "retail_health" && <RetailHealthHandbook />}
-            {activeTab === "fraud" && <FraudShield />}
-            {activeTab === "rights" && <BookBuyerRights />}
+            {activeTab === "marine" && <MarineInsurance />}
+            {activeTab === "ear_car" && <EarCarInsurance />}
             {activeTab === "helplines" && <BookHelplineHub />}
             {activeTab === "planner" && <PolicyPlanner />}
             {activeTab === "legal" && <LegalSafeguards />}
             {activeTab === "sitemap" && <SitemapPage setActiveTab={setActiveTab} currentAppVersion={currentAppVersion} />}
             {activeTab === "pyrametric" && <PyrametricTab />}
+            {activeTab === "parametric" && <ParametricRepository />}
           </div>
 
           {/* Bottom Utility Grid */}

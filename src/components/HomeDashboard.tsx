@@ -3,7 +3,8 @@ import { motion } from "motion/react";
 import { 
   Flame, 
   Heart, 
-  ShieldAlert, 
+  Ship,
+  HardHat,
   ShieldCheck, 
   PhoneCall, 
   Compass, 
@@ -20,7 +21,8 @@ import {
   Calendar,
   Radio,
   Lock,
-  ExternalLink
+  ExternalLink,
+  Waves
 } from "lucide-react";
 import PyrametricBox from "./PyrametricBox";
 
@@ -182,24 +184,24 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       actionText: "Check Rules"
     },
     {
-      id: "fraud",
-      title: "Phone-Scam Guard",
-      desc: "A list of annoying spam and scam callers who trick people with fake insurance offers or bonus money traps reported by real users.",
-      icon: ShieldAlert,
-      color: "from-red-50/70 to-red-100/20 hover:border-red-300 hover:shadow-red-100/40 dark:from-[#281313]/40 dark:to-[#1A0C0C]/20 dark:hover:border-red-900/50 dark:hover:shadow-red-950/20",
-      iconColor: "text-red-600 bg-red-100/80 dark:text-red-400 dark:bg-red-950/50",
-      badge: "Scam Warning",
-      actionText: "Search Spam List"
+      id: "marine",
+      title: "Marine & Cargo Transit",
+      desc: "Inland Transit Clauses (ITC A/B/C), ocean freight ICC rules, carrier liability notices, and public Indian insurer policies (New India, National, Oriental, United India).",
+      icon: Ship,
+      color: "from-cyan-50/70 to-cyan-100/20 hover:border-cyan-300 hover:shadow-cyan-100/40 dark:from-[#0C242E]/40 dark:to-[#07171D]/20 dark:hover:border-cyan-900/50 dark:hover:shadow-cyan-950/20",
+      iconColor: "text-cyan-600 bg-cyan-100/80 dark:text-cyan-400 dark:bg-cyan-950/50",
+      badge: "Marine & Cargo",
+      actionText: "Explore Marine"
     },
     {
-      id: "rights",
-      title: "Your Basic Rights",
-      desc: "A simple guide to your basic rights, like how fast an insurance company must settle your claim and what simple rules they must follow for you.",
-      icon: ShieldCheck,
-      color: "from-indigo-50/70 to-indigo-100/20 hover:border-indigo-300 hover:shadow-indigo-100/40 dark:from-[#15132B]/40 dark:to-[#0E0C1B]/20 dark:hover:border-indigo-900/50 dark:hover:shadow-indigo-950/20",
-      iconColor: "text-indigo-600 bg-indigo-100/80 dark:text-indigo-400 dark:bg-indigo-950/50",
-      badge: "Your Rights",
-      actionText: "See Your Rights"
+      id: "ear_car",
+      title: "EAR / CAR Engineering",
+      desc: "Erection All Risks & Contractor's All Risks policies for civil structures, highway corridors, factory machinery, testing periods, and TAC tariff endorsements.",
+      icon: HardHat,
+      color: "from-amber-50/70 to-amber-100/20 hover:border-amber-300 hover:shadow-amber-100/40 dark:from-[#2A1D0F]/40 dark:to-[#1A1208]/20 dark:hover:border-amber-900/50 dark:hover:shadow-amber-950/20",
+      iconColor: "text-amber-600 bg-amber-100/80 dark:text-amber-400 dark:bg-amber-950/50",
+      badge: "Project Insurance",
+      actionText: "Explore CAR/EAR"
     },
     {
       id: "helplines",
@@ -214,7 +216,7 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
     {
       id: "planner",
       title: "Find the Right Policy",
-      desc: "Answer simple questions about your lifestyle to find out what kinds of insurances actually fit your needs best.",
+      desc: "Answer simple questions about your property, cargo, project, or health risk profile to discover fitting indemnity insurances.",
       icon: Compass,
       color: "from-blue-50/70 to-blue-100/20 hover:border-blue-300 hover:shadow-blue-100/40 dark:from-[#121E2C]/40 dark:to-[#0B131D]/20 dark:hover:border-blue-900/50 dark:hover:shadow-blue-950/20",
       iconColor: "text-blue-600 bg-blue-100/80 dark:text-blue-400 dark:bg-blue-950/50",
@@ -240,6 +242,16 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       iconColor: "text-amber-400 bg-blue-950 border border-blue-800/80",
       badge: "AIFT Tariff Suite",
       actionText: "Open Underwriter"
+    },
+    {
+      id: "parametric",
+      title: "Parametric Policy Repository",
+      desc: "Based on Swiss Re's model (Gianni Biason). Explore index-triggered policies for cyclones, earthquakes, rainfall, and solar revenue with 2–14 day automated payouts.",
+      icon: Waves,
+      color: "from-blue-50/80 to-cyan-100/30 hover:border-cyan-400 hover:shadow-cyan-100/40 dark:from-[#0B1E2E]/60 dark:to-[#091522]/40 dark:hover:border-cyan-500/60 dark:hover:shadow-cyan-950/40",
+      iconColor: "text-cyan-600 bg-cyan-100/80 dark:text-cyan-400 dark:bg-cyan-950/50",
+      badge: "Swiss Re Model",
+      actionText: "Open Repository"
     },
     {
       id: "legal",

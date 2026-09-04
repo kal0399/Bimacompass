@@ -1,6 +1,6 @@
 {
   "name": "BimaCompass",
-  "description": "An offline-capable knowledge base and smart advisor for insurance buyers inspired by IRDA guidelines. Features quick glossary search, policy needs analyzer, fraud checklist, and a secure server-side Gemini advisory co-pilot.",
+  "description": "An offline-capable knowledge base and smart advisor for insurance buyers inspired by IRDA guidelines. Features quick glossary search, Marine Cargo (ITC A/B/C), EAR/CAR engineering insurance, Swiss Re parametric policy repository, and a secure server-side Gemini advisory co-pilot.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

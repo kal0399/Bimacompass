@@ -4,8 +4,8 @@ import {
   Map, 
   Flame, 
   Heart, 
-  ShieldAlert, 
-  ShieldCheck, 
+  Ship, 
+  HardHat, 
   PhoneCall, 
   Compass, 
   BookOpen, 
@@ -17,10 +17,11 @@ import {
   ArrowRight,
   Wifi,
   WifiOff,
-  Files
+  Files,
+  Waves
 } from "lucide-react";
 
-type TabId = "dictionary" | "handbook" | "retail_health" | "fraud" | "rights" | "helplines" | "planner" | "legal" | "sitemap";
+type TabId = "dictionary" | "handbook" | "retail_health" | "marine" | "ear_car" | "helplines" | "planner" | "legal" | "sitemap" | "pyrametric" | "parametric";
 
 interface SitemapPageProps {
   setActiveTab: (tab: TabId) => void;
@@ -77,22 +78,22 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       sections: ["Co-payment Clauses", "Pre-existing Disease Waivers", "Pre/Post Hospitalization Periods", "Exclusion Index"]
     },
     {
-      id: "fraud" as TabId,
-      name: "Phone-Scam Guard",
-      icon: ShieldAlert,
-      color: "text-rose-500 bg-rose-50 dark:bg-rose-950/30",
-      category: "Anti-Fraud Campaign & Cybersecurity Hub",
-      description: "Identify and defend against fake IRDAI callers, suspicious advisory schemes, and fraudulent premium links. Includes national threat spectrum data metrics.",
-      sections: ["Scam Tactics Catalog", "Live Consumer Warnings", "Irregularity Report Form", "Fraud Threat Spectrum Metrics"]
+      id: "marine" as TabId,
+      name: "Marine Cargo & Transit Insurance",
+      icon: Ship,
+      color: "text-cyan-500 bg-cyan-50 dark:bg-cyan-950/30",
+      category: "Transit Risk & Cargo Logistics Architecture",
+      description: "Inland Transit Clauses (ITC A/B/C) under TAC guidelines, international ocean Institute Cargo Clauses (ICC A/B/C), carrier subrogation notices, and open covers from Indian PSUs.",
+      sections: ["ITC vs ICC Perils Matrix", "Public Insurers Directory", "Open Policy vs Open Cover", "Notice to Carrier Draft Generator"]
     },
     {
-      id: "rights" as TabId,
-      name: "Smart-Buyer Rights",
-      icon: ShieldCheck,
-      color: "text-indigo-500 bg-indigo-50 dark:bg-indigo-950/30",
-      category: "Regulatory Codes & Fair Practice Rules",
-      description: "Sourced from the official IRDAI Consumer Rights Charter. Includes Free-Look period refund guidelines and carrier Code of Conduct benchmarks.",
-      sections: ["Free-Look Cancellation rules", "Claims Settlement Grace periods", "Pre-contract Disclosure rights", "Turnaround Time (TAT) mandates"]
+      id: "ear_car" as TabId,
+      name: "EAR & CAR Engineering Insurance",
+      icon: HardHat,
+      color: "text-amber-500 bg-amber-50 dark:bg-amber-950/30",
+      category: "Civil Works & Plant Erection Risk Management",
+      description: "Contractor's All Risks (CAR) for infrastructure/civil construction and Erection All Risks (EAR) for machinery, testing periods, and TAC tariff endorsements.",
+      sections: ["CAR vs EAR Diagnostic", "Section I Material Damage", "Section II Third Party Liability", "Accident Intimation Docket"]
     },
     {
       id: "helplines" as TabId,
@@ -120,6 +121,24 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       category: "Comprehensive On-Device Translation Index",
       description: "Plain English definitions of compound legal-jargon words found in binding policy wordings (e.g. Subrogation, Utmost Good Faith, General Average).",
       sections: ["Subrogation Principles", "Indemnification Math models", "Co-insurance Factors", "Deductible calculations"]
+    },
+    {
+      id: "parametric" as TabId,
+      name: "Parametric Policy Repository",
+      icon: Waves,
+      color: "text-cyan-600 bg-cyan-50 dark:bg-cyan-950/30",
+      category: "Swiss Re Parametric Solutions Framework",
+      description: "Based on Gianni Biason's Swiss Re doctrine. Features pre-agreed index-triggered policies for cyclones, earthquakes, rainfall, and solar revenue with 2–14 day automated payouts.",
+      sections: ["USGS Seismic ShakeMap Index", "Cat-In-A-Circle Cyclone Model", "Solar GHI & Wind Volume Hedges", "Automated Payout Underwriting Simulator"]
+    },
+    {
+      id: "pyrametric" as TabId,
+      name: "PyraMetric™ Actuarial Platform",
+      icon: Flame,
+      color: "text-amber-500 bg-amber-50 dark:bg-amber-950/30",
+      category: "Statutory AIFT & IIB Rate Engine",
+      description: "Explore 100+ industrial & commercial base rates across TAC Sections 1–8, IIB burning cost benchmarks, IS 1893 seismic pricing, and IRDAI underwriting slips.",
+      sections: ["TAC 1–8 Tariff Rates", "IS 1893 Seismic Geo-Pricing", "FEA Discount Matrix", "IRDAI Underwriting Slips"]
     },
     {
       id: "legal" as TabId,

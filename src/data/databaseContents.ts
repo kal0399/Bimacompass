@@ -10,23 +10,6 @@ export interface GlossaryRow {
   source_page: number;
 }
 
-export interface FraudRow {
-  id: number;
-  pattern: string;
-  warning_signs: string[];
-  countermeasure: string;
-  severity: "HIGH" | "CRITICAL" | "MODERATE";
-  caller_claim_type: string;
-}
-
-export interface BuyerRightRow {
-  id: number;
-  title: string;
-  stage: "Buying Stage" | "Post-Purchase" | "Claim Time";
-  details: string;
-  duty: string;
-}
-
 export interface ComplaintChannelRow {
   id: number;
   name: string;
@@ -248,58 +231,58 @@ export const glossaryDatabase: GlossaryRow[] = [
   },
   {
     id: 26,
-    term: "Life Insurance Basics",
-    category: "Life",
-    description: "A vital personal financial tool acting as the cornerstone of planning, paying a lump-sum death benefit to designated beneficiaries upon the policyholder's passing to replace income or pay estate taxes.",
-    simple_explanation: "A financial pact with your family. If something happens to you, this gives your named loved ones a large cash payout to pay off the mortgage, buy groceries, and cover children's college fees.",
+    term: "Principle of Indemnity",
+    category: "General",
+    description: "The foundational doctrine of non-life insurance stating that the insurer undertakes to place the policyholder, after a covered loss, in the exact same financial position they enjoyed immediately prior to the event, preventing any windfall, enrichment, or profit.",
+    simple_explanation: "The golden rule of insurance: it pays only for what was actually lost or damaged. You can never profit or make extra money from an insurance claim; it simply restores what you had.",
     source_page: 16
   },
   {
     id: 27,
-    term: "Term Life Insurance",
-    category: "Life",
-    description: "The simplest, most economical form of life insurance that pays a death benefit strictly if demise occurs during a pre-set term (usually 1 to 30 years), offering zero maturity or survival cash back.",
-    simple_explanation: "Pure and cheap protection. You pay a small regular premium for a set period (like 20 years). If you pass away, your family receives a massive cash shield. If you survive, the policy ends with no cash back, but it kept you safe for pennies.",
+    term: "Doctrine of Subrogation",
+    category: "General",
+    description: "The statutory right of an indemnity insurer, upon settling a claim in full, to step into the shoes of the insured and recover the loss amount from any third party, road carrier, or wrongdoer responsible for causing the damage.",
+    simple_explanation: "If someone else damages your cargo, factory, or car and your insurance pays for repairs, your insurer inherits your right to legally sue the responsible party to get their money back.",
     source_page: 17
   },
   {
     id: 28,
-    term: "Whole Life / Permanent",
-    category: "Life",
-    description: "Permanent life insurance that covers you for your entire lifetime and includes a cash value savings element that accumulates tax-deferred and can be borrowed against.",
-    simple_explanation: "Continuous protection that never expires. Part of your premium goes toward a permanent life payout, and the other part is saved inside an in-app compound cash nest egg. It is more secure but far more expensive.",
+    term: "Contribution Clause",
+    category: "General",
+    description: "The principle governing cases where property is insured under multiple concurrent indemnity policies. Each insurer is liable to pay only their rateable proportion of the actual loss, preventing double recovery by the policyholder.",
+    simple_explanation: "If you insure the same building with two different insurance companies, you cannot claim the full damage amount twice. The two insurers share and split the actual repair bill proportionally.",
     source_page: 17
   },
   {
     id: 29,
-    term: "Universal & Variable Life",
-    category: "Life",
-    description: "Flexible permanent life variations. Universal lets you adjust premium amounts and coverage sizes over time. Variable lets you invest the policy's cash nest egg directly into stocks or mutual funds.",
-    simple_explanation: "Life insurance with dynamic controls. Universal lets you change your payment sizes if you face tight budgets. Variable lets you link your policy's built-in savings to stock markets for higher risk and reward.",
+    term: "Reinstatement Value Clause (RVC)",
+    category: "Property/Home",
+    description: "An endorsement in fire and commercial property contracts where claim settlement is based on the cost of replacing or reinstating damaged buildings, machinery, or assets with new items of equal kind, without deduction for age or depreciation.",
+    simple_explanation: "New-for-old coverage. If your commercial machinery burns down, this clause pays for brand-new replacement machines without deducting for how old or worn your previous equipment was.",
     source_page: 17
   },
   {
     id: 30,
-    term: "Annuity Basics",
-    category: "Annuities",
-    description: "A contract between an individual and a life Insurer designed to enhance retirement security, converting saved assets into a guaranteed, regular stream of lifetime income.",
-    simple_explanation: "Reverse life insurance. You give an insurer a lump sum of money, and they guarantee to pay you a steady monthly paycheck for the rest of your life, ensuring you never run out of retirement funds.",
+    term: "Inland Transit Clauses (ITC A/B/C)",
+    category: "Marine Insurance",
+    description: "Standardized risk wordings established under TAC regulations governing domestic road and rail cargo transit across India. ITC-A provides all-risks cover, while ITC-B and C protect against specified catastrophic transit casualties.",
+    simple_explanation: "Domestic transit protection. It shields goods carried on trucks, trains, and delivery fleets against road accidents, overturns, bridge collapses, fire, and transit theft.",
     source_page: 19
   },
   {
     id: 31,
-    term: "Fixed vs Variable Annuity",
-    category: "Annuities",
-    description: "Annuity investment choices. Fixed options deposit your cash securely and guarantee a baseline, steady interest rate. Variable options link your returns to the performance of selected stock mutual funds.",
-    simple_explanation: "Fixed is the ultra-safe route: it guarantees a set paycheck size every month. Variable links your paycheck size to underlying market trends, giving professional upside but risking loss in down cycles.",
+    term: "Contractor's All Risks (CAR)",
+    category: "Business",
+    description: "A comprehensive project engineering insurance policy protecting civil engineering works (buildings, highways, bridges, flyovers) against accidental physical loss or damage, combined with third-party liability (TPL) coverage.",
+    simple_explanation: "Construction site protection. It shields building contractors and project owners against structural collapse, flood damage, earth movement, and accidental injury to neighbors during building works.",
     source_page: 20
   },
   {
     id: 32,
-    term: "Annuity Savings vs Payout Phase",
-    category: "Annuities",
-    description: "The two parts of a deferred annuity. The Accumulation Phase is when you build assets tax-deferred. The Payout (or Annuitization) Phase is when the funds convert into steady checks.",
-    simple_explanation: "Phase 1: You save and let your cash compile with zero taxes. Phase 2: You flip the switch and the insurer starts sending you regular payouts.",
+    term: "Erection All Risks (EAR)",
+    category: "Business",
+    description: "Specialized engineering insurance protecting industrial machinery, turbines, electrical plant equipment, and factory assemblies during transit, on-site storage, assembly, and rigorous cold and hot testing phases.",
+    simple_explanation: "Factory machinery installation cover. It protects expensive industrial machines while engineers are assembling, wiring, and testing them, before the factory goes into commercial production.",
     source_page: 21
   },
   {
@@ -307,7 +290,7 @@ export const glossaryDatabase: GlossaryRow[] = [
     term: "Long-Term Care Basics",
     category: "Health",
     description: "Insurance designed to pay for skilled nursing, assisted living, or in-home daily care for elderly or disabled individuals who cannot perform basic activities of daily living.",
-    simple_explanation: "Safeguards your retirement fund. If you get old or sick and need help with daily items like getting dressed, bathing, or eating, this pays for professional caregivers so your life savings aren't completely drained.",
+    simple_explanation: "Safeguards your retirement fund. If you get old or sick and need help with daily items like getting dressed, bathing, or eating, this pays for professional caregivers so your personal savings aren't completely drained.",
     source_page: 22
   },
   {
@@ -632,95 +615,7 @@ export const glossaryDatabase: GlossaryRow[] = [
   }
 ];
 
-// 2. Frauds Table Entries (Page 11-13 Spurious Call warnings)
-export const fraudsDatabase: FraudRow[] = [
-  {
-    id: 1,
-    pattern: "Guaranteed Direct Bonus & Profit Share Claims",
-    warning_signs: [
-      "Caller claims the central Insurance Regulator (IRDA/FEMA) is distributing a massive accumulated cash pool of old policies.",
-      "Buyer must first purchase a brand-new policy to show 'active account activation' and register.",
-      "Requires depositing minor registration fees directly in cash or an individual agent's personal bank account."
-    ],
-    countermeasure: "Decline immediately! Regulatory bodies are supervisory administrative agencies. They never sell insurance or distribute cash bonuses over the phone.",
-    severity: "CRITICAL",
-    caller_claim_type: "Fake Regulatory Commissioner"
-  },
-  {
-    id: 2,
-    pattern: "Fake Grievance Transfer and Refund Claims",
-    warning_signs: [
-      "Caller claims the benefits or maturity payouts of your old policy are being illegally transferred to a fraudulent account.",
-      "Asks you to instantly courier physical PAN, signature proof, and blank checks to solve the crisis."
-    ],
-    countermeasure: "Never courier sensitive files or blank signs! Contact your Insurer's official branch phone or website directly to verify.",
-    severity: "CRITICAL",
-    caller_claim_type: "Fake Grievance Inspector"
-  },
-  {
-    id: 3,
-    pattern: "Uncertified Agents / Cash-only Premium Requests",
-    warning_signs: [
-      "Agent tries to pressure you into signing a blank proposal form, promising to fill minor details later for 'convenience'.",
-      "Demands cash payments directly in their personal name or name of a local agency, refusing cheques."
-    ],
-    countermeasure: "Refuse. Always fill details yourself. Write premium cheques strictly in the official name of the registered Insurer, never a person.",
-    severity: "HIGH",
-    caller_claim_type: "Spurious Agent"
-  },
-  {
-    id: 4,
-    pattern: "Policy replacement scams (Churning)",
-    warning_signs: [
-      "Caller advice holds that surrendering your existing active life cover and buying a new one instantly doubles returns.",
-      "Fails to explain that surrendering early kills your accumulated savings and resets critical health waiting buffers."
-    ],
-    countermeasure: "Existing long-form policies are highly precious. Early surrenders result in heavy penalties. Never cancel without written proof from head offices.",
-    severity: "HIGH",
-    caller_claim_type: "Fake Advisor"
-  }
-];
-
-// 3. Buyer Rights and Duties Table Entries (Page 6-9)
-export const buyerRightsDatabase: BuyerRightRow[] = [
-  {
-    id: 1,
-    title: "Verify Agent & Intermediary Credentials",
-    stage: "Buying Stage",
-    details: "You possess a complete legal right to verify the agent's identity card, official registration license certificate, and branch phone numbers.",
-    duty: "Always audit credentials inside the authorized insurer directory or state registry before passing any checks or signing."
-  },
-  {
-    id: 2,
-    title: "Truthful Information Disclosure",
-    stage: "Buying Stage",
-    details: "Your right is to have all questions explained simply. Your matching duty is to declare pre-existing health habits completely truthfully on proposal files.",
-    duty: "Never let an agent write false statements or check 'No' for health illnesses you currently carry. Honest forms guaranteepaid claims."
-  },
-  {
-    id: 3,
-    title: "The Free-Look Return Window",
-    stage: "Post-Purchase",
-    details: "If you buy online or over distance calls, you have up to 30 days (15 days for standard physical buying) to review the printed book and cancel for a full refund.",
-    duty: "Open your policy folder immediately on delivery. Read dates, sums, and premium size. Report mismatches to head offices in writing."
-  },
-  {
-    id: 4,
-    title: "Audio Transcript Request",
-    stage: "Post-Purchase",
-    details: "If a telecaller pitched the insurance, you have an absolute right to demand full audio voice recordings or printed verbal transcripts.",
-    duty: "Compare verbal scripts with printed books to ensure the teleseller didn't hide critical exclusions or lock-in terms."
-  },
-  {
-    id: 5,
-    title: "Prompt Claim Redressal",
-    stage: "Claim Time",
-    details: "The right to have your claim evaluated, processed, and either paid or formally rejected with legal written reasons within strict state timelines.",
-    duty: "Notify the company of the disaster immediately, submit all genuine medical bills or repair receipts, and request an official reference case number."
-  }
-];
-
-// 4. Grievance Redressal Channels (Page 10)
+// 2. Grievance Redressal Channels (Page 10)
 export const complaintsDatabase: ComplaintChannelRow[] = [
   {
     id: 1,
@@ -776,15 +671,15 @@ export const bimaQuizQuestions: QuizQuestion[] = [
   },
   {
     id: 3,
-    question: "Which of the following describes a 'Term Plan'?",
+    question: "What is the core definition of the 'Principle of Indemnity' in general insurance?",
     options: [
-      "A plan with savings and guaranteed returns on the market.",
-      "A pension plan for elderly years.",
-      "A pure risk life cover of maximum duration which provides NO survival maturity benefit.",
-      "A health critical illness plan."
+      "A guaranteed fixed financial windfall paid regardless of the actual loss size.",
+      "The insured must be restored to the exact financial position they occupied immediately prior to the loss, without making any profit.",
+      "A fixed lump-sum cash benefit paid upon survival or policy maturity.",
+      "Double compensation claimed simultaneously from two different insurance companies."
     ],
-    answerIndex: 2,
-    explanation: "A Term plan offers high cover for low premium with zero survival maturity sum. It's strictly for protecting loved ones against death risk during the active term."
+    answerIndex: 1,
+    explanation: "The Principle of Indemnity mandates that general insurance compensates only for the exact financial loss sustained. The policyholder cannot recover more than the actual loss or turn an insurance claim into a commercial profit."
   },
   {
     id: 4,

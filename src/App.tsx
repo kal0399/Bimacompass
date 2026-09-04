@@ -30,6 +30,7 @@ import {
   Home,
   Timer
 } from "lucide-react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import BookDictionary from "./components/BookDictionary";
 import FraudShield from "./components/FraudShield";
 import BookBuyerRights from "./components/BookBuyerRights";
@@ -869,6 +870,7 @@ export default function App() {
         </div>
       )}
 
+      <SpeedInsights />
     </div>
   );
 }

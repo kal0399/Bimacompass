@@ -168,8 +168,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "Business Insurance Guide",
       desc: "Understand clear coverages for businesses—including cargo transit, fire damage, and work stoppage protection with simple interactive checklists.",
       icon: Flame,
-      color: "from-rose-50/70 to-rose-100/20 hover:border-rose-300 hover:shadow-rose-100/40 dark:from-[#241415]/40 dark:to-[#170E0E]/20 dark:hover:border-rose-900/50 dark:hover:shadow-rose-950/20",
-      iconColor: "text-rose-600 bg-rose-100/80 dark:text-rose-400 dark:bg-rose-950/50",
+      color: "from-rose-50/70 to-rose-100/30 hover:border-rose-300 hover:shadow-rose-100/40",
+      iconColor: "text-rose-600 bg-rose-100/80",
       badge: "Business Cover",
       actionText: "Explore Guide"
     },
@@ -178,8 +178,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "Personal Health Insurance",
       desc: "Learn about hospital room rent limits, illnesses you already had, waiting periods, and how to get pre-approval before your hospital stay.",
       icon: Heart,
-      color: "from-emerald-50/70 to-emerald-100/20 hover:border-emerald-300 hover:shadow-emerald-100/40 dark:from-[#112419]/40 dark:to-[#0C1710]/20 dark:hover:border-emerald-900/50 dark:hover:shadow-emerald-950/20",
-      iconColor: "text-emerald-600 bg-emerald-100/80 dark:text-emerald-400 dark:bg-emerald-950/50",
+      color: "from-emerald-50/70 to-emerald-100/30 hover:border-emerald-300 hover:shadow-emerald-100/40",
+      iconColor: "text-emerald-600 bg-emerald-100/80",
       badge: "Health Help",
       actionText: "Check Rules"
     },
@@ -188,8 +188,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "Marine & Cargo Transit",
       desc: "Inland Transit Clauses (ITC A/B/C), ocean freight ICC rules, carrier liability notices, and public Indian insurer policies (New India, National, Oriental, United India).",
       icon: Ship,
-      color: "from-cyan-50/70 to-cyan-100/20 hover:border-cyan-300 hover:shadow-cyan-100/40 dark:from-[#0C242E]/40 dark:to-[#07171D]/20 dark:hover:border-cyan-900/50 dark:hover:shadow-cyan-950/20",
-      iconColor: "text-cyan-600 bg-cyan-100/80 dark:text-cyan-400 dark:bg-cyan-950/50",
+      color: "from-cyan-50/70 to-cyan-100/30 hover:border-cyan-300 hover:shadow-cyan-100/40",
+      iconColor: "text-cyan-600 bg-cyan-100/80",
       badge: "Marine & Cargo",
       actionText: "Explore Marine"
     },
@@ -198,8 +198,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "EAR / CAR Engineering",
       desc: "Erection All Risks & Contractor's All Risks policies for civil structures, highway corridors, factory machinery, testing periods, and TAC tariff endorsements.",
       icon: HardHat,
-      color: "from-amber-50/70 to-amber-100/20 hover:border-amber-300 hover:shadow-amber-100/40 dark:from-[#2A1D0F]/40 dark:to-[#1A1208]/20 dark:hover:border-amber-900/50 dark:hover:shadow-amber-950/20",
-      iconColor: "text-amber-600 bg-amber-100/80 dark:text-amber-400 dark:bg-amber-950/50",
+      color: "from-amber-50/70 to-amber-100/30 hover:border-amber-300 hover:shadow-amber-100/40",
+      iconColor: "text-amber-600 bg-amber-100/80",
       badge: "Project Insurance",
       actionText: "Explore CAR/EAR"
     },
@@ -208,8 +208,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "Helplines & Support",
       desc: "A simple list of customer helpline offices, government complaint centers, and easy-to-use complaint letter formats.",
       icon: PhoneCall,
-      color: "from-amber-50/70 to-amber-100/20 hover:border-amber-300 hover:shadow-amber-100/40 dark:from-[#261B12]/40 dark:to-[#19110B]/20 dark:hover:border-amber-900/50 dark:hover:shadow-amber-950/20",
-      iconColor: "text-amber-600 bg-amber-100/80 dark:text-amber-400 dark:bg-amber-950/50",
+      color: "from-amber-50/70 to-amber-100/30 hover:border-amber-300 hover:shadow-amber-100/40",
+      iconColor: "text-amber-600 bg-amber-100/80",
       badge: "Support Contact",
       actionText: "Find Contacts"
     },
@@ -218,8 +218,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "Find the Right Policy",
       desc: "Answer simple questions about your property, cargo, project, or health risk profile to discover fitting indemnity insurances.",
       icon: Compass,
-      color: "from-blue-50/70 to-blue-100/20 hover:border-blue-300 hover:shadow-blue-100/40 dark:from-[#121E2C]/40 dark:to-[#0B131D]/20 dark:hover:border-blue-900/50 dark:hover:shadow-blue-950/20",
-      iconColor: "text-blue-600 bg-blue-100/80 dark:text-blue-400 dark:bg-blue-950/50",
+      color: "from-sky-50/80 to-blue-100/40 hover:border-sky-300 hover:shadow-sky-100/40",
+      iconColor: "text-sky-700 bg-sky-100/90",
       badge: "Policy Matcher",
       actionText: "Check My Needs"
     },
@@ -228,8 +228,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "Easy Word Dictionary",
       desc: "Search hard insurance terms and get them translated from complex policy language into plain, simple English words.",
       icon: BookOpen,
-      color: "from-teal-50/70 to-teal-100/20 hover:border-teal-300 hover:shadow-teal-100/40 dark:from-[#112224]/40 dark:to-[#0B1617]/20 dark:hover:border-teal-900/50 dark:hover:shadow-teal-950/20",
-      iconColor: "text-teal-600 bg-teal-100/80 dark:text-teal-400 dark:bg-teal-950/50",
+      color: "from-teal-50/70 to-teal-100/30 hover:border-teal-300 hover:shadow-teal-100/40",
+      iconColor: "text-teal-600 bg-teal-100/80",
       badge: "Translation Tool",
       actionText: "Search Words"
     },
@@ -238,8 +238,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "PyraMetric™ Actuarial Platform",
       desc: "Explore statutory All India Fire Tariff (AIFT) TAC 1–8 occupancy rates, IS 1893 seismic geo-pricing, and IRDAI underwriting slips.",
       icon: Flame,
-      color: "from-blue-950/30 to-indigo-950/20 hover:border-blue-500/50 hover:shadow-blue-950/30 dark:from-[#0B132B]/60 dark:to-[#0F1C3F]/40 dark:hover:border-blue-500/60 dark:hover:shadow-blue-950/40",
-      iconColor: "text-amber-400 bg-blue-950 border border-blue-800/80",
+      color: "from-sky-950/15 to-blue-900/10 hover:border-sky-500/50 hover:shadow-sky-950/10",
+      iconColor: "text-amber-600 bg-sky-50 border border-sky-200",
       badge: "AIFT Tariff Suite",
       actionText: "Open Underwriter"
     },
@@ -248,8 +248,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "Parametric Policy Repository",
       desc: "Based on Swiss Re's model (Gianni Biason). Explore index-triggered policies for cyclones, earthquakes, rainfall, and solar revenue with 2–14 day automated payouts.",
       icon: Waves,
-      color: "from-blue-50/80 to-cyan-100/30 hover:border-cyan-400 hover:shadow-cyan-100/40 dark:from-[#0B1E2E]/60 dark:to-[#091522]/40 dark:hover:border-cyan-500/60 dark:hover:shadow-cyan-950/40",
-      iconColor: "text-cyan-600 bg-cyan-100/80 dark:text-cyan-400 dark:bg-cyan-950/50",
+      color: "from-sky-50/80 to-cyan-100/40 hover:border-sky-400 hover:shadow-sky-100/40",
+      iconColor: "text-sky-700 bg-sky-100/80",
       badge: "Swiss Re Model",
       actionText: "Open Repository"
     },
@@ -258,8 +258,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       title: "Our Core Policies",
       desc: "Check our on-device safety details and see how our offline tool protects your data securely without sharing anything.",
       icon: Scale,
-      color: "from-slate-50 to-slate-100/50 hover:border-slate-300 hover:shadow-slate-100/40 dark:from-[#161B22]/40 dark:to-[#0F1217]/20 dark:hover:border-slate-800/50 dark:hover:shadow-slate-900/20",
-      iconColor: "text-indigo-600 bg-slate-100/80 dark:text-indigo-400 dark:bg-slate-950/50",
+      color: "from-slate-50 to-slate-100/70 hover:border-slate-300 hover:shadow-slate-100/40",
+      iconColor: "text-slate-700 bg-slate-200/80",
       badge: "App Information",
       actionText: "View Policies"
     }
@@ -325,8 +325,8 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       {/* Modules Selector Grid Section */}
       <div className="space-y-4">
         <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-          <h2 className="text-base font-extrabold text-orange-600 dark:text-orange-400 flex items-center gap-2">
-            <Bookmark className="w-4 h-4 text-orange-500 dark:text-orange-400" />
+          <h2 className="text-base font-extrabold text-sky-700 flex items-center gap-2">
+            <Bookmark className="w-4 h-4 text-sky-600" />
             <span>Tell us what you are looking for</span>
           </h2>
           <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider">
@@ -347,29 +347,29 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
                 key={m.id}
                 variants={cardVariants}
                 onClick={() => setActiveTab(m.id)}
-                className={`group relative rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-gradient-to-br ${m.color} p-6 transition-all duration-300 hover:shadow-lg dark:hover:shadow-indigo-950/20 cursor-pointer select-none hover:-translate-y-1.5 flex flex-col justify-between space-y-5`}
+                className={`group relative rounded-2xl border border-slate-200/90 bg-gradient-to-br ${m.color} p-6 transition-all duration-300 hover:shadow-lg cursor-pointer select-none hover:-translate-y-1.5 flex flex-col justify-between space-y-5`}
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between gap-3">
                     <div className={`p-2.5 rounded-xl ${m.iconColor} shrink-0 transition-transform duration-300 group-hover:scale-110`}>
                       <IconComponent className="w-5 h-5 shrink-0" />
                     </div>
-                    <span className="text-[9px] font-extrabold tracking-wider bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-350 px-2 py-0.5 rounded-md uppercase font-mono">
+                    <span className="text-[9px] font-extrabold tracking-wider bg-white/90 border border-slate-200 text-slate-700 px-2 py-0.5 rounded-md uppercase font-mono">
                       {m.badge}
                     </span>
                   </div>
                   
                   <div className="space-y-1.5">
-                    <h3 className="font-bold text-slate-900 dark:text-slate-50 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition duration-150 text-sm md:text-base tracking-tight leading-snug">
+                    <h3 className="font-bold text-slate-900 group-hover:text-sky-700 transition duration-150 text-sm md:text-base tracking-tight leading-snug">
                       {m.title}
                     </h3>
-                    <p className="text-xs text-slate-550 dark:text-slate-400 leading-relaxed font-sans line-clamp-3">
+                    <p className="text-xs text-slate-600 leading-relaxed font-sans line-clamp-3">
                       {m.desc}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-2.5 border-t border-slate-200/50 dark:border-slate-800/50 flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+                <div className="pt-2.5 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-bold text-slate-500 group-hover:text-sky-700 transition">
                   <span className="font-mono uppercase tracking-wider text-[10px]">{m.actionText}</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1.5 transition duration-200 shrink-0" />
                 </div>
@@ -380,21 +380,21 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       </div>
 
       {/* Indian Insurance Industry News Section (Placed directly above Interactive Insurance Tip) */}
-      <div className="bg-white dark:bg-[#121927] border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 md:p-6 shadow-xs space-y-4 relative overflow-hidden transition-all duration-300" id="indian-insurance-news-section">
+      <div className="bg-white border border-slate-200/90 rounded-2xl p-5 md:p-6 shadow-xs space-y-4 relative overflow-hidden transition-all duration-300" id="indian-insurance-news-section">
         {/* News Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-150 dark:border-slate-800 pb-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-150 pb-3">
           <div className="space-y-0.5">
             <div className="flex items-center gap-2 flex-wrap">
-              <Newspaper className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-              <h3 className="font-extrabold text-slate-900 dark:text-slate-100 text-sm md:text-base font-sans tracking-tight">
+              <Newspaper className="w-5 h-5 text-emerald-600 shrink-0" />
+              <h3 className="font-extrabold text-slate-900 text-sm md:text-base font-sans tracking-tight">
                 Indian Insurance Industry News
               </h3>
-              <span className="inline-flex items-center gap-1 text-[9px] font-bold font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800/80 px-2 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="inline-flex items-center gap-1 text-[9px] font-bold font-mono text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-full uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 Live Realtime Auto-Sync
               </span>
             </div>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 font-sans">
+            <p className="text-[11px] text-slate-500 font-sans">
               Verified IRDAI regulatory updates, industry developments, and consumer advisories automatically synced in real time.
             </p>
           </div>
@@ -412,7 +412,7 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
                 <span>{isSyncingNews ? "Syncing..." : "Sync News Now"}</span>
               </button>
             ) : (
-              <div className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-850 border border-slate-200 dark:border-slate-750 px-2.5 py-1 rounded-xl" title="Manual trigger reserved for administrators">
+              <div className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-xl" title="Manual trigger reserved for administrators">
                 <Lock className="w-3 h-3 text-amber-500 shrink-0" />
                 <span>Auto-Sync Active (Manual Sync: Admin Only)</span>
               </div>
@@ -421,7 +421,7 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
         </div>
 
         {newsMessage && (
-          <div className="text-[11px] font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 p-2.5 rounded-xl border border-emerald-200 dark:border-emerald-800 animate-fade-in flex items-center gap-2">
+          <div className="text-[11px] font-mono text-emerald-700 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 animate-fade-in flex items-center gap-2">
             <Radio className="w-3.5 h-3.5 text-emerald-500 animate-pulse shrink-0" />
             <span>{newsMessage}</span>
           </div>
@@ -432,30 +432,30 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
           {newsList.map((item) => (
             <div 
               key={item.id || item.title}
-              className="bg-slate-50/70 dark:bg-[#161F30] border border-slate-200/80 dark:border-slate-800 rounded-xl p-4 space-y-2.5 hover:border-emerald-300 dark:hover:border-emerald-800 transition duration-200 flex flex-col justify-between"
+              className="bg-slate-50/80 border border-slate-200/90 rounded-xl p-4 space-y-2.5 hover:border-sky-300 transition duration-200 flex flex-col justify-between"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 bg-emerald-100/80 dark:bg-emerald-950/80 border border-emerald-200/80 dark:border-emerald-800/80 px-2 py-0.5 rounded-md">
+                  <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/80 border border-emerald-200/80 px-2 py-0.5 rounded-md">
                     {item.category || "Regulatory"}
                   </span>
-                  <div className="flex items-center gap-1.5 text-[10px] text-slate-500 dark:text-slate-400 font-mono">
+                  <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-mono">
                     <Calendar className="w-3 h-3 text-slate-400 shrink-0" />
                     <span>{item.date || "August 2026"}</span>
                   </div>
                 </div>
 
-                <h4 className="font-extrabold text-slate-900 dark:text-slate-100 text-xs md:text-sm tracking-tight leading-snug">
+                <h4 className="font-extrabold text-slate-900 text-xs md:text-sm tracking-tight leading-snug">
                   {item.title}
                 </h4>
 
-                <p className="text-xs text-slate-650 dark:text-slate-350 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">
                   {item.summary}
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-slate-200/60 dark:border-slate-800/80 flex items-center justify-between text-[10px] text-slate-500 dark:text-slate-400 font-mono">
-                <span className="flex items-center gap-1 font-bold text-slate-700 dark:text-slate-300">
+              <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+                <span className="flex items-center gap-1 font-bold text-slate-700">
                   <Radio className="w-3 h-3 text-emerald-500 animate-pulse shrink-0" />
                   <span>{item.source || "IRDAI Bulletin"}</span>
                 </span>
@@ -463,7 +463,7 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
                   href="https://www.irda.gov.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-emerald-700 dark:text-emerald-400 hover:underline flex items-center gap-0.5 font-bold"
+                  className="text-sky-700 hover:underline flex items-center gap-0.5 font-bold"
                 >
                   <span>Official Portal</span>
                   <ExternalLink className="w-2.5 h-2.5 shrink-0" />
@@ -473,7 +473,7 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
           ))}
         </div>
 
-        <div className="flex items-center justify-between text-[10px] text-slate-400 dark:text-slate-500 font-mono pt-1">
+        <div className="flex items-center justify-between text-[10px] text-slate-400 font-mono pt-1">
           <span className="flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 block"></span>
             Background Realtime Sync Channel: Active

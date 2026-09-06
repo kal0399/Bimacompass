@@ -63,7 +63,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "handbook" as TabId,
       name: "Commercial Lines Handbook",
       icon: Flame,
-      color: "text-red-500 bg-red-50 dark:bg-red-950/30",
+      color: "text-rose-600 bg-rose-50",
       category: "Statutory Property & Liability Protection",
       description: "Covers Standard Fire & Special Perils Policy (SFSP), Marine Cargo transit open insurance cover, General Average salvage rules, and Workmen's Compensation statutory liabilities.",
       sections: ["SFSP Statutory Exclusions", "Marine Claims Protocols", "Workmen Liability Scale", "General Average Declarations"]
@@ -72,7 +72,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "retail_health" as TabId,
       name: "Retail Health Insurance",
       icon: Heart,
-      color: "text-emerald-500 bg-emerald-50 dark:bg-emerald-950/30",
+      color: "text-emerald-600 bg-emerald-50",
       category: "Individual & Family Welfare Guidelines",
       description: "Step-by-step health coverage evaluation, cash-less hospital authorization pipelines, pre-existence waiting criteria guides, and room rent cap parameters.",
       sections: ["Co-payment Clauses", "Pre-existing Disease Waivers", "Pre/Post Hospitalization Periods", "Exclusion Index"]
@@ -81,7 +81,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "marine" as TabId,
       name: "Marine Cargo & Transit Insurance",
       icon: Ship,
-      color: "text-cyan-500 bg-cyan-50 dark:bg-cyan-950/30",
+      color: "text-cyan-600 bg-cyan-50",
       category: "Transit Risk & Cargo Logistics Architecture",
       description: "Inland Transit Clauses (ITC A/B/C) under TAC guidelines, international ocean Institute Cargo Clauses (ICC A/B/C), carrier subrogation notices, and open covers from Indian PSUs.",
       sections: ["ITC vs ICC Perils Matrix", "Public Insurers Directory", "Open Policy vs Open Cover", "Notice to Carrier Draft Generator"]
@@ -90,7 +90,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "ear_car" as TabId,
       name: "EAR & CAR Engineering Insurance",
       icon: HardHat,
-      color: "text-amber-500 bg-amber-50 dark:bg-amber-950/30",
+      color: "text-amber-600 bg-amber-50",
       category: "Civil Works & Plant Erection Risk Management",
       description: "Contractor's All Risks (CAR) for infrastructure/civil construction and Erection All Risks (EAR) for machinery, testing periods, and TAC tariff endorsements.",
       sections: ["CAR vs EAR Diagnostic", "Section I Material Damage", "Section II Third Party Liability", "Accident Intimation Docket"]
@@ -99,7 +99,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "helplines" as TabId,
       name: "Redressal Helplines",
       icon: PhoneCall,
-      color: "text-amber-500 bg-amber-50 dark:bg-amber-950/30",
+      color: "text-amber-600 bg-amber-50",
       category: "Statutory Resolution Portals",
       description: "Directory of Bima Lokpal (Insurance Ombudsman) across Indian jurisdictions, dynamic claim escalation forms, and contact phone databases.",
       sections: ["Ombudsman Regional Directory", "IRDAI Grievance Call Center", "Grievance Redressal Officer (GRO) rules", "Sample Appeal Templates"]
@@ -108,7 +108,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "planner" as TabId,
       name: "Need-Based Matchmaker",
       icon: Compass,
-      color: "text-blue-500 bg-blue-50 dark:bg-blue-950/30",
+      color: "text-sky-600 bg-sky-50",
       category: "Interactive Diagnostic Assessment App",
       description: "On-device dynamic policy advisor recommending structural coverages based on age, lifestyle segment, or business profile risk index.",
       sections: ["Commercial Coverage Diagnostic", "Retail Premium Planner", "Asset Protection Rating Profile", "Dynamic Coverage Summary Export"]
@@ -117,7 +117,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "dictionary" as TabId,
       name: "Insurance Policy Glossary",
       icon: BookOpen,
-      color: "text-teal-500 bg-teal-50 dark:bg-teal-950/30",
+      color: "text-teal-600 bg-teal-50",
       category: "Comprehensive On-Device Translation Index",
       description: "Plain English definitions of compound legal-jargon words found in binding policy wordings (e.g. Subrogation, Utmost Good Faith, General Average).",
       sections: ["Subrogation Principles", "Indemnification Math models", "Co-insurance Factors", "Deductible calculations"]
@@ -126,7 +126,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "parametric" as TabId,
       name: "Parametric Policy Repository",
       icon: Waves,
-      color: "text-cyan-600 bg-cyan-50 dark:bg-cyan-950/30",
+      color: "text-cyan-600 bg-cyan-50",
       category: "Swiss Re Parametric Solutions Framework",
       description: "Based on Gianni Biason's Swiss Re doctrine. Features pre-agreed index-triggered policies for cyclones, earthquakes, rainfall, and solar revenue with 2–14 day automated payouts.",
       sections: ["USGS Seismic ShakeMap Index", "Cat-In-A-Circle Cyclone Model", "Solar GHI & Wind Volume Hedges", "Automated Payout Underwriting Simulator"]
@@ -135,7 +135,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "pyrametric" as TabId,
       name: "PyraMetric™ Actuarial Platform",
       icon: Flame,
-      color: "text-amber-500 bg-amber-50 dark:bg-amber-950/30",
+      color: "text-amber-600 bg-amber-50",
       category: "Statutory AIFT & IIB Rate Engine",
       description: "Explore 100+ industrial & commercial base rates across TAC Sections 1–8, IIB burning cost benchmarks, IS 1893 seismic pricing, and IRDAI underwriting slips.",
       sections: ["TAC 1–8 Tariff Rates", "IS 1893 Seismic Geo-Pricing", "FEA Discount Matrix", "IRDAI Underwriting Slips"]
@@ -144,7 +144,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       id: "legal" as TabId,
       name: "Legal & Privacy Policy",
       icon: Scale,
-      color: "text-slate-600 bg-slate-150 dark:bg-slate-800/30",
+      color: "text-slate-700 bg-slate-100",
       category: "Consumer Safety Codes of Operation",
       description: "Fair-use clauses, Sections of the Indian Copyright Act safeguards, copyright compliance certifications, and 72-hour swift email legal redressal channels.",
       sections: ["Section 52 Fair-Use Protection", "Zero-PII Privacy Pledge", "Safe Harbor Trademark Declarations", "72-Hour Legal Adjustment Covenant"]
@@ -293,7 +293,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
                   {/* Sections list tags */}
                   <div className="flex flex-wrap gap-1.5 pt-2">
                     {mod.sections.map((sec) => (
-                      <span key={sec} className="text-[9px] font-sans font-semibold bg-indigo-50/50 dark:bg-slate-800 text-slate-600 dark:text-indigo-200 rounded-md px-2 py-0.5 border border-slate-150">
+                      <span key={sec} className="text-[9px] font-sans font-semibold bg-sky-50 text-sky-800 rounded-md px-2 py-0.5 border border-sky-200">
                         {sec}
                       </span>
                     ))}
@@ -316,13 +316,13 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       </div>
 
       {/* Standard Offline Asset Manifest Table */}
-      <div className="space-y-4 bg-slate-50 dark:bg-slate-900/30 border border-slate-200 rounded-2xl p-5 shadow-3xs">
+      <div className="space-y-4 bg-slate-50 border border-slate-200 rounded-2xl p-5 shadow-xs">
         <div className="flex items-center justify-between border-b border-slate-200 pb-3">
           <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider font-mono flex items-center gap-2">
             <Files className="w-4 h-4 text-slate-700 shrink-0" />
             <span>PWA Precache Vault Manifest</span>
           </h3>
-          <span className="text-[9px] font-mono bg-indigo-150 text-indigo-800 font-extrabold px-1 py-0.5 rounded-md">
+          <span className="text-[9px] font-mono bg-sky-100 text-sky-800 font-extrabold px-1.5 py-0.5 rounded-md border border-sky-200">
             IMMUTABLE CORE SHELL
           </span>
         </div>
@@ -341,7 +341,7 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
             </thead>
             <tbody className="divide-y divide-slate-150/50">
               {cachedAssets.map((asset) => (
-                <tr key={asset.name} className="hover:bg-white/40 dark:hover:bg-slate-800/10 transition">
+                <tr key={asset.name} className="hover:bg-white/80 transition">
                   <td className="py-2.5 font-mono text-[11px] text-slate-800 font-bold">{asset.name}</td>
                   <td className="py-2.5 text-slate-500 font-medium">{asset.type}</td>
                   <td className="py-2.5 text-right font-mono text-[10px] text-emerald-800 font-bold">{asset.cache}</td>

@@ -454,36 +454,36 @@ For ${consignorName}`;
         <div className="space-y-6">
           {/* Key Principles Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 flex items-center justify-center font-bold">
+            <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-bold">
                 <Scale className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Insurable Interest Timing</h3>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+              <h3 className="text-sm font-bold text-slate-900">Insurable Interest Timing</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-sans">
                 Unlike fire insurance (where insurable interest must exist at policy inception), in Marine Insurance, 
                 insurable interest must exist <strong>at the time of loss</strong> (Section 8, Marine Insurance Act 1963). 
                 Crucial for buyers on FOB or CFR terms where ownership transfers at ship's rail.
               </p>
             </div>
 
-            <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 flex items-center justify-center font-bold">
+            <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Utmost Good Faith (Uberrimae Fidei)</h3>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+              <h3 className="text-sm font-bold text-slate-900">Utmost Good Faith (Uberrimae Fidei)</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-sans">
                 The proposer must disclose every <strong>material circumstance</strong> known regarding cargo packing, 
                 voyage route, transshipment hubs, vessel age, and carrier reliability prior to the contract conclusion. 
                 Nondisclosure entitles the insurer to avoid the policy (Section 19).
               </p>
             </div>
 
-            <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 flex items-center justify-center font-bold">
+            <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-2">
+              <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
                 <Anchor className="w-5 h-5" />
               </div>
-              <h3 className="text-sm font-bold text-slate-900 dark:text-white">General Average Contribution</h3>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+              <h3 className="text-sm font-bold text-slate-900">General Average Contribution</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-sans">
                 If the Master of a vessel deliberately sacrifices cargo or incurs extraordinary salvage expenses to save 
                 the vessel and remaining cargo from total peril (York-Antwerp Rules), all participating cargo owners 
                 must contribute proportionately to the loss.
@@ -495,15 +495,15 @@ For ${consignorName}`;
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-base font-extrabold text-slate-900 dark:text-white flex items-center gap-2 font-sans">
+                <h2 className="text-base font-extrabold text-slate-900 flex items-center gap-2 font-sans">
                   <Building2 className="w-4 h-4 text-cyan-600" />
                   <span>Public Indian Insurers Marine Cargo Portfolios</span>
                 </h2>
-                <p className="text-xs text-slate-500 dark:text-zinc-400">
+                <p className="text-xs text-slate-600">
                   Government general insurance corporations administering nationwide marine cargo underwriting.
                 </p>
               </div>
-              <span className="text-[11px] font-mono font-bold bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 px-2.5 py-1 rounded-lg">
+              <span className="text-[11px] font-mono font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">
                 4 Key PSUs
               </span>
             </div>
@@ -512,37 +512,37 @@ For ${consignorName}`;
               {PUBLIC_INSURERS.map((ins, idx) => (
                 <div
                   key={idx}
-                  className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-3.5 shadow-xs hover:border-cyan-400 transition"
+                  className="bg-white border border-slate-200 rounded-2xl p-5 space-y-3.5 shadow-xs hover:border-cyan-400 transition"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <span className="text-[10px] font-mono font-extrabold text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-200 dark:border-cyan-800">
+                      <span className="text-[10px] font-mono font-extrabold text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded border border-cyan-200">
                         {ins.badge}
                       </span>
-                      <h3 className="text-sm font-extrabold text-slate-900 dark:text-white mt-1 font-sans">
+                      <h3 className="text-sm font-extrabold text-slate-900 mt-1 font-sans">
                         {ins.name}
                       </h3>
-                      <p className="text-[11px] text-slate-500 dark:text-zinc-400 italic">
+                      <p className="text-[11px] text-slate-600 italic">
                         {ins.tagline}
                       </p>
                     </div>
                   </div>
 
                   <div className="space-y-1.5 pt-1">
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono block">
+                    <span className="text-[10px] font-bold text-slate-600 uppercase tracking-wider font-mono block">
                       Core Policy Offerings:
                     </span>
                     <ul className="space-y-1">
                       {ins.products.map((p, pIdx) => (
-                        <li key={pIdx} className="text-xs text-slate-700 dark:text-zinc-300 flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                        <li key={pIdx} className="text-xs text-slate-700 flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                           <span>{p}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="bg-slate-50 dark:bg-zinc-950/50 p-2.5 rounded-xl text-[11px] text-slate-600 dark:text-zinc-400 border border-slate-100 dark:border-zinc-800/80 flex items-start gap-2">
+                  <div className="bg-slate-50 p-2.5 rounded-xl text-[11px] text-slate-600 border border-slate-200 flex items-start gap-2">
                     <Info className="w-3.5 h-3.5 text-cyan-600 shrink-0 mt-0.5" />
                     <span><strong>Underwriting Note:</strong> {ins.guideline}</span>
                   </div>
@@ -557,9 +557,9 @@ For ${consignorName}`;
       {activeTab === "clauses" && (
         <div className="space-y-5">
           {/* Filter Bar */}
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3">
+          <div className="bg-slate-50 border border-slate-200 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2 w-full md:w-auto">
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider font-mono shrink-0">
+              <span className="text-xs font-bold text-slate-600 uppercase tracking-wider font-mono shrink-0">
                 Scope Filter:
               </span>
               <div className="flex gap-1.5">
@@ -570,7 +570,7 @@ For ${consignorName}`;
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer select-none ${
                       filterClause === filter
                         ? "bg-cyan-600 text-white shadow-xs"
-                        : "bg-white dark:bg-zinc-800 text-slate-600 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700 hover:bg-slate-100"
+                        : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-100"
                     }`}
                   >
                     {filter === "ALL" ? "All Clauses" : filter === "ITC" ? "Domestic (Inland ITC)" : "International (ICC)"}
@@ -586,34 +586,34 @@ For ${consignorName}`;
                 placeholder="Search peril or risk clause..."
                 value={searchPeril}
                 onChange={(e) => setSearchPeril(e.target.value)}
-                className="w-full text-xs pl-9 pr-3 py-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-cyan-500 font-sans text-slate-900 dark:text-white"
+                className="w-full text-xs pl-9 pr-3 py-2 border border-slate-200 bg-white rounded-xl focus:outline-none focus:ring-1 focus:ring-cyan-500 font-sans text-slate-900 placeholder:text-slate-400"
               />
             </div>
           </div>
 
           {/* Comparative Table */}
-          <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-xs">
+          <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="bg-slate-100/80 dark:bg-zinc-800/80 border-b border-slate-200 dark:border-zinc-700 text-slate-800 dark:text-zinc-200 font-bold">
+                  <tr className="bg-slate-100 border-b border-slate-200 text-slate-800 font-bold">
                     <th className="p-3.5 pl-4">Covered Peril / Event</th>
                     <th className="p-3.5 text-center font-mono">ITC (A)<br/><span className="text-[10px] font-normal text-slate-500">All Risks</span></th>
                     <th className="p-3.5 text-center font-mono">ITC (B)<br/><span className="text-[10px] font-normal text-slate-500">Named Perils</span></th>
                     <th className="p-3.5 text-center font-mono">ITC (C)<br/><span className="text-[10px] font-normal text-slate-500">Major Fire/Loss</span></th>
-                    <th className="p-3.5 text-center font-mono border-l border-slate-200 dark:border-zinc-700">ICC (A)<br/><span className="text-[10px] font-normal text-slate-500">Intl All Risks</span></th>
+                    <th className="p-3.5 text-center font-mono border-l border-slate-200">ICC (A)<br/><span className="text-[10px] font-normal text-slate-500">Intl All Risks</span></th>
                     <th className="p-3.5 text-center font-mono">ICC (B)<br/><span className="text-[10px] font-normal text-slate-500">Intl Water/Loss</span></th>
                     <th className="p-3.5 text-center font-mono">ICC (C)<br/><span className="text-[10px] font-normal text-slate-500">Intl Catastrophe</span></th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-zinc-800">
+                <tbody className="divide-y divide-slate-100">
                   {filteredPerils.map((item, idx) => (
                     <React.Fragment key={idx}>
                       <tr
                         onClick={() => setExpandedPeril(expandedPeril === item.name ? null : item.name)}
-                        className="hover:bg-slate-50/70 dark:hover:bg-zinc-800/50 cursor-pointer transition"
+                        className="hover:bg-slate-50 cursor-pointer transition"
                       >
-                        <td className="p-3.5 pl-4 font-bold text-slate-900 dark:text-white flex items-center justify-between gap-2">
+                        <td className="p-3.5 pl-4 font-bold text-slate-900 flex items-center justify-between gap-2">
                           <span>{item.name}</span>
                           <span className="text-[10px] text-slate-400">
                             {expandedPeril === item.name ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -628,7 +628,7 @@ For ${consignorName}`;
                         <td className="p-3.5 text-center">
                           {item.itcC ? <CheckCircle2 className="w-4 h-4 text-emerald-600 mx-auto" /> : <XCircle className="w-4 h-4 text-slate-300 mx-auto" />}
                         </td>
-                        <td className="p-3.5 text-center border-l border-slate-200 dark:border-zinc-700">
+                        <td className="p-3.5 text-center border-l border-slate-200">
                           {item.iccA ? <CheckCircle2 className="w-4 h-4 text-emerald-600 mx-auto" /> : <XCircle className="w-4 h-4 text-slate-300 mx-auto" />}
                         </td>
                         <td className="p-3.5 text-center">
@@ -639,9 +639,9 @@ For ${consignorName}`;
                         </td>
                       </tr>
                       {expandedPeril === item.name && (
-                        <tr className="bg-cyan-50/50 dark:bg-cyan-950/20 text-slate-700 dark:text-zinc-300">
+                        <tr className="bg-cyan-50/70 text-slate-700">
                           <td colSpan={7} className="p-3.5 pl-6 text-xs leading-relaxed">
-                            <strong className="text-cyan-800 dark:text-cyan-300">Scope Definition:</strong> {item.description}
+                            <strong className="text-cyan-900">Scope Definition:</strong> {item.description}
                           </td>
                         </tr>
                       )}
@@ -657,77 +657,77 @@ For ${consignorName}`;
       {/* TAB 3: POLICY STRUCTURES & SPECIALTY COVERS */}
       {activeTab === "policies" && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-3">
+          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-3">
             <div className="flex items-center gap-2">
-              <span className="p-2 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600">
+              <span className="p-2 rounded-xl bg-sky-100 text-sky-600">
                 <Truck className="w-4 h-4" />
               </span>
-              <h3 className="text-sm font-extrabold text-slate-900 dark:text-white font-sans">
+              <h3 className="text-sm font-extrabold text-slate-900 font-sans">
                 Specific Voyage Policy
               </h3>
             </div>
-            <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+            <p className="text-xs text-slate-600 leading-relaxed font-sans">
               Covers a single designated trip from point of origin to destination (e.g., dispatch of 1 transformer from Vadodara to Chennai). 
               Policy expires immediately upon arrival and delivery at the destination warehouse or after 7 days from arrival at destination railway station/carrier godown.
             </p>
-            <div className="text-[11px] font-mono bg-white dark:bg-zinc-800 p-2.5 rounded-xl border border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300">
+            <div className="text-[11px] font-mono bg-white p-2.5 rounded-xl border border-slate-200 text-slate-700">
               <strong>Best for:</strong> One-off consignments, retail traders, machinery movements, and non-repetitive despatches.
             </div>
           </div>
 
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-3">
+          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-3">
             <div className="flex items-center gap-2">
-              <span className="p-2 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600">
+              <span className="p-2 rounded-xl bg-emerald-100 text-emerald-600">
                 <Ship className="w-4 h-4" />
               </span>
-              <h3 className="text-sm font-extrabold text-slate-900 dark:text-white font-sans">
+              <h3 className="text-sm font-extrabold text-slate-900 font-sans">
                 Marine Open Policy (Floating Policy)
               </h3>
             </div>
-            <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+            <p className="text-xs text-slate-600 leading-relaxed font-sans">
               An annual continuous contract taken for an estimated total value of dispatches over a 12-month period. 
               The insured pays advance premium and submits periodic (weekly or monthly) declarations of actual shipments. 
               Premium is debited from the advance deposit against declarations until the sum insured is exhausted.
             </p>
-            <div className="text-[11px] font-mono bg-white dark:bg-zinc-800 p-2.5 rounded-xl border border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300">
+            <div className="text-[11px] font-mono bg-white p-2.5 rounded-xl border border-slate-200 text-slate-700">
               <strong>Best for:</strong> Domestic manufacturers, FMCG distributors, auto-part suppliers with hundreds of monthly despatches.
             </div>
           </div>
 
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-3">
+          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-3">
             <div className="flex items-center gap-2">
-              <span className="p-2 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600">
+              <span className="p-2 rounded-xl bg-purple-100 text-purple-600">
                 <Anchor className="w-4 h-4" />
               </span>
-              <h3 className="text-sm font-extrabold text-slate-900 dark:text-white font-sans">
+              <h3 className="text-sm font-extrabold text-slate-900 font-sans">
                 Marine Open Cover (Export / Import)
               </h3>
             </div>
-            <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+            <p className="text-xs text-slate-600 leading-relaxed font-sans">
               A continuous permanent memorandum of agreement between an international exporter/importer and an Indian public insurer. 
               The insurer agrees to cover all future shipments within agreed limits (limit per bottom/vessel and limit per location), 
               and individual stamped insurance certificates are generated for letter of credit (LC) negotiation.
             </p>
-            <div className="text-[11px] font-mono bg-white dark:bg-zinc-800 p-2.5 rounded-xl border border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300">
+            <div className="text-[11px] font-mono bg-white p-2.5 rounded-xl border border-slate-200 text-slate-700">
               <strong>Best for:</strong> Import/Export businesses negotiating bank LCs under ICC (A) terms.
             </div>
           </div>
 
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-3">
+          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-3">
             <div className="flex items-center gap-2">
-              <span className="p-2 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600">
+              <span className="p-2 rounded-xl bg-amber-100 text-amber-600">
                 <Building2 className="w-4 h-4" />
               </span>
-              <h3 className="text-sm font-extrabold text-slate-900 dark:text-white font-sans">
+              <h3 className="text-sm font-extrabold text-slate-900 font-sans">
                 Customs Duty Insurance Policy
               </h3>
             </div>
-            <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+            <p className="text-xs text-slate-600 leading-relaxed font-sans">
               When imported goods arrive at an Indian port and custom duties are assessed, the duty component increases the financial value of the cargo. 
               If the cargo is subsequently lost or damaged before physical clearance into the importer's warehouse, 
               customs authorities do not refund duty paid. This policy covers the duty value component under ITC (A).
             </p>
-            <div className="text-[11px] font-mono bg-white dark:bg-zinc-800 p-2.5 rounded-xl border border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300">
+            <div className="text-[11px] font-mono bg-white p-2.5 rounded-xl border border-slate-200 text-slate-700">
               <strong>Statutory Requirement:</strong> Must be taken before the shipment arrives at the Indian port of discharge.
             </div>
           </div>
@@ -738,19 +738,19 @@ For ${consignorName}`;
       {activeTab === "calculator" && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Controls */}
-          <div className="lg:col-span-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 rounded-2xl space-y-4">
-            <h3 className="text-sm font-extrabold text-slate-900 dark:text-white uppercase font-sans tracking-wide border-b border-slate-200 dark:border-zinc-700 pb-2 flex items-center gap-2">
+          <div className="lg:col-span-2 bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-4">
+            <h3 className="text-sm font-extrabold text-slate-900 uppercase font-sans tracking-wide border-b border-slate-200 pb-2 flex items-center gap-2">
               <Compass className="w-4 h-4 text-cyan-600" />
               <span>Transit Risk & Sum Insured Evaluator</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Cargo Category:</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Cargo Category:</label>
                 <select
                   value={commodityType}
                   onChange={(e) => setCommodityType(e.target.value)}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-sans"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-sans"
                 >
                   <option value="manufactured">Manufactured Goods / Machinery</option>
                   <option value="electronics">Consumer Electronics & Instruments</option>
@@ -761,11 +761,11 @@ For ${consignorName}`;
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Transit Route & Mode:</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Transit Route & Mode:</label>
                 <select
                   value={transitMode}
                   onChange={(e) => setTransitMode(e.target.value)}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-sans"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-sans"
                 >
                   <option value="inland_road">Domestic Inland Transit (Road Logistics / Highway)</option>
                   <option value="inland_rail">Domestic Inland Transit (Indian Railways / Freight Corridor)</option>
@@ -775,33 +775,33 @@ For ${consignorName}`;
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Invoice Value of Goods (INR):</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Invoice Value of Goods (INR):</label>
                 <input
                   type="number"
                   value={cargoValue}
                   onChange={(e) => setCargoValue(Math.max(1000, Number(e.target.value)))}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-mono"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-mono"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Freight & Forwarding Charges (INR):</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Freight & Forwarding Charges (INR):</label>
                 <input
                   type="number"
                   value={freightValue}
                   onChange={(e) => setFreightValue(Math.max(0, Number(e.target.value)))}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-mono"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-mono"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">
                   Statutory Markup (% Anticipated Profit / Overhead):
                 </label>
                 <select
                   value={markupPct}
                   onChange={(e) => setMarkupPct(Number(e.target.value))}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-sans"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-sans"
                 >
                   <option value={0}>0% (Base Cost Only)</option>
                   <option value={10}>10% (TAC Standard Benchmark for Indian PSUs)</option>
@@ -811,11 +811,11 @@ For ${consignorName}`;
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Commercial Incoterm (2020):</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Commercial Incoterm (2020):</label>
                 <select
                   value={incoterm}
                   onChange={(e) => setIncoterm(e.target.value)}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-sans"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-sans"
                 >
                   <option value="CIF">CIF (Cost, Insurance & Freight - Seller Buys Marine Cover)</option>
                   <option value="FOB">FOB (Free on Board - Buyer Insures Post-Loading)</option>
@@ -826,8 +826,8 @@ For ${consignorName}`;
               </div>
             </div>
 
-            <div className="pt-2 flex flex-wrap gap-4 border-t border-slate-200 dark:border-zinc-700">
-              <label className="flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-zinc-300 cursor-pointer">
+            <div className="pt-2 flex flex-wrap gap-4 border-t border-slate-200">
+              <label className="flex items-center gap-2 text-xs font-bold text-slate-700 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={includeSrcc}
@@ -838,7 +838,7 @@ For ${consignorName}`;
               </label>
 
               {(transitMode === "international_ocean" || transitMode === "international_air") && (
-                <label className="flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-zinc-300 cursor-pointer">
+                <label className="flex items-center gap-2 text-xs font-bold text-slate-700 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={includeWar}
@@ -908,13 +908,13 @@ For ${consignorName}`;
       {/* TAB 5: CLAIMS SOP & CARRIER NOTICE */}
       {activeTab === "claims" && (
         <div className="space-y-6">
-          <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 p-5 rounded-2xl flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+          <div className="bg-amber-50 border border-amber-200 p-5 rounded-2xl flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <h4 className="text-xs font-bold text-amber-900 dark:text-amber-200 font-sans">
+              <h4 className="text-xs font-bold text-amber-900 font-sans">
                 Statutory Subrogation Preservation Rule (Carriage by Road Act, 2007)
               </h4>
-              <p className="text-xs text-amber-800 dark:text-amber-300/90 leading-relaxed font-sans">
+              <p className="text-xs text-amber-800 leading-relaxed font-sans">
                 In India, insurance companies settle marine claims under the strict legal principle of <strong>Subrogation</strong>. 
                 If the insured fails to serve a formal written notice of monetary loss onto the carrier within the statutory notice period 
                 (usually within 180 days under Carriage by Road Act, or within 7 days for Indian Railways), 
@@ -924,73 +924,73 @@ For ${consignorName}`;
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2.5 shadow-xs">
+            <div className="bg-white border border-slate-200 p-5 rounded-2xl space-y-2.5 shadow-xs">
               <span className="w-6 h-6 rounded-full bg-cyan-600 text-white text-xs font-bold flex items-center justify-center font-mono">
                 1
               </span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white font-sans">
+              <h4 className="text-sm font-bold text-slate-900 font-sans">
                 Immediate Notice & Segregation
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Immediately inform the insurer's branch office and the transporting carrier within 24 to 48 hours of cargo arrival. 
                 Segregate damaged packages from sound packages to prevent worsening damage (Sue & Labour duty).
               </p>
             </div>
 
-            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2.5 shadow-xs">
+            <div className="bg-white border border-slate-200 p-5 rounded-2xl space-y-2.5 shadow-xs">
               <span className="w-6 h-6 rounded-full bg-cyan-600 text-white text-xs font-bold flex items-center justify-center font-mono">
                 2
               </span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white font-sans">
+              <h4 className="text-sm font-bold text-slate-900 font-sans">
                 Independent IRDAI Marine Survey
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 The insurer appoints an IRDAI-licensed independent marine cargo surveyor. 
                 A joint inspection is conducted in presence of the carrier's representative to determine root cause, extent of loss, and salvage value.
               </p>
             </div>
 
-            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2.5 shadow-xs">
+            <div className="bg-white border border-slate-200 p-5 rounded-2xl space-y-2.5 shadow-xs">
               <span className="w-6 h-6 rounded-full bg-cyan-600 text-white text-xs font-bold flex items-center justify-center font-mono">
                 3
               </span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white font-sans">
+              <h4 className="text-sm font-bold text-slate-900 font-sans">
                 Letter of Subrogation & Settlement
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Execute a stamped Letter of Subrogation and Special Power of Attorney in favor of the insurer. 
                 Insurer disburses net assessed loss directly to the insured's bank account via NEFT/RTGS.
               </p>
             </div>
           </div>
 
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-3">
-            <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase font-mono tracking-wider">
+          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-3">
+            <h4 className="text-xs font-bold text-slate-900 uppercase font-mono tracking-wider">
               Essential Claims Documentation Dossier:
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-zinc-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-700">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Original Policy Document or Stamped Declaration Certificate</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Original Consignment Note / Lorry Receipt (LR) with damage endorsement</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Commercial Invoice & Itemized Packing List showing weights/specs</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Carrier Damage / Shortage Certificate issued by transporter</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Copy of Monetary Claim Notice lodged against the carrier with postal acknowledgment</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>IRDAI Surveyor Assessment Report and salvage disposal bills</span>
               </div>
             </div>
@@ -1001,91 +1001,91 @@ For ${consignorName}`;
       {/* TAB 6: DRAFT NOTICE GENERATOR */}
       {activeTab === "draft" && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-3">
-            <h4 className="text-xs font-extrabold text-slate-900 dark:text-white uppercase font-sans tracking-wide border-b border-slate-200 dark:border-zinc-700 pb-2 flex items-center gap-1.5">
+          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-3">
+            <h4 className="text-xs font-extrabold text-slate-900 uppercase font-sans tracking-wide border-b border-slate-200 pb-2 flex items-center gap-1.5">
               <FileText className="w-4 h-4 text-cyan-600" />
               <span>Notice to Carrier Parameters</span>
             </h4>
 
             <div className="space-y-3">
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Consignor / Insured Name:</label>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Consignor / Insured Name:</label>
                 <input
                   type="text"
                   value={consignorName}
                   onChange={(e) => setConsignorName(e.target.value)}
-                  className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white"
+                  className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900"
                 />
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Carrier / Logistics Operator:</label>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Carrier / Logistics Operator:</label>
                 <input
                   type="text"
                   value={transporterName}
                   onChange={(e) => setTransporterName(e.target.value)}
-                  className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white"
+                  className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">LR / B/L Number:</label>
+                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">LR / B/L Number:</label>
                   <input
                     type="text"
                     value={lrNumber}
                     onChange={(e) => setLrNumber(e.target.value)}
-                    className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white font-mono"
+                    className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900 font-mono"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Invoice Reference:</label>
+                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Invoice Reference:</label>
                   <input
                     type="text"
                     value={invoiceNumber}
                     onChange={(e) => setInvoiceNumber(e.target.value)}
-                    className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white font-mono"
+                    className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900 font-mono"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Marine Policy No:</label>
+                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Marine Policy No:</label>
                   <input
                     type="text"
                     value={policyNumber}
                     onChange={(e) => setPolicyNumber(e.target.value)}
-                    className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white font-mono"
+                    className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900 font-mono"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Claimed Amount (INR):</label>
+                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Claimed Amount (INR):</label>
                   <input
                     type="number"
                     value={claimAmount}
                     onChange={(e) => setClaimAmount(Number(e.target.value))}
-                    className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white font-mono"
+                    className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900 font-mono"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Damage Discovery Description:</label>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Damage Discovery Description:</label>
                 <textarea
                   rows={3}
                   value={damageDescription}
                   onChange={(e) => setDamageDescription(e.target.value)}
-                  className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white"
+                  className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900"
                 />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-xs">
+          <div className="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-xs">
             <div className="space-y-2">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-2">
-                <span className="text-xs font-bold text-slate-900 dark:text-white font-sans">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span className="text-xs font-bold text-slate-900 font-sans">
                   Compiled Notice Document
                 </span>
                 <button
@@ -1097,12 +1097,12 @@ For ${consignorName}`;
                 </button>
               </div>
 
-              <pre className="bg-slate-50 dark:bg-zinc-950 p-3.5 rounded-xl text-[11px] font-mono text-slate-800 dark:text-zinc-200 whitespace-pre-wrap leading-relaxed max-h-[350px] overflow-y-auto border border-slate-200 dark:border-zinc-800">
+              <pre className="bg-slate-50 p-3.5 rounded-xl text-[11px] font-mono text-slate-800 whitespace-pre-wrap leading-relaxed max-h-[350px] overflow-y-auto border border-slate-200">
                 {generatedNoticeText}
               </pre>
             </div>
 
-            <p className="text-[10px] text-slate-400 dark:text-zinc-500 italic">
+            <p className="text-[10px] text-slate-500 italic">
               * Send this letter via Registered Post with Acknowledgment Due (RPAD) or Speed Post to maintain official legal proof of dispatch.
             </p>
           </div>

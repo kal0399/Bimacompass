@@ -394,101 +394,101 @@ ${contractorName}`;
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* CAR CARD */}
-            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 space-y-4 shadow-xs">
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 space-y-4 shadow-xs">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
                   <Building className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white font-sans">
+                  <h3 className="text-base font-extrabold text-slate-900 font-sans">
                     Contractors All Risks (CAR)
                   </h3>
-                  <span className="text-[11px] font-mono text-amber-600 dark:text-amber-400 font-bold uppercase">
+                  <span className="text-[11px] font-mono text-amber-700 font-bold uppercase">
                     Civil Construction Works
                   </span>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+              <p className="text-xs text-slate-600 leading-relaxed font-sans">
                 Designed primarily for civil engineering contracts where brick, mortar, concrete, and structural steel predominate. 
                 Provides complete protection from commencement of ground excavations until final handover to the Principal.
               </p>
 
-              <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-zinc-800">
+              <div className="space-y-2 pt-2 border-t border-slate-100">
                 <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono block">
                   Typical Project Applicability:
                 </span>
-                <ul className="space-y-1.5 text-xs text-slate-700 dark:text-zinc-300">
+                <ul className="space-y-1.5 text-xs text-slate-700">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Commercial & Residential Tower Complexes</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Highways, Expressways, Bridges & Flyovers (NHAI/State PWD)</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Dams, Irrigation Canals, Tunnels & Marine Jetties</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Airport Terminals, Runways & Metro Rail Viaducts</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-amber-50 dark:bg-amber-950/20 p-3 rounded-xl border border-amber-200 dark:border-amber-900/40 text-[11px] text-amber-900 dark:text-amber-300">
+              <div className="bg-amber-50 p-3 rounded-xl border border-amber-200 text-[11px] text-amber-900">
                 <strong>Key Risk Driver:</strong> Natural catastrophes (AOG: Act of God) like floods, cloudbursts, earthquakes, landslide subsidence, and formwork collapse.
               </div>
             </div>
 
             {/* EAR CARD */}
-            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 space-y-4 shadow-xs">
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 space-y-4 shadow-xs">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-400 flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center font-bold">
                   <Wrench className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white font-sans">
+                  <h3 className="text-base font-extrabold text-slate-900 font-sans">
                     Erection All Risks (EAR)
                   </h3>
-                  <span className="text-[11px] font-mono text-blue-600 dark:text-blue-400 font-bold uppercase">
+                  <span className="text-[11px] font-mono text-blue-700 font-bold uppercase">
                     Mechanical & Electrical Plant Installation
                   </span>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+              <p className="text-xs text-slate-600 leading-relaxed font-sans">
                 Formulated for projects involving the installation, erection, alignment, and testing of machinery, industrial plant, 
                 and electrical equipment. Begins upon unloading the first consignment on site and extends through critical testing phases.
               </p>
 
-              <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-zinc-800">
+              <div className="space-y-2 pt-2 border-t border-slate-100">
                 <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono block">
                   Typical Project Applicability:
                 </span>
-                <ul className="space-y-1.5 text-xs text-slate-700 dark:text-zinc-300">
+                <ul className="space-y-1.5 text-xs text-slate-700">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Thermal, Hydro, Solar & Wind Power Generation Stations</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Chemical Refineries, Steel Mills, Cement & Fertilizer Plants</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Substations, High-Voltage Transformers & Transmission Towers</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Factory Production Lines, Conveyors & Heavy CNC Assembly</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-blue-50 dark:bg-blue-950/20 p-3 rounded-xl border border-blue-200 dark:border-blue-900/40 text-[11px] text-blue-900 dark:text-blue-300">
+              <div className="bg-blue-50 p-3 rounded-xl border border-blue-200 text-[11px] text-blue-900">
                 <strong>Critical Phase:</strong> Testing and Commissioning (cold and hot tests) where machinery is energized, carrying elevated explosion and mechanical breakdown hazards.
               </div>
             </div>
@@ -496,7 +496,7 @@ ${contractorName}`;
 
           {/* Public Sector Insurers Profile */}
           <div className="space-y-4">
-            <h3 className="text-sm font-extrabold text-slate-900 dark:text-white uppercase font-mono tracking-wider flex items-center gap-2">
+            <h3 className="text-sm font-extrabold text-slate-900 uppercase font-mono tracking-wider flex items-center gap-2">
               <Building2 className="w-4 h-4 text-amber-600" />
               <span>Public Indian General Insurers Engineering Tariff Capacities</span>
             </h3>
@@ -505,30 +505,30 @@ ${contractorName}`;
               {PUBLIC_INDIAN_INSURERS.map((ins, idx) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-3"
+                  className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3"
                 >
                   <div>
-                    <span className="text-[10px] font-mono font-bold text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-950 px-2 py-0.5 rounded">
+                    <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">
                       {ins.badge}
                     </span>
-                    <h4 className="text-sm font-extrabold text-slate-900 dark:text-white mt-1 font-sans">
+                    <h4 className="text-sm font-extrabold text-slate-900 mt-1 font-sans">
                       {ins.name}
                     </h4>
-                    <p className="text-[11px] text-slate-500 dark:text-zinc-400 italic">
+                    <p className="text-[11px] text-slate-600 italic">
                       {ins.tagline}
                     </p>
                   </div>
 
-                  <ul className="space-y-1 text-xs text-slate-700 dark:text-zinc-300">
+                  <ul className="space-y-1 text-xs text-slate-700">
                     {ins.features.map((f, fIdx) => (
                       <li key={fIdx} className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                         <span>{f}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="text-[11px] text-slate-600 dark:text-zinc-400 bg-white dark:bg-zinc-800 p-2.5 rounded-xl border border-slate-200 dark:border-zinc-700 font-sans">
+                  <div className="text-[11px] text-slate-700 bg-white p-2.5 rounded-xl border border-slate-200 font-sans">
                     <strong>Tariff Norm:</strong> {ins.norm}
                   </div>
                 </div>
@@ -543,30 +543,30 @@ ${contractorName}`;
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* SECTION I: MATERIAL DAMAGE */}
-            <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 rounded-2xl space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-200 dark:border-zinc-700 pb-3">
-                <h3 className="text-sm font-extrabold text-slate-900 dark:text-white font-sans uppercase tracking-wide flex items-center gap-2">
+            <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+                <h3 className="text-sm font-extrabold text-slate-900 font-sans uppercase tracking-wide flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs font-mono">
                     I
                   </span>
                   <span>Section I: Material Damage</span>
                 </h3>
-                <span className="text-[10px] font-mono bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded font-bold">
+                <span className="text-[10px] font-mono bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">
                   Property in Contract
                 </span>
               </div>
 
-              <div className="space-y-3 text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+              <div className="space-y-3 text-xs text-slate-600 leading-relaxed font-sans">
                 <p>
                   Provides cover against sudden and unforeseen physical loss or damage from any cause, other than those specifically excluded, 
                   to the contract works, construction materials, temporary structures, and equipment.
                 </p>
 
                 <div className="space-y-1.5 pt-1">
-                  <strong className="text-slate-900 dark:text-white font-bold block">
+                  <strong className="text-slate-900 font-bold block">
                     Sum Insured Breakdown Components:
                   </strong>
-                  <div className="bg-white dark:bg-zinc-800 p-3 rounded-xl border border-slate-200 dark:border-zinc-700 space-y-1.5 font-mono text-[11px] text-slate-700 dark:text-zinc-300">
+                  <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1.5 font-mono text-[11px] text-slate-700">
                     <div>1. Full Contract Value (Completed replacement value)</div>
                     <div>2. Materials & Equipment supplied by Principal (Free-issue items)</div>
                     <div>3. Freight, Customs Duties, Taxes & Handling Costs</div>
@@ -575,7 +575,7 @@ ${contractorName}`;
                 </div>
 
                 <div className="space-y-1 pt-1">
-                  <strong className="text-slate-900 dark:text-white font-bold block">
+                  <strong className="text-slate-900 font-bold block">
                     Standard Covered Perils:
                   </strong>
                   <p>
@@ -584,7 +584,7 @@ ${contractorName}`;
                   </p>
                 </div>
 
-                <div className="bg-rose-50 dark:bg-rose-950/20 p-3 rounded-xl border border-rose-200 dark:border-rose-900/40 text-[11px] text-rose-800 dark:text-rose-300">
+                <div className="bg-rose-50 p-3 rounded-xl border border-rose-200 text-[11px] text-rose-800">
                   <strong>Standard Exclusions:</strong> Normal wear and tear, gradual corrosion, defective design (unless specifically endorsed), 
                   cost of rectifying defective workmanship, inventory shortages, war and nuclear risks, cessation of work.
                 </div>
@@ -592,30 +592,30 @@ ${contractorName}`;
             </div>
 
             {/* SECTION II: THIRD PARTY LIABILITY */}
-            <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 rounded-2xl space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-200 dark:border-zinc-700 pb-3">
-                <h3 className="text-sm font-extrabold text-slate-900 dark:text-white font-sans uppercase tracking-wide flex items-center gap-2">
+            <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+                <h3 className="text-sm font-extrabold text-slate-900 font-sans uppercase tracking-wide flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-mono">
                     II
                   </span>
                   <span>Section II: Third Party Liability</span>
                 </h3>
-                <span className="text-[10px] font-mono bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 px-2 py-0.5 rounded font-bold">
+                <span className="text-[10px] font-mono bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-bold">
                   Legal Liabilities (TPL)
                 </span>
               </div>
 
-              <div className="space-y-3 text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+              <div className="space-y-3 text-xs text-slate-600 leading-relaxed font-sans">
                 <p>
                   Indemnifies the Insured up to the specified limits against legal liability to pay compensation for 
                   accidental bodily injury or property damage to third parties occurring in direct connection with the execution of the contract works.
                 </p>
 
                 <div className="space-y-1.5 pt-1">
-                  <strong className="text-slate-900 dark:text-white font-bold block">
+                  <strong className="text-slate-900 font-bold block">
                     Indemnity Scope:
                   </strong>
-                  <div className="bg-white dark:bg-zinc-800 p-3 rounded-xl border border-slate-200 dark:border-zinc-700 space-y-1.5 font-mono text-[11px] text-slate-700 dark:text-zinc-300">
+                  <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1.5 font-mono text-[11px] text-slate-700">
                     <div>1. Accidental Bodily Injury or Death to Third Parties</div>
                     <div>2. Accidental Physical Damage to Third-Party Property</div>
                     <div>3. Legal defense fees and litigation costs awarded against Insured</div>
@@ -624,7 +624,7 @@ ${contractorName}`;
                 </div>
 
                 <div className="space-y-1 pt-1">
-                  <strong className="text-slate-900 dark:text-white font-bold block">
+                  <strong className="text-slate-900 font-bold block">
                     Vibration & Support Removal Caution:
                   </strong>
                   <p>
@@ -633,7 +633,7 @@ ${contractorName}`;
                   </p>
                 </div>
 
-                <div className="bg-rose-50 dark:bg-rose-950/20 p-3 rounded-xl border border-rose-200 dark:border-rose-900/40 text-[11px] text-rose-800 dark:text-rose-300">
+                <div className="bg-rose-50 p-3 rounded-xl border border-rose-200 text-[11px] text-rose-800">
                   <strong>Section II Exclusions:</strong> Injury/death to employees or workmen of contractor/principal (covered under Workmen's Compensation), 
                   damage to property owned or held in trust by the contractor, road traffic accidents by registered motor vehicles.
                 </div>
@@ -642,41 +642,41 @@ ${contractorName}`;
           </div>
 
           {/* Project Timeline Phases */}
-          <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 rounded-2xl space-y-4 shadow-xs">
-            <h3 className="text-sm font-extrabold text-slate-900 dark:text-white uppercase font-sans tracking-wide flex items-center gap-2">
+          <div className="bg-white border border-slate-200 p-6 rounded-2xl space-y-4 shadow-xs">
+            <h3 className="text-sm font-extrabold text-slate-900 uppercase font-sans tracking-wide flex items-center gap-2">
               <Clock className="w-4 h-4 text-amber-600" />
               <span>Engineering Policy Lifecycle Phases</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700 space-y-2">
-                <span className="text-[10px] font-mono font-bold text-amber-600 dark:text-amber-400 uppercase">Phase 1</span>
-                <h4 className="text-xs font-bold text-slate-900 dark:text-white">Storage on Site</h4>
-                <p className="text-[11px] text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <span className="text-[10px] font-mono font-bold text-amber-600 uppercase">Phase 1</span>
+                <h4 className="text-xs font-bold text-slate-900">Storage on Site</h4>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
                   Begins the moment equipment or building materials are unloaded at the project site godowns.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700 space-y-2">
-                <span className="text-[10px] font-mono font-bold text-amber-600 dark:text-amber-400 uppercase">Phase 2</span>
-                <h4 className="text-xs font-bold text-slate-900 dark:text-white">Erection / Construction</h4>
-                <p className="text-[11px] text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <span className="text-[10px] font-mono font-bold text-amber-600 uppercase">Phase 2</span>
+                <h4 className="text-xs font-bold text-slate-900">Erection / Construction</h4>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
                   Active structural assembly, concrete pouring, welding, rigging, and mechanical fitment.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700 space-y-2">
-                <span className="text-[10px] font-mono font-bold text-rose-600 dark:text-rose-400 uppercase">Phase 3 (EAR Only)</span>
-                <h4 className="text-xs font-bold text-slate-900 dark:text-white">Testing & Commissioning</h4>
-                <p className="text-[11px] text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <span className="text-[10px] font-mono font-bold text-rose-600 uppercase">Phase 3 (EAR Only)</span>
+                <h4 className="text-xs font-bold text-slate-900">Testing & Commissioning</h4>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
                   Standard tariff provides 4 weeks. Additional weeks require prorated premium loading.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 dark:bg-zinc-800/60 border border-slate-200 dark:border-zinc-700 space-y-2">
-                <span className="text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase">Phase 4</span>
-                <h4 className="text-xs font-bold text-slate-900 dark:text-white">Maintenance / Defect Liability</h4>
-                <p className="text-[11px] text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <span className="text-[10px] font-mono font-bold text-emerald-600 uppercase">Phase 4</span>
+                <h4 className="text-xs font-bold text-slate-900">Maintenance / Defect Liability</h4>
+                <p className="text-[11px] text-slate-600 leading-relaxed">
                   12 to 24 months post Practical Completion Certificate under Extended Maintenance clause.
                 </p>
               </div>
@@ -688,9 +688,9 @@ ${contractorName}`;
       {/* TAB 3: ENDORSEMENTS & CLAUSES */}
       {activeTab === "endorsements" && (
         <div className="space-y-5">
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3">
+          <div className="bg-slate-50 border border-slate-200 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2 w-full md:w-auto">
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider font-mono shrink-0">
+              <span className="text-xs font-bold text-slate-600 uppercase tracking-wider font-mono shrink-0">
                 Category:
               </span>
               <div className="flex flex-wrap gap-1.5">
@@ -701,7 +701,7 @@ ${contractorName}`;
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer select-none ${
                       filterCategory === cat
                         ? "bg-amber-600 text-white shadow-xs"
-                        : "bg-white dark:bg-zinc-800 text-slate-600 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700 hover:bg-slate-100"
+                        : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
                     }`}
                   >
                     {cat}
@@ -717,7 +717,7 @@ ${contractorName}`;
                 placeholder="Search clause name, tariff code..."
                 value={searchEndorsement}
                 onChange={(e) => setSearchEndorsement(e.target.value)}
-                className="w-full text-xs pl-9 pr-3 py-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-amber-500 font-sans text-slate-900 dark:text-white"
+                className="w-full text-xs pl-9 pr-3 py-2 border border-slate-200 bg-white rounded-xl focus:outline-none focus:ring-1 focus:ring-amber-500 font-sans text-slate-900"
               />
             </div>
           </div>
@@ -726,34 +726,34 @@ ${contractorName}`;
             {filteredEndorsements.map((item) => (
               <div
                 key={item.id}
-                className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-3 shadow-xs hover:border-amber-400 transition"
+                className="bg-white border border-slate-200 rounded-2xl p-5 space-y-3 shadow-xs hover:border-amber-400 transition"
               >
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <span className="text-[10px] font-mono font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-2 py-0.5 rounded border border-amber-200 dark:border-amber-800">
+                    <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
                       {item.tariffCode}
                     </span>
-                    <h4 className="text-sm font-extrabold text-slate-900 dark:text-white mt-1 font-sans">
+                    <h4 className="text-sm font-extrabold text-slate-900 mt-1 font-sans">
                       {item.name}
                     </h4>
                   </div>
                   <span
                     className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded ${
                       item.premiumBearing
-                        ? "bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300"
-                        : "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
+                        ? "bg-purple-100 text-purple-800"
+                        : "bg-emerald-100 text-emerald-800"
                     }`}
                   >
                     {item.premiumBearing ? "Premium Bearing" : "Standard Tariff"}
                   </span>
                 </div>
 
-                <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">
                   {item.description}
                 </p>
 
-                <div className="text-[11px] text-slate-500 dark:text-zinc-400 bg-slate-50 dark:bg-zinc-800/60 p-2.5 rounded-xl border border-slate-100 dark:border-zinc-800">
-                  <strong className="text-slate-800 dark:text-zinc-200 font-bold">Recommended When:</strong> {item.recommendedFor}
+                <div className="text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                  <strong className="text-slate-800 font-bold">Recommended When:</strong> {item.recommendedFor}
                 </div>
               </div>
             ))}
@@ -765,19 +765,19 @@ ${contractorName}`;
       {activeTab === "evaluator" && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Form */}
-          <div className="lg:col-span-2 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-6 rounded-2xl space-y-4">
-            <h3 className="text-sm font-extrabold text-slate-900 dark:text-white uppercase font-sans tracking-wide border-b border-slate-200 dark:border-zinc-700 pb-2 flex items-center gap-2">
+          <div className="lg:col-span-2 bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-4">
+            <h3 className="text-sm font-extrabold text-slate-900 uppercase font-sans tracking-wide border-b border-slate-200 pb-2 flex items-center gap-2">
               <Calculator className="w-4 h-4 text-amber-600" />
               <span>Engineering Project Risk Profiler</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Project Classification:</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Project Classification:</label>
                 <select
                   value={projectCategory}
                   onChange={(e) => setProjectCategory(e.target.value)}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-sans"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-sans"
                 >
                   <option value="civil_building">Commercial / Residential Real Estate (Civil)</option>
                   <option value="highway">Highways & Expressways (NHAI / PWD)</option>
@@ -789,51 +789,51 @@ ${contractorName}`;
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Total Contract Value (INR Crores):</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Total Contract Value (INR Crores):</label>
                 <input
                   type="number"
                   value={contractValueCrores}
                   onChange={(e) => setContractValueCrores(Math.max(0.5, Number(e.target.value)))}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-mono"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-mono"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Principal Supplied Materials (INR Cr):</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Principal Supplied Materials (INR Cr):</label>
                 <input
                   type="number"
                   value={principalMaterialsCrores}
                   onChange={(e) => setPrincipalMaterialsCrores(Math.max(0, Number(e.target.value)))}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-mono"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-mono"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Contractor Plant & Machinery (CPM) (INR Cr):</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Contractor Plant & Machinery (CPM) (INR Cr):</label>
                 <input
                   type="number"
                   value={cpmValueCrores}
                   onChange={(e) => setCpmValueCrores(Math.max(0, Number(e.target.value)))}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-mono"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-mono"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Construction Duration (Months):</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Construction Duration (Months):</label>
                 <input
                   type="number"
                   value={projectMonths}
                   onChange={(e) => setProjectMonths(Math.max(1, Number(e.target.value)))}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-mono"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-mono"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-bold text-slate-500 font-mono uppercase">Defect Liability / Maintenance (Months):</label>
+                <label className="text-[11px] font-bold text-slate-600 font-mono uppercase">Defect Liability / Maintenance (Months):</label>
                 <select
                   value={maintenanceMonths}
                   onChange={(e) => setMaintenanceMonths(Number(e.target.value))}
-                  className="w-full text-xs p-2.5 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-xl text-slate-900 dark:text-white font-sans"
+                  className="w-full text-xs p-2.5 border border-slate-200 bg-white rounded-xl text-slate-900 font-sans"
                 >
                   <option value={0}>0 Months (None)</option>
                   <option value={6}>6 Months (Limited)</option>
@@ -844,29 +844,29 @@ ${contractorName}`;
             </div>
 
             {recommendedPolicyType.testingRequired && (
-              <div className="bg-blue-50 dark:bg-blue-950/20 p-3.5 rounded-xl border border-blue-200 dark:border-blue-900/40 space-y-2">
-                <label className="text-[11px] font-bold text-blue-900 dark:text-blue-300 font-mono uppercase block">
+              <div className="bg-blue-50 p-3.5 rounded-xl border border-blue-200 space-y-2">
+                <label className="text-[11px] font-bold text-blue-900 font-mono uppercase block">
                   Testing & Commissioning Period (Weeks):
                 </label>
                 <input
                   type="number"
                   value={testingWeeks}
                   onChange={(e) => setTestingWeeks(Math.max(1, Number(e.target.value)))}
-                  className="w-full text-xs p-2 border border-blue-200 dark:border-blue-800 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white font-mono"
+                  className="w-full text-xs p-2 border border-blue-200 bg-white rounded-lg text-slate-900 font-mono"
                 />
-                <p className="text-[10px] text-blue-700 dark:text-blue-300">
+                <p className="text-[10px] text-blue-800">
                   Standard tariff covers up to 4 weeks. Additional weeks require specific prorated loading under TAC norms.
                 </p>
               </div>
             )}
 
-            <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-zinc-700">
-              <span className="text-[11px] font-bold text-slate-600 dark:text-zinc-400 font-mono uppercase">
+            <div className="space-y-2 pt-2 border-t border-slate-200">
+              <span className="text-[11px] font-bold text-slate-600 font-mono uppercase">
                 Select Critical Add-On Endorsements:
               </span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {ENDORSEMENTS_DATA.slice(0, 6).map((end) => (
-                  <label key={end.id} className="flex items-center gap-2 text-xs text-slate-700 dark:text-zinc-300 cursor-pointer">
+                  <label key={end.id} className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={selectedEndorsements.includes(end.id)}
@@ -951,13 +951,13 @@ ${contractorName}`;
       {/* TAB 5: SURVEY & CLAIMS PROTOCOL */}
       {activeTab === "claims" && (
         <div className="space-y-6">
-          <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 p-5 rounded-2xl flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+          <div className="bg-amber-50 border border-amber-200 p-5 rounded-2xl flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <h4 className="text-xs font-bold text-amber-900 dark:text-amber-200 font-sans">
+              <h4 className="text-xs font-bold text-amber-900 font-sans">
                 Critical Condition: Preservation of Undisturbed Evidence
               </h4>
-              <p className="text-xs text-amber-800 dark:text-amber-300/90 leading-relaxed font-sans">
+              <p className="text-xs text-amber-800 leading-relaxed font-sans">
                 Except for emergency actions necessary to prevent further collapse or safeguard human life, 
                 the insured must NOT clear or alter the damaged contract works before the arrival of the IRDAI-appointed 
                 independent engineering surveyor. Clearing rubble prematurely may result in claim repudiation due to inability to verify root cause.
@@ -966,73 +966,73 @@ ${contractorName}`;
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2.5 shadow-xs">
+            <div className="bg-white border border-slate-200 p-5 rounded-2xl space-y-2.5 shadow-xs">
               <span className="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center font-mono">
                 1
               </span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white font-sans">
+              <h4 className="text-sm font-bold text-slate-900 font-sans">
                 Immediate Notice & Police FIR
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Provide immediate written notice to the insurer within 24 hours. For theft, burglary, malicious damage, 
                 or serious site fatalities, lodge a formal First Information Report (FIR) with local police immediately.
               </p>
             </div>
 
-            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2.5 shadow-xs">
+            <div className="bg-white border border-slate-200 p-5 rounded-2xl space-y-2.5 shadow-xs">
               <span className="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center font-mono">
                 2
               </span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white font-sans">
+              <h4 className="text-sm font-bold text-slate-900 font-sans">
                 Joint On-Site Survey & Logbooks
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Facilitate site visit for the loss adjuster. Provide certified copies of the Measurement Book (MB), 
                 site daily logbooks, rainfall/weather reports, and structural drawings showing pre-incident status.
               </p>
             </div>
 
-            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-2.5 shadow-xs">
+            <div className="bg-white border border-slate-200 p-5 rounded-2xl space-y-2.5 shadow-xs">
               <span className="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-bold flex items-center justify-center font-mono">
                 3
               </span>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white font-sans">
+              <h4 className="text-sm font-bold text-slate-900 font-sans">
                 Reinstatement & Claim Discharge
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Execute repairs in accordance with the surveyor's recommendation. Submit itemized reconstruction contractor invoices, 
                 salvage credit vouchers, and signed Joint Discharge Voucher for direct NEFT settlement.
               </p>
             </div>
           </div>
 
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-3">
-            <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase font-mono tracking-wider">
+          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-3">
+            <h4 className="text-xs font-bold text-slate-900 uppercase font-mono tracking-wider">
               Engineering Claims Verification Checklist:
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-zinc-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-700">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Original CAR/EAR Policy schedule with all endorsement slips</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Contract Agreement between Principal and Main Contractor (with BOQ)</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Certified extract of Measurement Book (MB) immediately preceding loss</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Structural drawings, erection bar-chart schedules, and testing logs</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Police FIR / Panchnama copy (if burglary, collapse, or third-party injury)</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Indian Meteorological Department (IMD) rainfall/storm verification bulletin</span>
               </div>
             </div>
@@ -1043,91 +1043,91 @@ ${contractorName}`;
       {/* TAB 6: INTIMATION LETTER GENERATOR */}
       {activeTab === "draft" && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl space-y-3">
-            <h4 className="text-xs font-extrabold text-slate-900 dark:text-white uppercase font-sans tracking-wide border-b border-slate-200 dark:border-zinc-700 pb-2 flex items-center gap-1.5">
+          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl space-y-3">
+            <h4 className="text-xs font-extrabold text-slate-900 uppercase font-sans tracking-wide border-b border-slate-200 pb-2 flex items-center gap-1.5">
               <HardHat className="w-4 h-4 text-amber-600" />
               <span>Accident Intimation Parameters</span>
             </h4>
 
             <div className="space-y-3">
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Contractor / Insured Firm:</label>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Contractor / Insured Firm:</label>
                 <input
                   type="text"
                   value={contractorName}
                   onChange={(e) => setContractorName(e.target.value)}
-                  className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white"
+                  className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900"
                 />
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Principal / Employer Body:</label>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Principal / Employer Body:</label>
                 <input
                   type="text"
                   value={principalName}
                   onChange={(e) => setPrincipalName(e.target.value)}
-                  className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white"
+                  className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900"
                 />
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Project Name & Section:</label>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Project Name & Section:</label>
                 <input
                   type="text"
                   value={projectName}
                   onChange={(e) => setProjectName(e.target.value)}
-                  className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white"
+                  className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">CAR/EAR Policy No:</label>
+                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">CAR/EAR Policy No:</label>
                   <input
                     type="text"
                     value={policyNumber}
                     onChange={(e) => setPolicyNumber(e.target.value)}
-                    className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white font-mono"
+                    className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900 font-mono"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Date of Incident:</label>
+                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Date of Incident:</label>
                   <input
                     type="date"
                     value={incidentDate}
                     onChange={(e) => setIncidentDate(e.target.value)}
-                    className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white font-mono"
+                    className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900 font-mono"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Estimated Loss (INR Crores):</label>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Estimated Loss (INR Crores):</label>
                 <input
                   type="number"
                   step="0.1"
                   value={estimatedLossCrores}
                   onChange={(e) => setEstimatedLossCrores(Number(e.target.value))}
-                  className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white font-mono"
+                  className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900 font-mono"
                 />
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase font-mono">Damage & Accident Details:</label>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono">Damage & Accident Details:</label>
                 <textarea
                   rows={3}
                   value={incidentDescription}
                   onChange={(e) => setIncidentDescription(e.target.value)}
-                  className="w-full text-xs p-2 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 rounded-lg text-slate-900 dark:text-white"
+                  className="w-full text-xs p-2 border border-slate-200 bg-white rounded-lg text-slate-900"
                 />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-xs">
+          <div className="bg-white border border-slate-200 p-5 rounded-2xl flex flex-col justify-between space-y-4 shadow-xs">
             <div className="space-y-2">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-2">
-                <span className="text-xs font-bold text-slate-900 dark:text-white font-sans">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span className="text-xs font-bold text-slate-900 font-sans">
                   Compiled Intimation Letter
                 </span>
                 <button
@@ -1139,12 +1139,12 @@ ${contractorName}`;
                 </button>
               </div>
 
-              <pre className="bg-slate-50 dark:bg-zinc-950 p-3.5 rounded-xl text-[11px] font-mono text-slate-800 dark:text-zinc-200 whitespace-pre-wrap leading-relaxed max-h-[350px] overflow-y-auto border border-slate-200 dark:border-zinc-800">
+              <pre className="bg-slate-50 p-3.5 rounded-xl text-[11px] font-mono text-slate-800 whitespace-pre-wrap leading-relaxed max-h-[350px] overflow-y-auto border border-slate-200">
                 {compiledLetter}
               </pre>
             </div>
 
-            <p className="text-[10px] text-slate-400 dark:text-zinc-500 italic">
+            <p className="text-[10px] text-slate-500 italic">
               * Send this letter immediately via email to the underwriting branch and claims department, followed by a signed physical copy.
             </p>
           </div>

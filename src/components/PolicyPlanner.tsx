@@ -938,23 +938,23 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
   }, [matrixCategory, matrixSearch]);
 
   return (
-    <div className="bg-white dark:bg-[#121215] border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-xs animate-fade-in transition-all duration-200" id="policy-planner-root">
+    <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs animate-fade-in transition-all duration-200" id="policy-planner-root">
       
       {/* Header Panel with Mode Switcher */}
       <div className="bg-slate-900 text-white p-5 border-b border-slate-800">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="bg-emerald-500/10 text-emerald-400 p-2.5 rounded-xl border border-emerald-500/20 shrink-0">
+            <div className="bg-sky-500/20 text-sky-300 p-2.5 rounded-xl border border-sky-500/30 shrink-0">
               <Compass className="w-6 h-6 shrink-0" />
             </div>
             <div>
               <h2 className="text-base md:text-lg font-bold tracking-tight text-white font-sans flex items-center gap-2">
                 <span>Find the Right Policy & Statutory Underwriting Engine</span>
-                <span className="text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full uppercase">
+                <span className="text-[10px] font-mono font-bold bg-sky-500/20 text-sky-200 border border-sky-400/40 px-2 py-0.5 rounded-full uppercase">
                   AIFT & IRDAI 2024
                 </span>
               </h2>
-              <p className="text-slate-400 text-xs mt-0.5 font-sans">
+              <p className="text-slate-300 text-xs mt-0.5 font-sans">
                 Statutory policy mapping for Fire (AIFT TAC Sections 1–8), Retail Health (2024 Master Circular), Marine & Liabilities.
               </p>
             </div>
@@ -966,8 +966,8 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
               onClick={() => setPlannerMode("wizard")}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold font-sans transition flex items-center gap-1.5 cursor-pointer ${
                 plannerMode === "wizard" 
-                  ? "bg-emerald-600 text-white shadow-xs" 
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-sky-600 text-white shadow-xs" 
+                  : "text-slate-300 hover:text-white"
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -977,8 +977,8 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
               onClick={() => setPlannerMode("regulatory_matrix")}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold font-sans transition flex items-center gap-1.5 cursor-pointer ${
                 plannerMode === "regulatory_matrix" 
-                  ? "bg-blue-600 text-white shadow-xs" 
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-sky-700 text-white shadow-xs" 
+                  : "text-slate-300 hover:text-white"
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
@@ -997,12 +997,12 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
           <div className="space-y-5">
             {/* Step Indicator (If in questionnaire) */}
             {!isSubmitted && (
-              <div className="mb-4 flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-3" id="matchmaker-progress-header">
+              <div className="mb-4 flex items-center justify-between border-b border-slate-200 pb-3" id="matchmaker-progress-header">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 font-bold px-2 py-0.5 rounded-md uppercase tracking-wider block">
+                  <span className="text-[10px] font-mono bg-sky-50 text-sky-800 border border-sky-200 font-bold px-2 py-0.5 rounded-md uppercase tracking-wider block">
                     Diagnostic Flow
                   </span>
-                  <p className="text-xs text-slate-600 dark:text-zinc-400 font-bold">
+                  <p className="text-xs text-slate-700 font-bold">
                     {currentStep === 0 && "Overview & Regulatory Alignment"}
                     {currentStep === 1 && "Step 1: Risk Target & Statutory Domain"}
                     {currentStep === 2 && "Step 2: Risk Profile & Exposure Level"}
@@ -1010,7 +1010,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                   </p>
                 </div>
                 {currentStep > 0 && (
-                  <span className="text-[10px] text-slate-400 font-mono font-bold">
+                  <span className="text-[10px] text-slate-500 font-mono font-bold">
                     Step {currentStep} of 3
                   </span>
                 )}
@@ -1020,41 +1020,41 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
             {/* SCREEN 0: WELCOME OVERVIEW */}
             {currentStep === 0 && !isSubmitted && (
               <div className="space-y-5 py-2 animate-fade-in" id="matchmaker-welcome-card">
-                <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-4">
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-4">
                   <div className="flex gap-3 items-start">
                     <span className="text-2xl mt-0.5 select-none">🎯</span>
                     <div className="space-y-1">
-                      <h4 className="font-extrabold text-sm md:text-base text-slate-900 dark:text-zinc-100 font-sans tracking-tight">
+                      <h4 className="font-extrabold text-sm md:text-base text-slate-900 font-sans tracking-tight">
                         Intelligent Policy Matchmaker & Statutory Underwriting Advisor
                       </h4>
-                      <p className="text-slate-600 dark:text-zinc-400 text-xs leading-relaxed font-sans">
+                      <p className="text-slate-600 text-xs leading-relaxed font-sans">
                         Discover the exact policy structure, statutory riders, and carrier suitability tailored to your unique risks. Grounded directly in the <strong>Tariff Advisory Committee (TAC) All India Fire Tariff (AIFT)</strong>, <strong>Engineering All Risks (CAR/EAR)</strong>, the <strong>IRDAI 2024 Master Circular on Health</strong>, <strong>Institute Cargo Clauses (ICC)</strong>, and the <strong>Employee's Compensation Act</strong>.
                       </p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
-                    <div className="bg-white dark:bg-zinc-950 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1">
-                      <span className="text-[10px] font-bold font-mono text-orange-600 dark:text-orange-400 uppercase">🏢 AIFT Fire Standard</span>
-                      <p className="text-[11px] text-slate-600 dark:text-zinc-400">
+                    <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+                      <span className="text-[10px] font-bold font-mono text-sky-700 uppercase">🏢 AIFT Fire Standard</span>
+                      <p className="text-[11px] text-slate-600">
                         Automatic mapping to Bharat Griha Raksha, Bharat Sookshma, Bharat Laghu, SFSP & IAR with FEA discount logic.
                       </p>
                     </div>
-                    <div className="bg-white dark:bg-zinc-950 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1">
-                      <span className="text-[10px] font-bold font-mono text-amber-600 dark:text-amber-400 uppercase">⚙️ Engineering All Risks</span>
-                      <p className="text-[11px] text-slate-600 dark:text-zinc-400">
+                    <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+                      <span className="text-[10px] font-bold font-mono text-amber-700 uppercase">⚙️ Engineering All Risks</span>
+                      <p className="text-[11px] text-slate-600">
                         Contractor's (CAR) & Erection All Risks (EAR) with hot testing, 72-hr CAT clause, and surrounding property.
                       </p>
                     </div>
-                    <div className="bg-white dark:bg-zinc-950 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1">
-                      <span className="text-[10px] font-bold font-mono text-emerald-600 dark:text-emerald-400 uppercase">🏥 IRDAI 2024 Circular</span>
-                      <p className="text-[11px] text-slate-600 dark:text-zinc-400">
+                    <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+                      <span className="text-[10px] font-bold font-mono text-emerald-700 uppercase">🏥 IRDAI 2024 Circular</span>
+                      <p className="text-[11px] text-slate-600">
                         Zero room-rent capping, 100% cashless nationwide, 36-month max PED moratorium, and full AYUSH parity.
                       </p>
                     </div>
-                    <div className="bg-white dark:bg-zinc-950 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1">
-                      <span className="text-[10px] font-bold font-mono text-blue-600 dark:text-blue-400 uppercase">🚢 Cargo & Transit</span>
-                      <p className="text-[11px] text-slate-600 dark:text-zinc-400">
+                    <div className="bg-white p-3 rounded-xl border border-slate-200 space-y-1">
+                      <span className="text-[10px] font-bold font-mono text-cyan-700 uppercase">🚢 Cargo & Transit</span>
+                      <p className="text-[11px] text-slate-600">
                         Institute Cargo Clauses (A) All-Risks, Warehouse-to-Warehouse, 110% CIF valuation & WC Table A/B compliance.
                       </p>
                     </div>
@@ -1065,10 +1065,10 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                   <button
                     type="button"
                     onClick={() => setCurrentStep(1)}
-                    className="bg-slate-950 hover:bg-slate-850 dark:bg-zinc-100 dark:hover:bg-white dark:text-zinc-950 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition cursor-pointer shadow-xs flex items-center gap-2 font-sans"
+                    className="bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition cursor-pointer shadow-xs flex items-center gap-2 font-sans"
                   >
                     <span>Launch Diagnostic Needs Matchmaker</span>
-                    <ChevronRight className="w-4 h-4 text-emerald-400 dark:text-emerald-600" />
+                    <ChevronRight className="w-4 h-4 text-sky-400" />
                   </button>
                 </div>
               </div>
@@ -1077,7 +1077,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
             {/* SCREEN 1: STEP 1 - CHOOSE DOMAIN */}
             {currentStep === 1 && !isSubmitted && (
               <div className="space-y-4 animate-fade-in" id="matchmaker-question-1">
-                <h4 className="text-sm font-extrabold text-slate-900 dark:text-zinc-100 font-sans tracking-tight">
+                <h4 className="text-sm font-extrabold text-slate-900 font-sans tracking-tight">
                   1. Select your target protection domain or risk subject:
                 </h4>
                 
@@ -1087,25 +1087,25 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={domainItem.id}
                       onClick={() => handleSelectDomain(domainItem.id as ProtectionDomain)}
                       type="button"
-                      className="p-4 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900/80 transition flex flex-col justify-between cursor-pointer space-y-2 group"
+                      className="p-4 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/50 hover:border-sky-300 transition flex flex-col justify-between cursor-pointer space-y-2 group shadow-2xs"
                     >
                       <div className="space-y-1.5">
                         <div className="flex items-center justify-between gap-2">
-                          <span className="font-extrabold text-xs text-slate-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition font-sans">
+                          <span className="font-extrabold text-xs text-slate-900 group-hover:text-sky-700 transition font-sans">
                             {domainItem.label}
                           </span>
-                          <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400">
+                          <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">
                             {domainItem.badge}
                           </span>
                         </div>
-                        <p className="text-[11px] text-slate-500 dark:text-zinc-400 leading-relaxed font-sans">
+                        <p className="text-[11px] text-slate-600 leading-relaxed font-sans">
                           {domainItem.desc}
                         </p>
                       </div>
 
                       <div className="flex flex-wrap gap-1.5 pt-1">
                         {domainItem.highlights.slice(0, 2).map((h, i) => (
-                          <span key={i} className="text-[9.5px] px-2 py-0.5 rounded bg-slate-100/80 dark:bg-zinc-800/80 text-slate-600 dark:text-zinc-400 font-mono">
+                          <span key={i} className="text-[9.5px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono border border-slate-200/80">
                             ✓ {h}
                           </span>
                         ))}
@@ -1114,11 +1114,11 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                   ))}
                 </div>
 
-                <div className="flex justify-between items-center border-t border-slate-100 dark:border-zinc-800 pt-4 mt-2">
+                <div className="flex justify-between items-center border-t border-slate-200 pt-4 mt-2">
                   <button
                     type="button"
                     onClick={() => setCurrentStep(0)}
-                    className="px-4 py-2 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 font-bold rounded-lg text-xs border border-slate-300 dark:border-zinc-700 transition cursor-pointer"
+                    className="px-4 py-2 hover:bg-slate-100 text-slate-700 font-bold rounded-lg text-xs border border-slate-300 transition cursor-pointer"
                   >
                     Back to Overview
                   </button>
@@ -1129,7 +1129,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
             {/* SCREEN 2: STEP 2 - SPECIFIC ATTRIBUTES */}
             {currentStep === 2 && answers.domain && !isSubmitted && (
               <div className="space-y-4 animate-fade-in" id="matchmaker-question-2">
-                <h4 className="text-sm font-extrabold text-slate-900 dark:text-zinc-100 font-sans tracking-tight">
+                <h4 className="text-sm font-extrabold text-slate-900 font-sans tracking-tight">
                   {answers.domain === "commercial_fire" && "2. Identify your property type and approximate total asset value (Building + Plant + Machinery + Stocks):"}
                   {answers.domain === "engineering_ear_car" && "2. Identify your project scope, civil engineering class, or plant installation phase:"}
                   {answers.domain === "retail_health" && "2. Select target demographic age group to optimize retail health premium and PED clauses:"}
@@ -1152,13 +1152,13 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={opt.value}
                       onClick={() => handleSelectStep1(opt.value)}
                       type="button"
-                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/60 hover:border-sky-300 text-slate-800 transition flex items-center justify-between cursor-pointer group shadow-2xs"
                     >
                       <div>
-                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-orange-500 transition">{opt.label}</span>
-                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                        <span className="font-bold text-xs block font-sans text-slate-900 group-hover:text-sky-700 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-600 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-orange-500 shrink-0 ml-3" />
+                      <ChevronRight className="w-4 h-4 text-sky-600 shrink-0 ml-3" />
                     </button>
                   ))}
 
@@ -1171,13 +1171,13 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={opt.value}
                       onClick={() => handleSelectStep1(opt.value)}
                       type="button"
-                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/60 hover:border-sky-300 text-slate-800 transition flex items-center justify-between cursor-pointer group shadow-2xs"
                     >
                       <div>
-                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-amber-500 transition">{opt.label}</span>
-                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                        <span className="font-bold text-xs block font-sans text-slate-900 group-hover:text-sky-700 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-600 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-amber-500 shrink-0 ml-3" />
+                      <ChevronRight className="w-4 h-4 text-sky-600 shrink-0 ml-3" />
                     </button>
                   ))}
 
@@ -1190,13 +1190,13 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={opt.value}
                       onClick={() => handleSelectStep1(opt.value)}
                       type="button"
-                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/60 hover:border-sky-300 text-slate-800 transition flex items-center justify-between cursor-pointer group shadow-2xs"
                     >
                       <div>
-                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-emerald-500 transition">{opt.label}</span>
-                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                        <span className="font-bold text-xs block font-sans text-slate-900 group-hover:text-sky-700 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-600 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-emerald-500 shrink-0 ml-3" />
+                      <ChevronRight className="w-4 h-4 text-sky-600 shrink-0 ml-3" />
                     </button>
                   ))}
 
@@ -1209,13 +1209,13 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={opt.value}
                       onClick={() => handleSelectStep1(opt.value)}
                       type="button"
-                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/60 hover:border-sky-300 text-slate-800 transition flex items-center justify-between cursor-pointer group shadow-2xs"
                     >
                       <div>
-                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-blue-500 transition">{opt.label}</span>
-                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                        <span className="font-bold text-xs block font-sans text-slate-900 group-hover:text-sky-700 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-600 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-blue-500 shrink-0 ml-3" />
+                      <ChevronRight className="w-4 h-4 text-sky-600 shrink-0 ml-3" />
                     </button>
                   ))}
 
@@ -1227,13 +1227,13 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={opt.value}
                       onClick={() => handleSelectStep1(opt.value)}
                       type="button"
-                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/60 hover:border-sky-300 text-slate-800 transition flex items-center justify-between cursor-pointer group shadow-2xs"
                     >
                       <div>
-                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-cyan-500 transition">{opt.label}</span>
-                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                        <span className="font-bold text-xs block font-sans text-slate-900 group-hover:text-sky-700 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-600 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-cyan-500 shrink-0 ml-3" />
+                      <ChevronRight className="w-4 h-4 text-sky-600 shrink-0 ml-3" />
                     </button>
                   ))}
 
@@ -1245,13 +1245,13 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={opt.value}
                       onClick={() => handleSelectStep1(opt.value)}
                       type="button"
-                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/60 hover:border-sky-300 text-slate-800 transition flex items-center justify-between cursor-pointer group shadow-2xs"
                     >
                       <div>
-                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-teal-500 transition">{opt.label}</span>
-                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                        <span className="font-bold text-xs block font-sans text-slate-900 group-hover:text-sky-700 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-600 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-teal-500 shrink-0 ml-3" />
+                      <ChevronRight className="w-4 h-4 text-sky-600 shrink-0 ml-3" />
                     </button>
                   ))}
 
@@ -1263,13 +1263,13 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={opt.value}
                       onClick={() => handleSelectStep1(opt.value)}
                       type="button"
-                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/60 hover:border-sky-300 text-slate-800 transition flex items-center justify-between cursor-pointer group shadow-2xs"
                     >
                       <div>
-                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-indigo-500 transition">{opt.label}</span>
-                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                        <span className="font-bold text-xs block font-sans text-slate-900 group-hover:text-sky-700 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-600 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-indigo-500 shrink-0 ml-3" />
+                      <ChevronRight className="w-4 h-4 text-sky-600 shrink-0 ml-3" />
                     </button>
                   ))}
 
@@ -1281,22 +1281,22 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                       key={opt.value}
                       onClick={() => handleSelectStep1(opt.value)}
                       type="button"
-                      className="p-3.5 text-left rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 text-slate-800 dark:text-zinc-200 transition flex items-center justify-between cursor-pointer group"
+                      className="p-3.5 text-left rounded-xl border border-slate-200 bg-white hover:bg-sky-50/60 hover:border-sky-300 text-slate-800 transition flex items-center justify-between cursor-pointer group shadow-2xs"
                     >
                       <div>
-                        <span className="font-bold text-xs block font-sans text-slate-900 dark:text-zinc-100 group-hover:text-orange-500 transition">{opt.label}</span>
-                        <span className="text-[10.5px] block text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
+                        <span className="font-bold text-xs block font-sans text-slate-900 group-hover:text-sky-700 transition">{opt.label}</span>
+                        <span className="text-[10.5px] block text-slate-600 leading-relaxed font-sans mt-0.5">{opt.desc}</span>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-orange-500 shrink-0 ml-3" />
+                      <ChevronRight className="w-4 h-4 text-sky-600 shrink-0 ml-3" />
                     </button>
                   ))}
                 </div>
 
-                <div className="flex justify-between items-center border-t border-slate-100 dark:border-zinc-800 pt-4 mt-2">
+                <div className="flex justify-between items-center border-t border-slate-200 pt-4 mt-2">
                   <button
                     type="button"
                     onClick={() => setCurrentStep(1)}
-                    className="px-4 py-2 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 font-bold rounded-lg text-xs border border-slate-300 dark:border-zinc-700 transition cursor-pointer"
+                    className="px-4 py-2 hover:bg-slate-100 text-slate-700 font-bold rounded-lg text-xs border border-slate-300 transition cursor-pointer"
                   >
                     Back to Domain Select
                   </button>
@@ -1307,18 +1307,18 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
             {/* SCREEN 3: STEP 3 - CARRIER PREFERENCE & ADD-ONS */}
             {currentStep === 3 && answers.domain && !isSubmitted && (
               <div className="space-y-5 animate-fade-in" id="matchmaker-question-3">
-                <div className="border-b border-slate-100 dark:border-zinc-800 pb-3">
-                  <h4 className="text-sm font-extrabold text-slate-900 dark:text-zinc-100 font-sans tracking-tight">
+                <div className="border-b border-slate-200 pb-3">
+                  <h4 className="text-sm font-extrabold text-slate-900 font-sans tracking-tight">
                     Step 3: Define Carrier Parameters & Statutory Add-On Endorsements
                   </h4>
-                  <p className="text-[11px] text-slate-500 dark:text-zinc-400 leading-relaxed font-sans mt-0.5">
+                  <p className="text-[11px] text-slate-600 leading-relaxed font-sans mt-0.5">
                     Select preferred underwriting partner and attach essential regulatory riders to eliminate out-of-pocket claim deductions.
                   </p>
                 </div>
 
                 {/* Part A: Insurer Partner */}
                 <div className="space-y-2.5">
-                  <label className="text-[10px] font-extrabold text-slate-500 dark:text-zinc-400 block uppercase tracking-wider font-mono">
+                  <label className="text-[10px] font-extrabold text-slate-600 block uppercase tracking-wider font-mono">
                     Part A: Select Preferred Underwriting Carrier
                   </label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
@@ -1331,20 +1331,20 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                           type="button"
                           className={`p-3 text-left rounded-xl border transition flex flex-col justify-between cursor-pointer ${
                             isSelected 
-                              ? "bg-slate-900 dark:bg-zinc-100 text-white dark:text-zinc-950 border-slate-900 dark:border-zinc-100 shadow-xs" 
-                              : "bg-white dark:bg-zinc-900 border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-800/80 text-slate-800 dark:text-zinc-200"
+                              ? "bg-slate-900 text-white border-slate-900 shadow-xs" 
+                              : "bg-white border-slate-200 hover:bg-sky-50/60 hover:border-sky-300 text-slate-800"
                           }`}
                         >
                           <div>
                             <div className="flex items-center gap-2">
                               <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 transition ${
-                                isSelected ? "bg-emerald-500 border-emerald-500 text-white" : "border-slate-300 dark:border-zinc-600 bg-white dark:bg-zinc-900"
+                                isSelected ? "bg-sky-500 border-sky-500 text-white" : "border-slate-300 bg-white"
                               }`}>
-                                {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-white dark:bg-zinc-950" />}
+                                {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
                               </div>
                               <span className="font-extrabold text-[11.5px] font-sans">{brand.name}</span>
                             </div>
-                            <span className={`text-[10px] block leading-relaxed mt-1.5 pl-5 ${isSelected ? "text-slate-300 dark:text-zinc-600" : "text-slate-500 dark:text-zinc-400"}`}>
+                            <span className={`text-[10px] block leading-relaxed mt-1.5 pl-5 ${isSelected ? "text-slate-300" : "text-slate-600"}`}>
                               {brand.desc}
                             </span>
                           </div>
@@ -1355,12 +1355,12 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                 </div>
 
                 {/* Part B: Multiple Add-ons Toggle */}
-                <div className="space-y-2.5 pt-3 border-t border-slate-100 dark:border-zinc-800">
+                <div className="space-y-2.5 pt-3 border-t border-slate-200">
                   <div className="flex items-center justify-between">
-                    <label className="text-[10px] font-extrabold text-slate-500 dark:text-zinc-400 block uppercase tracking-wider font-mono">
+                    <label className="text-[10px] font-extrabold text-slate-600 block uppercase tracking-wider font-mono">
                       Part B: Key Add-On Endorsements (Select Multiple to prevent claim shortfalls)
                     </label>
-                    <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold">
+                    <span className="text-[10px] font-mono text-sky-700 font-bold bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
                       {answers.step2_addons?.length || 0} Endorsements Selected
                     </span>
                   </div>
@@ -1375,22 +1375,22 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                           type="button"
                           className={`p-3 text-left rounded-xl border transition flex items-start gap-3 cursor-pointer ${
                             isChecked 
-                              ? "bg-emerald-50/90 dark:bg-emerald-950/40 border-emerald-400 dark:border-emerald-700 text-slate-900 dark:text-zinc-100 shadow-xs" 
-                              : "bg-white dark:bg-zinc-900 border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-800/80 text-slate-800 dark:text-zinc-300"
+                              ? "bg-sky-50 border-sky-400 text-slate-900 shadow-xs" 
+                              : "bg-white border-slate-200 hover:bg-slate-50 text-slate-800"
                           }`}
                         >
                           <div className={`w-4 h-4 rounded-md border flex items-center justify-center shrink-0 mt-0.5 transition ${
-                            isChecked ? "bg-emerald-500 border-emerald-500 text-white" : "border-slate-300 dark:border-zinc-600 bg-white dark:bg-zinc-800"
+                            isChecked ? "bg-sky-600 border-sky-600 text-white" : "border-slate-300 bg-white"
                           }`}>
                             {isChecked && <Check className="w-2.5 h-2.5 stroke-[3px]" />}
                           </div>
                           <div className="space-y-0.5">
-                            <span className="font-bold text-[11.5px] block font-sans">{addon.label}</span>
-                            <span className="text-[9.5px] block leading-relaxed text-slate-500 dark:text-zinc-400">
+                            <span className="font-bold text-[11.5px] block font-sans text-slate-900">{addon.label}</span>
+                            <span className="text-[9.5px] block leading-relaxed text-slate-600">
                               {addon.desc}
                             </span>
                             {addon.statutoryRef && (
-                              <span className="inline-block text-[8.5px] font-mono text-slate-400 dark:text-zinc-500 font-semibold mt-0.5">
+                              <span className="inline-block text-[8.5px] font-mono text-slate-500 font-semibold mt-0.5">
                                 📌 {addon.statutoryRef}
                               </span>
                             )}
@@ -1401,11 +1401,11 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t border-slate-100 dark:border-zinc-800 pt-4 mt-2">
+                <div className="flex justify-between items-center border-t border-slate-200 pt-4 mt-2">
                   <button
                     type="button"
                     onClick={() => setCurrentStep(2)}
-                    className="px-4 py-2 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 font-bold rounded-lg text-xs border border-slate-300 dark:border-zinc-700 transition cursor-pointer"
+                    className="px-4 py-2 hover:bg-slate-100 text-slate-700 font-bold rounded-lg text-xs border border-slate-300 transition cursor-pointer"
                   >
                     Back to Step 2
                   </button>
@@ -1414,10 +1414,10 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                     type="button"
                     onClick={handleGenerateReport}
                     disabled={!answers.step2_insurer}
-                    className="bg-slate-950 hover:bg-slate-850 dark:bg-zinc-100 dark:hover:bg-white dark:text-zinc-950 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition shadow-xs flex items-center gap-2 cursor-pointer font-sans"
+                    className="bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition shadow-xs flex items-center gap-2 cursor-pointer font-sans"
                   >
                     <span>Generate Statutory Suitability Report</span>
-                    <Sparkles className="w-4 h-4 text-emerald-400 dark:text-emerald-600" />
+                    <Sparkles className="w-4 h-4 text-sky-400" />
                   </button>
                 </div>
               </div>
@@ -1432,27 +1432,27 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                 id="matchmaker-report-panel"
               >
                 {/* Top Analysis Header Card */}
-                <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 md:p-6 flex flex-col md:flex-row gap-5 items-start justify-between">
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 md:p-6 flex flex-col md:flex-row gap-5 items-start justify-between">
                   <div className="flex gap-4 items-start">
-                    <div className="bg-slate-950 dark:bg-zinc-100 text-white dark:text-zinc-950 p-3 rounded-2xl shrink-0 shadow-sm">
-                      <Sparkles className="w-5 h-5 text-emerald-400 dark:text-emerald-600" />
+                    <div className="bg-slate-900 text-white p-3 rounded-2xl shrink-0 shadow-xs">
+                      <Sparkles className="w-5 h-5 text-sky-400" />
                     </div>
                     <div className="space-y-1 font-sans">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-[9px] font-mono bg-slate-900 dark:bg-zinc-800 text-white dark:text-zinc-200 font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">
+                        <span className="text-[9px] font-mono bg-slate-900 text-white font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">
                           Statutory Suitability Result
                         </span>
-                        <span className="text-[9px] font-mono font-bold bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-md">
+                        <span className="text-[9px] font-mono font-bold bg-sky-100 text-sky-800 border border-sky-200 px-2 py-0.5 rounded-md">
                           Match Index: {matchedReportResult.suitabilityScore}%
                         </span>
                       </div>
-                      <h3 className="text-base md:text-lg font-extrabold text-slate-950 dark:text-zinc-50">
+                      <h3 className="text-base md:text-lg font-extrabold text-slate-900">
                         {matchedReportResult.title}
                       </h3>
-                      <p className="text-xs text-slate-600 dark:text-zinc-400 font-medium">
-                        Standard Class: <strong className="text-slate-900 dark:text-zinc-200">{matchedReportResult.planType}</strong>
+                      <p className="text-xs text-slate-700 font-medium">
+                        Standard Class: <strong className="text-slate-900">{matchedReportResult.planType}</strong>
                       </p>
-                      <p className="text-[11px] text-slate-500 dark:text-zinc-500 font-mono">
+                      <p className="text-[11px] text-slate-500 font-mono">
                         Reference: {matchedReportResult.statutoryStandard}
                       </p>
                     </div>
@@ -1463,45 +1463,71 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                     <button
                       onClick={copyBrokerSpecSheet}
                       type="button"
-                      className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-bold text-slate-700 dark:text-zinc-300 bg-white dark:bg-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-700 border border-slate-200 dark:border-zinc-700 rounded-xl transition cursor-pointer shadow-2xs font-sans"
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl transition cursor-pointer shadow-2xs font-sans"
                       title="Copy Broker Specification"
                     >
-                      {copiedSpec ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
+                      {copiedSpec ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
                       <span>{copiedSpec ? "Copied!" : "Copy Spec"}</span>
                     </button>
 
                     <button
                       onClick={downloadReportAsPDF}
                       type="button"
-                      className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-bold text-white dark:text-zinc-950 bg-slate-950 dark:bg-zinc-100 hover:bg-slate-850 dark:hover:bg-white rounded-xl transition cursor-pointer shadow-2xs font-sans"
+                      className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition cursor-pointer shadow-2xs font-sans"
                       title="Download PDF Specification"
                     >
-                      <Download className="w-3.5 h-3.5 text-emerald-400 dark:text-emerald-600" />
+                      <Download className="w-3.5 h-3.5 text-sky-400" />
                       <span>Download PDF</span>
                     </button>
                   </div>
                 </div>
 
+                {/* PyraMetric Actuarial Benchmark Link Callout */}
+                <div className="bg-sky-50/70 border border-sky-200 rounded-2xl p-4.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-sky-600 text-white flex items-center justify-center shrink-0 font-bold font-mono text-sm">
+                      λ
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-sky-950 font-sans">
+                        Benchmark Base Tariff Rates with PyraMetric™ Engine
+                      </h4>
+                      <p className="text-[11px] text-sky-800 font-sans mt-0.5">
+                        Verify statutory AIFT Section rates, burning cost projections, and deductible rebates for this policy.
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://pyrametric.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-sky-700 hover:bg-sky-800 text-white text-xs font-bold font-sans transition shrink-0 shadow-2xs"
+                  >
+                    <span>Launch PyraMetric™</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+
                 {/* Strategic Rationale Explanation Box */}
                 <div className="space-y-2 font-sans" id="matchmaker-rationale-section">
-                  <span className="font-bold text-[11px] text-slate-700 dark:text-zinc-300 block uppercase tracking-wider font-mono">
+                  <span className="font-bold text-[11px] text-slate-700 block uppercase tracking-wider font-mono">
                     Underwriting & Statutory Analysis Rationale:
                   </span>
-                  <div className="text-xs text-slate-700 dark:text-zinc-300 leading-relaxed bg-slate-50 dark:bg-zinc-900 p-4 border border-slate-200 dark:border-zinc-800 rounded-2xl font-medium whitespace-pre-line">
+                  <div className="text-xs text-slate-700 leading-relaxed bg-slate-50 p-4 border border-slate-200 rounded-2xl font-medium whitespace-pre-line">
                     {matchedReportResult.explanation}
                   </div>
                 </div>
 
                 {/* Coverage Vigilance Checklist */}
                 <div className="space-y-3 pt-2 font-sans" id="matchmaker-checklist-section">
-                  <span className="font-extrabold text-xs text-slate-900 dark:text-zinc-100 flex items-center gap-1.5 border-b border-slate-100 dark:border-zinc-800 pb-2 uppercase font-mono tracking-wider">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                  <span className="font-extrabold text-xs text-slate-900 flex items-center gap-1.5 border-b border-slate-200 pb-2 uppercase font-mono tracking-wider">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                     Coverage Vigilance & Statutory Compliance Checklist:
                   </span>
                   <ul className="space-y-2.5">
                     {matchedReportResult.checklist.map((item, index) => (
-                      <li key={index} className="flex gap-2.5 items-start text-xs text-slate-700 dark:text-zinc-300 leading-relaxed font-medium">
-                        <div className="bg-emerald-50 dark:bg-emerald-950/60 rounded-full border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400 p-0.5 shrink-0 mt-0.5">
+                      <li key={index} className="flex gap-2.5 items-start text-xs text-slate-700 leading-relaxed font-medium">
+                        <div className="bg-emerald-50 rounded-full border border-emerald-300 text-emerald-700 p-0.5 shrink-0 mt-0.5">
                           <Check className="w-3 h-3 stroke-[3px]" />
                         </div>
                         <span>{item}</span>
@@ -1511,24 +1537,24 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                 </div>
 
                 {/* Disclaimer box */}
-                <div className="bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-900/40 rounded-xl p-4 flex gap-3 text-xs text-slate-600 dark:text-zinc-400">
-                  <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                <div className="bg-amber-50/70 border border-amber-200 rounded-xl p-4 flex gap-3 text-xs text-slate-700">
+                  <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                   <div className="space-y-0.5 font-sans">
-                    <span className="font-bold text-slate-800 dark:text-zinc-200 uppercase font-mono text-[9px] tracking-wider block">
+                    <span className="font-bold text-slate-900 uppercase font-mono text-[9px] tracking-wider block">
                       Standard Regulatory Clause (IRDA Act 1999 & TAC AIFT Standard)
                     </span>
-                    <p className="leading-relaxed text-[11px]">
+                    <p className="leading-relaxed text-[11px] text-slate-600">
                       Outputs are mapped against public domain IRDAI master circulars, the All India Fire Tariff (AIFT), and General Insurance Council benchmarks. Designed strictly for educational reference and pre-underwriting needs analysis.
                     </p>
                   </div>
                 </div>
 
                 {/* Restart Control */}
-                <div className="flex justify-between items-center pt-3 border-t border-slate-150 dark:border-zinc-800">
+                <div className="flex justify-between items-center pt-3 border-t border-slate-200">
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="px-4 py-2.5 bg-slate-950 hover:bg-slate-900 dark:bg-zinc-100 dark:hover:bg-white dark:text-zinc-950 text-white font-extrabold rounded-xl text-xs transition shadow-xs cursor-pointer flex items-center gap-1.5 font-sans"
+                    className="px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-extrabold rounded-xl text-xs transition shadow-xs cursor-pointer flex items-center gap-1.5 font-sans"
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
                     <span>Configure Another Domain</span>
@@ -1537,7 +1563,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                   <button
                     type="button"
                     onClick={() => setPlannerMode("regulatory_matrix")}
-                    className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-xl text-xs transition shadow-xs cursor-pointer flex items-center gap-1.5 font-sans"
+                    className="px-4 py-2.5 bg-sky-700 hover:bg-sky-800 text-white font-extrabold rounded-xl text-xs transition shadow-xs cursor-pointer flex items-center gap-1.5 font-sans"
                   >
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>View Public Domain Rules</span>
@@ -1554,7 +1580,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
         {plannerMode === "regulatory_matrix" && (
           <div className="space-y-5 animate-fade-in" id="regulatory-matrix-root">
             {/* Search & Filter Header */}
-            <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-4">
+            <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between border-b border-slate-200 pb-4">
               {/* Category Filter Pills */}
               <div className="flex flex-wrap gap-1.5">
                 {["All", "Fire & Property", "Health & Mediclaim", "Marine & Transit", "Liability & Cyber", "Statutory Acts"].map(cat => (
@@ -1563,8 +1589,8 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                     onClick={() => setMatrixCategory(cat)}
                     className={`px-3 py-1 rounded-lg text-xs font-bold font-sans transition cursor-pointer ${
                       matrixCategory === cat
-                        ? "bg-blue-600 text-white shadow-2xs"
-                        : "bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 hover:bg-slate-200 dark:hover:bg-zinc-700"
+                        ? "bg-sky-600 text-white shadow-2xs"
+                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                     }`}
                   >
                     {cat}
@@ -1580,7 +1606,7 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
                   placeholder="Search rules, circulars..."
                   value={matrixSearch}
                   onChange={(e) => setMatrixSearch(e.target.value)}
-                  className="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl text-slate-900 dark:text-zinc-100 focus:outline-none focus:border-blue-500"
+                  className="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:bg-white transition"
                 />
               </div>
             </div>
@@ -1590,59 +1616,59 @@ Generated via BimaCompass Open Regulatory Advisor (AIFT & IRDAI Aligned)
               {filteredResources.map(res => (
                 <div 
                   key={res.id}
-                  className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-3.5 transition hover:shadow-xs"
+                  className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3.5 transition hover:shadow-xs"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/80 dark:border-zinc-800 pb-2.5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/80 pb-2.5">
                     <div className="space-y-0.5">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-[9.5px] font-mono font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300">
+                        <span className="text-[9.5px] font-mono font-bold px-2 py-0.5 rounded bg-sky-100 text-sky-800 border border-sky-200">
                           {res.category}
                         </span>
-                        <span className="text-[10px] font-mono text-slate-500 dark:text-zinc-400">
+                        <span className="text-[10px] font-mono text-slate-500">
                           {res.gazetteRef}
                         </span>
                       </div>
-                      <h4 className="font-extrabold text-sm text-slate-900 dark:text-zinc-100 font-sans">
+                      <h4 className="font-extrabold text-sm text-slate-900 font-sans">
                         {res.title}
                       </h4>
                     </div>
 
-                    <span className="text-[10px] font-mono font-semibold text-slate-500 dark:text-zinc-400 bg-white dark:bg-zinc-950 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-zinc-800 self-start sm:self-auto shrink-0">
+                    <span className="text-[10px] font-mono font-semibold text-slate-600 bg-white px-2.5 py-1 rounded-lg border border-slate-200 self-start sm:self-auto shrink-0">
                       Authority: {res.authority}
                     </span>
                   </div>
 
-                  <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-sans">
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
                     {res.summary}
                   </p>
 
                   {/* Key Clauses Bullet Points */}
                   <div className="space-y-2 pt-1">
-                    <span className="text-[10px] font-bold font-mono text-slate-700 dark:text-zinc-300 uppercase tracking-wider block">
+                    <span className="text-[10px] font-bold font-mono text-slate-700 uppercase tracking-wider block">
                       Key Consumer Safeguards & Mandatory Standards:
                     </span>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {res.keyConsumerClauses.map((clause, ci) => (
-                        <li key={ci} className="bg-white dark:bg-zinc-950 p-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 text-[11px] text-slate-700 dark:text-zinc-300 leading-relaxed flex items-start gap-2">
-                          <Check className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5 stroke-[2.5px]" />
+                        <li key={ci} className="bg-white p-2.5 rounded-xl border border-slate-200 text-[11px] text-slate-700 leading-relaxed flex items-start gap-2 shadow-2xs">
+                          <Check className="w-3.5 h-3.5 text-sky-600 shrink-0 mt-0.5 stroke-[2.5px]" />
                           <span>{clause}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="pt-2 text-[10px] font-mono text-slate-400 dark:text-zinc-500 border-t border-slate-200/60 dark:border-zinc-800">
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 border-t border-slate-200">
                     ℹ️ {res.officialPublicDomainNote}
                   </div>
                 </div>
               ))}
 
               {filteredResources.length === 0 && (
-                <div className="p-8 text-center bg-slate-50 dark:bg-zinc-900 rounded-2xl border border-slate-200 dark:border-zinc-800 space-y-2">
-                  <p className="text-xs text-slate-500 dark:text-zinc-400 font-medium">No regulatory resources matched your search filter.</p>
+                <div className="p-8 text-center bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                  <p className="text-xs text-slate-600 font-medium">No regulatory resources matched your search filter.</p>
                   <button
                     onClick={() => { setMatrixCategory("All"); setMatrixSearch(""); }}
-                    className="text-xs text-blue-600 dark:text-blue-400 font-bold hover:underline"
+                    className="text-xs text-sky-600 font-bold hover:underline"
                   >
                     Reset all filters
                   </button>

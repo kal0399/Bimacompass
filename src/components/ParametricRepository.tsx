@@ -620,7 +620,7 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
         <div className="space-y-6 animate-fade-in" id="parametric-catalog-section">
           
           {/* Filter & Search Bar */}
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-4 flex flex-col md:flex-row gap-3 items-center justify-between">
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-col md:flex-row gap-3 items-center justify-between">
             <div className="flex flex-wrap items-center gap-1.5 w-full md:w-auto">
               <span className="text-[10px] font-bold font-mono text-slate-500 uppercase tracking-wider mr-1">
                 Filter Peril:
@@ -640,8 +640,8 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                   onClick={() => setSelectedPeril(cat)}
                   className={`text-[11px] font-sans font-bold px-3 py-1.5 rounded-lg transition cursor-pointer ${
                     selectedPeril === cat
-                      ? "bg-blue-600 text-white shadow-2xs"
-                      : "bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 text-slate-600 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-700"
+                      ? "bg-sky-600 text-white shadow-2xs"
+                      : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-100"
                   }`}
                 >
                   {cat}
@@ -657,7 +657,7 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search index, oracle, or peril..."
-                className="w-full pl-9 pr-3 py-1.5 text-xs bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-zinc-100 font-sans"
+                className="w-full pl-9 pr-3 py-1.5 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 placeholder:text-slate-400 font-sans"
               />
             </div>
           </div>
@@ -668,10 +668,10 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
             {/* Left Column: Blueprint Selector List (4 Cols) */}
             <div className="lg:col-span-5 space-y-3">
               <div className="flex items-center justify-between pb-1">
-                <span className="text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase font-mono tracking-wider">
+                <span className="text-xs font-bold text-slate-700 uppercase font-mono tracking-wider">
                   Indexed Blueprints ({filteredPolicies.length})
                 </span>
-                <span className="text-[10px] text-slate-400 font-mono">
+                <span className="text-[10px] text-slate-500 font-mono">
                   Sourced from Swiss Re Case Studies
                 </span>
               </div>
@@ -685,40 +685,40 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                       onClick={() => setActivePolicyId(policy.id)}
                       className={`p-4 rounded-xl border transition-all duration-200 cursor-pointer text-left space-y-2.5 ${
                         isSelected
-                          ? "bg-blue-50/90 dark:bg-blue-950/40 border-blue-500 dark:border-blue-500 shadow-xs ring-1 ring-blue-500/30"
-                          : "bg-white dark:bg-zinc-900 border-slate-200 dark:border-zinc-800 hover:border-slate-300 dark:hover:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-850"
+                          ? "bg-sky-50 border-sky-500 shadow-xs ring-1 ring-sky-500/30"
+                          : "bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-2">
                         <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
-                          policy.perilCategory === "Earthquake" ? "bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300" :
-                          policy.perilCategory === "Cyclone / Wind" ? "bg-cyan-100 text-cyan-800 dark:bg-cyan-950/60 dark:text-cyan-300" :
-                          policy.perilCategory === "Flood / Rain" ? "bg-blue-100 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300" :
-                          policy.perilCategory === "Renewable Energy" ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300" :
-                          policy.perilCategory === "Agriculture" ? "bg-lime-100 text-lime-800 dark:bg-lime-950/60 dark:text-lime-300" :
-                          policy.perilCategory === "Heatwave" ? "bg-red-100 text-red-800 dark:bg-red-950/60 dark:text-red-300" :
-                          "bg-indigo-100 text-indigo-800 dark:bg-indigo-950/60 dark:text-indigo-300"
+                          policy.perilCategory === "Earthquake" ? "bg-amber-100 text-amber-800" :
+                          policy.perilCategory === "Cyclone / Wind" ? "bg-cyan-100 text-cyan-800" :
+                          policy.perilCategory === "Flood / Rain" ? "bg-sky-100 text-sky-800" :
+                          policy.perilCategory === "Renewable Energy" ? "bg-emerald-100 text-emerald-800" :
+                          policy.perilCategory === "Agriculture" ? "bg-lime-100 text-lime-800" :
+                          policy.perilCategory === "Heatwave" ? "bg-red-100 text-red-800" :
+                          "bg-indigo-100 text-indigo-800"
                         }`}>
                           {policy.perilCategory}
                         </span>
 
-                        <span className="text-[10px] font-mono font-bold text-slate-500 dark:text-zinc-400">
+                        <span className="text-[10px] font-mono font-bold text-slate-500">
                           ⏱ {policy.typicalSettlementDays} Days
                         </span>
                       </div>
 
                       <div>
-                        <h4 className={`text-sm font-bold font-sans ${isSelected ? "text-blue-900 dark:text-blue-200" : "text-slate-900 dark:text-zinc-100"}`}>
+                        <h4 className={`text-sm font-bold font-sans ${isSelected ? "text-sky-950" : "text-slate-900"}`}>
                           {policy.name}
                         </h4>
-                        <p className="text-[11px] text-slate-500 dark:text-zinc-400 font-sans line-clamp-1 mt-0.5">
+                        <p className="text-[11px] text-slate-600 font-sans line-clamp-1 mt-0.5">
                           {policy.industry}
                         </p>
                       </div>
 
-                      <div className="pt-2 border-t border-slate-100 dark:border-zinc-800 text-[10.5px] font-mono flex items-center justify-between text-slate-600 dark:text-zinc-400">
+                      <div className="pt-2 border-t border-slate-100 text-[10.5px] font-mono flex items-center justify-between text-slate-600">
                         <span className="truncate max-w-[200px]">Index: {policy.indexMetric.split("&")[0]}</span>
-                        <span className="font-bold text-blue-600 dark:text-blue-400">{policy.payoutModel}</span>
+                        <span className="font-bold text-sky-700">{policy.payoutModel}</span>
                       </div>
                     </div>
                   );
@@ -727,18 +727,18 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
             </div>
 
             {/* Right Column: Deep Blueprint Specimen Sheet (7 Cols) */}
-            <div className="lg:col-span-7 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 space-y-6 shadow-xs">
+            <div className="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-6 space-y-6 shadow-xs">
               
               {/* Policy Header & Action Buttons */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-zinc-800 pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
                 <div className="space-y-1">
-                  <span className="text-[10px] font-mono font-bold bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 px-2.5 py-0.5 rounded uppercase">
+                  <span className="text-[10px] font-mono font-bold bg-sky-100 text-sky-800 px-2.5 py-0.5 rounded uppercase">
                     Swiss Re Specimen Slip #{activePolicy.id.toUpperCase()}
                   </span>
-                  <h3 className="text-lg md:text-xl font-extrabold text-slate-900 dark:text-zinc-100 font-sans">
+                  <h3 className="text-lg md:text-xl font-extrabold text-slate-900 font-sans">
                     {activePolicy.name}
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-zinc-400 font-sans">
+                  <p className="text-xs text-slate-600 font-sans">
                     Sector: <strong>{activePolicy.industry}</strong>
                   </p>
                 </div>
@@ -746,15 +746,15 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                 <div className="flex items-center gap-2 shrink-0">
                   <button
                     onClick={handleCopySpec}
-                    className="p-2 bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-700 dark:text-zinc-200 rounded-xl transition text-xs font-bold font-sans flex items-center gap-1.5 cursor-pointer"
+                    className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition text-xs font-bold font-sans flex items-center gap-1.5 cursor-pointer"
                     title="Copy Policy Markdown Slip"
                   >
-                    {copiedSpec ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+                    {copiedSpec ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
                     <span>{copiedSpec ? "Copied" : "Copy Slip"}</span>
                   </button>
                   <button
                     onClick={handleExportPDF}
-                    className="p-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition text-xs font-bold font-sans flex items-center gap-1.5 cursor-pointer shadow-xs"
+                    className="p-2 bg-sky-600 hover:bg-sky-500 text-white rounded-xl transition text-xs font-bold font-sans flex items-center gap-1.5 cursor-pointer shadow-xs"
                     title="Export PDF Term Sheet"
                   >
                     <Download className="w-4 h-4" />
@@ -765,21 +765,21 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
 
               {/* Vital Metrics Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div className="p-3.5 bg-slate-50 dark:bg-zinc-800/60 rounded-xl border border-slate-200/80 dark:border-zinc-750 space-y-1">
-                  <span className="text-[10px] font-mono font-bold uppercase text-slate-400 block">
+                <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
+                  <span className="text-[10px] font-mono font-bold uppercase text-slate-500 block">
                     Underlying Index & Metric
                   </span>
-                  <p className="text-xs font-bold text-slate-900 dark:text-zinc-100 font-sans">
+                  <p className="text-xs font-bold text-slate-900 font-sans">
                     {activePolicy.indexMetric}
                   </p>
                 </div>
 
-                <div className="p-3.5 bg-slate-50 dark:bg-zinc-800/60 rounded-xl border border-slate-200/80 dark:border-zinc-750 space-y-1">
-                  <span className="text-[10px] font-mono font-bold uppercase text-slate-400 block">
+                <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
+                  <span className="text-[10px] font-mono font-bold uppercase text-slate-500 block">
                     Independent Data Oracle
                   </span>
                   <div className="flex items-center justify-between gap-1">
-                    <p className="text-xs font-bold text-slate-900 dark:text-zinc-100 font-sans">
+                    <p className="text-xs font-bold text-slate-900 font-sans">
                       {activePolicy.oracleAgency}
                     </p>
                     {activePolicy.oracleUrl && (
@@ -787,7 +787,7 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                         href={activePolicy.oracleUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-500 hover:text-blue-600 p-1"
+                        className="text-sky-600 hover:text-sky-700 p-1"
                         title="Open Oracle Data Portal"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -796,20 +796,20 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                   </div>
                 </div>
 
-                <div className="p-3.5 bg-slate-50 dark:bg-zinc-800/60 rounded-xl border border-slate-200/80 dark:border-zinc-750 space-y-1">
-                  <span className="text-[10px] font-mono font-bold uppercase text-slate-400 block">
+                <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
+                  <span className="text-[10px] font-mono font-bold uppercase text-slate-500 block">
                     Payout Formula Structure
                   </span>
-                  <p className="text-xs font-bold text-blue-600 dark:text-blue-400 font-sans">
+                  <p className="text-xs font-bold text-sky-700 font-sans">
                     {activePolicy.payoutModel}
                   </p>
                 </div>
 
-                <div className="p-3.5 bg-slate-50 dark:bg-zinc-800/60 rounded-xl border border-slate-200/80 dark:border-zinc-750 space-y-1">
-                  <span className="text-[10px] font-mono font-bold uppercase text-slate-400 block">
+                <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
+                  <span className="text-[10px] font-mono font-bold uppercase text-slate-500 block">
                     Target Disbursement Window
                   </span>
-                  <p className="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-sans flex items-center gap-1.5">
+                  <p className="text-xs font-bold text-emerald-700 font-sans flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5" />
                     <span>{activePolicy.typicalSettlementDays} Calendar Days post oracle data</span>
                   </p>
@@ -817,40 +817,40 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
               </div>
 
               {/* Trigger Condition Statement */}
-              <div className="p-4 bg-blue-50/70 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/50 rounded-xl space-y-1.5">
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-900 dark:text-blue-300 block flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-blue-500" />
+              <div className="p-4 bg-sky-50 border border-sky-200 rounded-xl space-y-1.5">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-900 block flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5 text-sky-600" />
                   Contractual Trigger Condition:
                 </span>
-                <p className="text-xs text-slate-800 dark:text-zinc-200 font-sans leading-relaxed">
+                <p className="text-xs text-slate-800 font-sans leading-relaxed">
                   {activePolicy.triggerCondition}
                 </p>
               </div>
 
               {/* Payout Schedule Table */}
               <div className="space-y-2">
-                <span className="text-xs font-bold text-slate-900 dark:text-zinc-100 font-sans uppercase font-mono tracking-wider block">
+                <span className="text-xs font-bold text-slate-900 font-sans uppercase font-mono tracking-wider block">
                   Stepped Payout Matrix:
                 </span>
-                <div className="border border-slate-200 dark:border-zinc-800 rounded-xl overflow-hidden text-xs">
+                <div className="border border-slate-200 rounded-xl overflow-hidden text-xs">
                   <table className="w-full text-left font-sans">
-                    <thead className="bg-slate-50 dark:bg-zinc-800/80 text-[10.5px] font-mono text-slate-500 dark:text-zinc-400 border-b border-slate-200 dark:border-zinc-800">
+                    <thead className="bg-slate-50 text-[10.5px] font-mono text-slate-600 border-b border-slate-200">
                       <tr>
                         <th className="p-3">Trigger Threshold</th>
                         <th className="p-3 text-center">Disbursement %</th>
                         <th className="p-3">Loss Application / Liquidity Purpose</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-100 dark:divide-zinc-800 text-[11.5px]">
+                    <tbody className="divide-y divide-slate-100 text-[11.5px]">
                       {activePolicy.payoutSchedule.map((tier, idx) => (
-                        <tr key={idx} className="hover:bg-slate-50/50 dark:hover:bg-zinc-800/40">
-                          <td className="p-3 font-semibold text-slate-900 dark:text-zinc-100">{tier.trigger}</td>
+                        <tr key={idx} className="hover:bg-slate-50/70">
+                          <td className="p-3 font-semibold text-slate-900">{tier.trigger}</td>
                           <td className="p-3 text-center">
-                            <span className="font-mono font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300">
+                            <span className="font-mono font-bold px-2 py-0.5 rounded bg-sky-100 text-sky-800 border border-sky-200">
                               {tier.payoutPct}%
                             </span>
                           </td>
-                          <td className="p-3 text-slate-600 dark:text-zinc-400 leading-normal">{tier.notes}</td>
+                          <td className="p-3 text-slate-600 leading-normal">{tier.notes}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -860,33 +860,33 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
 
               {/* Protection Gap & Basis Risk Explanations */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 bg-slate-50 dark:bg-zinc-800/40 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1.5">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 block flex items-center gap-1.5">
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-600 block flex items-center gap-1.5">
                     <AlertCircle className="w-3.5 h-3.5" />
                     Protection Gap Addressed:
                   </span>
-                  <p className="text-[11.5px] text-slate-700 dark:text-zinc-300 leading-relaxed font-sans">
+                  <p className="text-[11.5px] text-slate-700 leading-relaxed font-sans">
                     {activePolicy.protectionGapAddressed}
                   </p>
                 </div>
 
-                <div className="p-4 bg-slate-50 dark:bg-zinc-800/40 rounded-xl border border-slate-200 dark:border-zinc-800 space-y-1.5">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block flex items-center gap-1.5">
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 block flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     Basis Risk Mitigation:
                   </span>
-                  <p className="text-[11.5px] text-slate-700 dark:text-zinc-300 leading-relaxed font-sans">
+                  <p className="text-[11.5px] text-slate-700 leading-relaxed font-sans">
                     {activePolicy.basisRiskMitigation}
                   </p>
                 </div>
               </div>
 
               {/* Swiss Re Benchmark Case Study Note */}
-              <div className="p-4 bg-amber-50/70 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/40 rounded-xl space-y-1">
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-900 dark:text-amber-300 block">
+              <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl space-y-1">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-900 block">
                   Swiss Re Tour de Raison Benchmark:
                 </span>
-                <p className="text-xs text-amber-950 dark:text-amber-200 font-sans italic leading-relaxed">
+                <p className="text-xs text-amber-950 font-sans italic leading-relaxed">
                   "{activePolicy.swissReCaseStudy}"
                 </p>
               </div>
@@ -902,14 +902,14 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
       {activeViewMode === "simulator" && (
         <div className="space-y-6 animate-fade-in" id="parametric-simulator-section">
           
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-2">
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2">
             <div className="flex items-center gap-2">
-              <Sliders className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-              <h3 className="font-extrabold text-base text-slate-900 dark:text-zinc-100 font-sans">
+              <Sliders className="w-5 h-5 text-sky-600" />
+              <h3 className="font-extrabold text-base text-slate-900 font-sans">
                 Interactive Parametric Underwriting & Trigger Lab
               </h3>
             </div>
-            <p className="text-xs text-slate-600 dark:text-zinc-400 font-sans leading-relaxed">
+            <p className="text-xs text-slate-600 font-sans leading-relaxed">
               Experience the mechanics of Swiss Re parametric underwriting in real time. Select a peril policy, adjust your total limit (Sum Insured), and simulate hazard index telemetry (e.g. storm windspeed or seismic PGA) to witness the automated payout calculation and swift disbursement timeline.
             </p>
           </div>
@@ -917,11 +917,11 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
             {/* Simulator Controls (5 Cols) */}
-            <div className="lg:col-span-5 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-5 shadow-xs">
+            <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-5 space-y-5 shadow-xs">
               
               {/* 1. Policy Archetype Selection */}
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-900 dark:text-zinc-100 font-sans block">
+                <label className="text-xs font-bold text-slate-900 font-sans block">
                   1. Select Parametric Peril Policy:
                 </label>
                 <select
@@ -933,7 +933,7 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                     else if (newId === "eq-usgs-pga") setSimTriggerMetric(38);
                     else setSimTriggerMetric(65);
                   }}
-                  className="w-full text-xs font-sans p-2.5 bg-slate-50 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-900 dark:text-zinc-100"
+                  className="w-full text-xs font-sans p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900"
                 >
                   {PARAMETRIC_POLICIES_DATABASE.map(p => (
                     <option key={p.id} value={p.id}>
@@ -946,10 +946,10 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
               {/* 2. Total Sum Insured / Policy Limit */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-sans">
-                  <span className="font-bold text-slate-900 dark:text-zinc-100">
+                  <span className="font-bold text-slate-900">
                     2. Total Sum Insured (Limit):
                   </span>
-                  <span className="font-mono font-extrabold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-900">
+                  <span className="font-mono font-extrabold text-sky-700 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
                     ₹{simSumInsured} Crores ($~{(simSumInsured * 0.12).toFixed(1)}M USD)
                   </span>
                 </div>
@@ -960,9 +960,9 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                   step="1"
                   value={simSumInsured}
                   onChange={(e) => setSimSumInsured(parseInt(e.target.value))}
-                  className="w-full h-2 bg-slate-200 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-slate-400">
+                <div className="flex justify-between text-[10px] font-mono text-slate-500">
                   <span>₹2 Cr</span>
                   <span>₹25 Cr</span>
                   <span>₹50 Cr</span>
@@ -971,12 +971,12 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
               </div>
 
               {/* 3. Hazard Event Metric Simulator Slider */}
-              <div className="space-y-2 p-3.5 bg-slate-50 dark:bg-zinc-800/60 rounded-xl border border-slate-200 dark:border-zinc-750">
+              <div className="space-y-2 p-3.5 bg-slate-50 rounded-xl border border-slate-200">
                 <div className="flex justify-between items-center text-xs font-sans">
-                  <span className="font-bold text-slate-900 dark:text-zinc-100">
+                  <span className="font-bold text-slate-900">
                     3. Simulated Oracle Telemetry:
                   </span>
-                  <span className="font-mono font-bold text-amber-600 dark:text-amber-400">
+                  <span className="font-mono font-bold text-amber-700">
                     {simPolicy.id === "cyclone-cat-in-circle" ? `${simTriggerMetric} Knots (${Math.round(simTriggerMetric * 1.852)} km/h)` :
                      simPolicy.id === "eq-usgs-pga" ? `${(simTriggerMetric / 100).toFixed(2)}g Peak Acceleration` :
                      `${simTriggerMetric}% Metric Index Level`}
@@ -990,17 +990,17 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                   step="1"
                   value={simTriggerMetric}
                   onChange={(e) => setSimTriggerMetric(parseInt(e.target.value))}
-                  className="w-full h-2 bg-slate-200 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
 
-                <p className="text-[10px] text-slate-500 dark:text-zinc-400 font-sans leading-relaxed">
+                <p className="text-[10px] text-slate-600 font-sans leading-relaxed">
                   Reporting Oracle: <strong>{simPolicy.oracleAgency}</strong>
                 </p>
               </div>
 
               {/* 4. Trigger Model Switcher */}
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-slate-900 dark:text-zinc-100 font-sans block">
+                <label className="text-xs font-bold text-slate-900 font-sans block">
                   4. Structure Model:
                 </label>
                 <div className="grid grid-cols-2 gap-2 text-xs font-sans">
@@ -1009,8 +1009,8 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                     onClick={() => setSimModelType("stepped")}
                     className={`p-2.5 rounded-xl border font-bold transition text-left cursor-pointer ${
                       simModelType === "stepped"
-                        ? "bg-blue-600 text-white border-blue-600 shadow-2xs"
-                        : "bg-slate-50 dark:bg-zinc-800 border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300"
+                        ? "bg-sky-600 text-white border-sky-600 shadow-2xs"
+                        : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                     }`}
                   >
                     <div>Stepped Bracket</div>
@@ -1022,8 +1022,8 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                     onClick={() => setSimModelType("linear")}
                     className={`p-2.5 rounded-xl border font-bold transition text-left cursor-pointer ${
                       simModelType === "linear"
-                        ? "bg-blue-600 text-white border-blue-600 shadow-2xs"
-                        : "bg-slate-50 dark:bg-zinc-800 border-slate-200 dark:border-zinc-700 text-slate-700 dark:text-zinc-300"
+                        ? "bg-sky-600 text-white border-sky-600 shadow-2xs"
+                        : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                     }`}
                   >
                     <div>Continuous Linear</div>
@@ -1038,10 +1038,10 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
             <div className="lg:col-span-7 space-y-4">
               
               {/* Primary Payout Confirmation Card */}
-              <div className={`p-6 rounded-2xl border text-white transition-all shadow-md ${
-                simCalculation.triggerStatus === "full" ? "bg-gradient-to-br from-emerald-900 via-slate-900 to-slate-950 border-emerald-500/50" :
-                simCalculation.triggerStatus === "partial" ? "bg-gradient-to-br from-blue-900 via-slate-900 to-slate-950 border-blue-500/50" :
-                "bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 border-slate-700/60"
+              <div className={`p-6 rounded-2xl border text-white transition-all shadow-sm ${
+                simCalculation.triggerStatus === "full" ? "bg-slate-900 border-emerald-500/50" :
+                simCalculation.triggerStatus === "partial" ? "bg-slate-900 border-sky-500/50" :
+                "bg-slate-900 border-slate-700/60"
               }`}>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -1050,8 +1050,8 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                     </span>
                     <span className={`text-[10.5px] font-mono font-bold px-2 py-0.5 rounded ${
                       simCalculation.triggerStatus === "full" ? "bg-emerald-400 text-slate-950" :
-                      simCalculation.triggerStatus === "partial" ? "bg-blue-400 text-slate-950" :
-                      "bg-slate-600 text-white"
+                      simCalculation.triggerStatus === "partial" ? "bg-sky-400 text-slate-950" :
+                      "bg-slate-700 text-slate-200"
                     }`}>
                       {simCalculation.triggerStatus === "full" ? "100% FULL PAYOUT" :
                        simCalculation.triggerStatus === "partial" ? `${simCalculation.payoutPercent}% TRIGGER BREACHED` :
@@ -1085,48 +1085,48 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
               </div>
 
               {/* Settlement Timeline: Parametric vs Traditional Indemnity */}
-              <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-4 shadow-xs">
-                <span className="text-xs font-bold text-slate-900 dark:text-zinc-100 font-sans uppercase font-mono tracking-wider block">
+              <div className="bg-white border border-slate-200 rounded-2xl p-5 space-y-4 shadow-xs">
+                <span className="text-xs font-bold text-slate-900 font-sans uppercase font-mono tracking-wider block">
                   Speed-to-Cash Liquidity Comparison:
                 </span>
 
                 <div className="space-y-3 font-sans text-xs">
                   {/* Parametric Track */}
-                  <div className="p-3 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 rounded-xl space-y-1.5">
+                  <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl space-y-1.5">
                     <div className="flex justify-between items-center">
-                      <strong className="text-emerald-900 dark:text-emerald-200 font-bold flex items-center gap-1.5">
-                        <Zap className="w-3.5 h-3.5 text-emerald-500" />
+                      <strong className="text-emerald-950 font-bold flex items-center gap-1.5">
+                        <Zap className="w-3.5 h-3.5 text-emerald-600" />
                         Swiss Re Parametric Model:
                       </strong>
-                      <span className="font-mono font-bold text-emerald-700 dark:text-emerald-300">
+                      <span className="font-mono font-bold text-emerald-700">
                         {simCalculation.settlementDays} Days Total
                       </span>
                     </div>
-                    <div className="flex items-center gap-2 text-[10.5px] text-emerald-800 dark:text-emerald-300">
-                      <span className="bg-emerald-200/80 dark:bg-emerald-900 px-1.5 py-0.5 rounded font-mono">Day 1</span> Event Occurs →
-                      <span className="bg-emerald-200/80 dark:bg-emerald-900 px-1.5 py-0.5 rounded font-mono">Day 3</span> Oracle Validates →
-                      <span className="bg-emerald-200/80 dark:bg-emerald-900 px-1.5 py-0.5 rounded font-mono">Day {simCalculation.settlementDays}</span> Wire Transfer
+                    <div className="flex items-center gap-2 text-[10.5px] text-emerald-800">
+                      <span className="bg-emerald-200 px-1.5 py-0.5 rounded font-mono font-semibold">Day 1</span> Event Occurs →
+                      <span className="bg-emerald-200 px-1.5 py-0.5 rounded font-mono font-semibold">Day 3</span> Oracle Validates →
+                      <span className="bg-emerald-200 px-1.5 py-0.5 rounded font-mono font-semibold">Day {simCalculation.settlementDays}</span> Wire Transfer
                     </div>
                   </div>
 
                   {/* Traditional Indemnity Track */}
-                  <div className="p-3 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/50 rounded-xl space-y-1.5 opacity-90">
+                  <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl space-y-1.5 opacity-90">
                     <div className="flex justify-between items-center">
-                      <strong className="text-rose-900 dark:text-rose-200 font-bold flex items-center gap-1.5">
+                      <strong className="text-rose-950 font-bold flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-rose-500" />
                         Traditional Indemnity Claim:
                       </strong>
-                      <span className="font-mono font-bold text-rose-700 dark:text-rose-300">
+                      <span className="font-mono font-bold text-rose-700">
                         180 – 365+ Days
                       </span>
                     </div>
-                    <div className="text-[10.5px] text-rose-800 dark:text-rose-300 leading-relaxed">
+                    <div className="text-[10.5px] text-rose-800 leading-relaxed">
                       Surveyor appointment (Wk 2) → Site visits (Wk 6) → Forensic books audit (Mth 4) → Depreciation disputes (Mth 7) → Arbitrations & Final Release (Mth 12+).
                     </div>
                   </div>
                 </div>
 
-                <div className="p-3 bg-slate-50 dark:bg-zinc-800 rounded-xl text-[11px] text-slate-600 dark:text-zinc-400 font-sans leading-relaxed">
+                <div className="p-3 bg-slate-50 rounded-xl text-[11px] text-slate-600 font-sans leading-relaxed border border-slate-200">
                   💡 <strong>Swiss Re Key Insight:</strong> Parametric insurance does not replace indemnity for rebuilding factories—it operates in tandem as a <em>liquidity accelerator</em> to fund emergency payroll, supplier advance payments, and customer retention during the first 90 days of catastrophe.
                 </div>
               </div>
@@ -1144,38 +1144,38 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
       {activeViewMode === "comparator" && (
         <div className="space-y-6 animate-fade-in" id="parametric-comparator-section">
           
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-2">
-            <h3 className="font-extrabold text-base text-slate-900 dark:text-zinc-100 font-sans">
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2">
+            <h3 className="font-extrabold text-base text-slate-900 font-sans">
               Structural Comparison: Traditional Indemnity vs. Parametric Solutions
             </h3>
-            <p className="text-xs text-slate-600 dark:text-zinc-400 font-sans leading-relaxed">
+            <p className="text-xs text-slate-600 font-sans leading-relaxed">
               Adapted directly from <strong>Gianni Biason's Swiss Re Tour de Raison</strong> presentation. Examine how index-based triggers eliminate claims disputes and address previously uninsurable business continuity risks.
             </p>
           </div>
 
-          <div className="border border-slate-200 dark:border-zinc-800 rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 shadow-xs">
+          <div className="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-xs">
             <table className="w-full text-left font-sans text-xs border-collapse">
-              <thead className="bg-slate-50 dark:bg-zinc-800/80 border-b border-slate-200 dark:border-zinc-800 text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+              <thead className="bg-slate-50 border-b border-slate-200 text-[11px] font-mono uppercase tracking-wider text-slate-600">
                 <tr>
                   <th className="p-4 w-1/4">Structural Dimension</th>
-                  <th className="p-4 w-1/3 text-rose-700 dark:text-rose-400 bg-rose-50/40 dark:bg-rose-950/20">Traditional Indemnity Insurance</th>
-                  <th className="p-4 w-1/3 text-blue-700 dark:text-blue-400 bg-blue-50/40 dark:bg-blue-950/20">Swiss Re Parametric Solutions</th>
-                  <th className="p-4 w-1/6 text-slate-600 dark:text-zinc-300">Strategic Advantage</th>
+                  <th className="p-4 w-1/3 text-rose-700 bg-rose-50/60">Traditional Indemnity Insurance</th>
+                  <th className="p-4 w-1/3 text-sky-700 bg-sky-50/60">Swiss Re Parametric Solutions</th>
+                  <th className="p-4 w-1/6 text-slate-700">Strategic Advantage</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-zinc-800 text-[12px]">
+              <tbody className="divide-y divide-slate-100 text-[12px]">
                 {INDEMNITY_VS_PARAMETRIC.map((item, index) => (
-                  <tr key={index} className="hover:bg-slate-50/60 dark:hover:bg-zinc-850/60 transition">
-                    <td className="p-4 font-bold text-slate-900 dark:text-zinc-100 font-sans">
+                  <tr key={index} className="hover:bg-slate-50 transition">
+                    <td className="p-4 font-bold text-slate-900 font-sans">
                       {item.dimension}
                     </td>
-                    <td className="p-4 text-slate-600 dark:text-zinc-300 bg-rose-50/20 dark:bg-rose-950/10 leading-relaxed">
+                    <td className="p-4 text-slate-600 bg-rose-50/30 leading-relaxed">
                       {item.indemnity}
                     </td>
-                    <td className="p-4 text-slate-800 dark:text-zinc-100 font-medium bg-blue-50/20 dark:bg-blue-950/10 leading-relaxed">
+                    <td className="p-4 text-slate-800 font-medium bg-sky-50/30 leading-relaxed">
                       {item.parametric}
                     </td>
-                    <td className="p-4 font-mono font-bold text-[11px] text-emerald-600 dark:text-emerald-400">
+                    <td className="p-4 font-mono font-bold text-[11px] text-emerald-600">
                       {item.winner}
                     </td>
                   </tr>
@@ -1185,23 +1185,23 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-sans text-xs">
-            <div className="p-4 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl space-y-1.5">
-              <span className="font-bold text-slate-900 dark:text-zinc-100 block">1. The "Pure Fortuity" Pillar</span>
-              <p className="text-slate-600 dark:text-zinc-400 leading-relaxed">
+            <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5">
+              <span className="font-bold text-slate-900 block">1. The "Pure Fortuity" Pillar</span>
+              <p className="text-slate-600 leading-relaxed">
                 Parametric insurance contracts are legally structured to require an underlying insurable interest, ensuring compliance with global insurance regulatory mandates rather than speculative financial derivatives.
               </p>
             </div>
 
-            <div className="p-4 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl space-y-1.5">
-              <span className="font-bold text-slate-900 dark:text-zinc-100 block">2. Managing Basis Risk</span>
-              <p className="text-slate-600 dark:text-zinc-400 leading-relaxed">
+            <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5">
+              <span className="font-bold text-slate-900 block">2. Managing Basis Risk</span>
+              <p className="text-slate-600 leading-relaxed">
                 Basis risk—the chance that an event triggers without loss, or a loss occurs without triggering—is minimized using dual triggers, tight geographic micro-corridors, and high-density weather station networks.
               </p>
             </div>
 
-            <div className="p-4 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl space-y-1.5">
-              <span className="font-bold text-slate-900 dark:text-zinc-100 block">3. Corporate Solvency Shield</span>
-              <p className="text-slate-600 dark:text-zinc-400 leading-relaxed">
+            <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5">
+              <span className="font-bold text-slate-900 block">3. Corporate Solvency Shield</span>
+              <p className="text-slate-600 leading-relaxed">
                 By delivering millions in cash within days, parametric insurance prevents post-disaster credit rating downgrades, covenant defaults on senior loans, and supplier flight during the rehabilitation window.
               </p>
             </div>
@@ -1216,61 +1216,61 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
       {activeViewMode === "principles" && (
         <div className="space-y-6 animate-fade-in" id="parametric-principles-section">
           
-          <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-5 space-y-2">
-            <h3 className="font-extrabold text-base text-slate-900 dark:text-zinc-100 font-sans">
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2">
+            <h3 className="font-extrabold text-base text-slate-900 font-sans">
               Anatomy of a Parametric Solution (Swiss Re Engineering Guide)
             </h3>
-            <p className="text-xs text-slate-600 dark:text-zinc-400 font-sans leading-relaxed">
+            <p className="text-xs text-slate-600 font-sans leading-relaxed">
               Gianni Biason's Swiss Re methodology defines four mandatory pillars required to construct any viable parametric insurance contract.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             
-            <div className="p-5 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl space-y-3 shadow-xs">
-              <div className="p-2.5 w-10 h-10 bg-blue-100 dark:bg-blue-950 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold">
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl space-y-3 shadow-xs">
+              <div className="p-2.5 w-10 h-10 bg-sky-100 rounded-xl flex items-center justify-center text-sky-700 font-bold">
                 1
               </div>
-              <h4 className="font-bold text-sm text-slate-900 dark:text-zinc-100 font-sans">
+              <h4 className="font-bold text-sm text-slate-900 font-sans">
                 The Index (Parameter)
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 font-sans leading-relaxed">
                 Must be an objective physical variable (wind speed, ground acceleration, river height, precipitation mm, solar radiation) that closely correlates with economic hardship.
               </p>
             </div>
 
-            <div className="p-5 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl space-y-3 shadow-xs">
-              <div className="p-2.5 w-10 h-10 bg-emerald-100 dark:bg-emerald-950 rounded-xl flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl space-y-3 shadow-xs">
+              <div className="p-2.5 w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 font-bold">
                 2
               </div>
-              <h4 className="font-bold text-sm text-slate-900 dark:text-zinc-100 font-sans">
+              <h4 className="font-bold text-sm text-slate-900 font-sans">
                 Independent Oracle
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 font-sans leading-relaxed">
                 Data must be monitored and published by an independent, disinterested third-party scientific institution (USGS, NOAA, IMD, ECMWF, Copernicus) without insurer or buyer influence.
               </p>
             </div>
 
-            <div className="p-5 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl space-y-3 shadow-xs">
-              <div className="p-2.5 w-10 h-10 bg-amber-100 dark:bg-amber-950 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold">
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl space-y-3 shadow-xs">
+              <div className="p-2.5 w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-amber-700 font-bold">
                 3
               </div>
-              <h4 className="font-bold text-sm text-slate-900 dark:text-zinc-100 font-sans">
+              <h4 className="font-bold text-sm text-slate-900 font-sans">
                 Payout Matrix
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 font-sans leading-relaxed">
                 A pre-agreed mathematical schedule defining the exact cash payout as a function of the parameter breach (e.g. 35% at Category 3, 100% at Category 5), leaving zero room for subjective dispute.
               </p>
             </div>
 
-            <div className="p-5 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl space-y-3 shadow-xs">
-              <div className="p-2.5 w-10 h-10 bg-purple-100 dark:bg-purple-950 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold">
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl space-y-3 shadow-xs">
+              <div className="p-2.5 w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 font-bold">
                 4
               </div>
-              <h4 className="font-bold text-sm text-slate-900 dark:text-zinc-100 font-sans">
+              <h4 className="font-bold text-sm text-slate-900 font-sans">
                 Insurable Interest
               </h4>
-              <p className="text-xs text-slate-600 dark:text-zinc-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 font-sans leading-relaxed">
                 The insured party must demonstrate ongoing physical operations, commercial risk, or economic vulnerability within the designated geographic polygon to confirm legality under insurance contract law.
               </p>
             </div>
@@ -1280,7 +1280,7 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
           {/* Source Document Citation Box */}
           <div className="p-5 bg-slate-900 text-white rounded-2xl border border-slate-800 space-y-3">
             <div className="flex items-center gap-2">
-              <ExternalLink className="w-4 h-4 text-blue-400" />
+              <ExternalLink className="w-4 h-4 text-sky-400" />
               <h4 className="font-bold text-sm font-sans">
                 Official Regulatory Citation & Document Source
               </h4>
@@ -1293,7 +1293,7 @@ ${activePolicy.payoutSchedule.map(s => `- **${s.trigger}:** ${s.payoutPct}% of T
                 href={SWISS_RE_SOURCE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-mono font-bold text-blue-400 hover:text-blue-300 underline break-all inline-flex items-center gap-1.5"
+                className="text-xs font-mono font-bold text-sky-400 hover:text-sky-300 underline break-all inline-flex items-center gap-1.5"
               >
                 <span>{SWISS_RE_SOURCE_URL}</span>
                 <ExternalLink className="w-3.5 h-3.5 shrink-0" />

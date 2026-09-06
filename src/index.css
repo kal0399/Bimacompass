@@ -7,139 +7,44 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-/* Minimalist Clean Dark & Light Global Styles */
+/* Cool Shades Theme: Crisp Arctic Palette with WCAG AAA Contrast */
 html, body {
-  background-color: #FAFAFA;
-  color: #18181B;
+  background-color: #F1F5F9;
+  color: #0F172A;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html.dark,
-html.dark body,
-html.dark #app-container {
-  background-color: #09090B !important;
-  color: #F4F4F5 !important;
+/* Custom Scrollbar in Cool Slate */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
 }
 
-html.dark header {
-  background-color: rgba(9, 9, 11, 0.9) !important;
-  border-color: #27272A !important;
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
 }
 
-/* Card & Background Overrides */
-html.dark .bg-white {
-  background-color: #121215 !important;
-  border-color: #27272A !important;
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
 }
 
-html.dark .bg-slate-50,
-html.dark .bg-slate-100 {
-  background-color: #18181B !important;
-  border-color: #27272A !important;
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
 }
 
-html.dark .bg-slate-50\/50,
-html.dark .bg-slate-50\/70,
-html.dark .bg-slate-50\/80,
-html.dark .bg-slate-100\/50,
-html.dark .bg-slate-100\/80 {
-  background-color: #18181B !important;
+/* High-Contrast Focus Ring */
+:focus-visible {
+  outline: 2px solid #0284C7;
+  outline-offset: 2px;
 }
 
-/* Text overrides */
-html.dark .text-slate-900,
-html.dark .text-slate-850,
-html.dark .text-slate-800,
-html.dark .text-slate-750 {
-  color: #FAFAFA !important;
+/* Crisp Text Selection */
+::selection {
+  background-color: #BAE6FD;
+  color: #0369A1;
 }
 
-html.dark .text-slate-700,
-html.dark .text-slate-650,
-html.dark .text-slate-600 {
-  color: #D4D4D8 !important;
-}
-
-html.dark .text-slate-550,
-html.dark .text-slate-500,
-html.dark .text-slate-400 {
-  color: #A1A1AA !important;
-}
-
-html.dark .text-slate-330,
-html.dark .text-slate-300 {
-  color: #E4E4E7 !important;
-}
-
-/* Border overrides */
-html.dark .border-slate-100,
-html.dark .border-slate-200,
-html.dark .border-slate-250,
-html.dark .border-slate-300,
-html.dark .border-slate-400,
-html.dark .border-slate-700,
-html.dark .border-slate-800 {
-  border-color: #27272A !important;
-}
-
-html.dark .border-b,
-html.dark .border-t,
-html.dark .border-l,
-html.dark .border-r,
-html.dark .border {
-  border-color: #27272A !important;
-}
-
-/* Button & hover overrides */
-html.dark .hover\:bg-slate-50:hover,
-html.dark .hover\:bg-slate-100:hover {
-  background-color: #27272A !important;
-  color: #FAFAFA !important;
-}
-
-/* Inputs, textareas & select elements */
-html.dark input,
-html.dark select,
-html.dark textarea {
-  background-color: #121215 !important;
-  color: #FAFAFA !important;
-  border-color: #27272A !important;
-}
-
-html.dark input::placeholder,
-html.dark textarea::placeholder {
-  color: #71717A !important;
-}
-
-/* Minimalist Clean Callout Mappings */
-html.dark .bg-emerald-50,
-html.dark .bg-emerald-50\/70,
-html.dark .bg-indigo-50,
-html.dark .bg-rose-50,
-html.dark .bg-amber-50,
-html.dark .bg-blue-50,
-html.dark .bg-teal-50 {
-  background-color: #18181B !important;
-  border-color: #27272A !important;
-}
-
-html.dark hr {
-  border-color: #27272A !important;
-}
-
-html.dark .divide-y > * + * {
-  border-color: #27272A !important;
-}
-
-html.dark .divide-slate-200 > * + * {
-  border-color: #27272A !important;
-}
-
-html.dark ::-webkit-scrollbar-track {
-  background: #09090B !important;
-}
-
-html.dark ::-webkit-scrollbar-thumb {
-  background: #27272A !important;
-  border-radius: 10px;
-}
 

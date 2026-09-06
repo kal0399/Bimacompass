@@ -23,7 +23,7 @@ interface PyrametricBoxProps {
   onExploreInternal?: () => void;
 }
 
-const PYRAMETRIC_APP_URL = "https://pyrametric.ai.studio";
+const PYRAMETRIC_APP_URL = "https://pyrametric.vercel.app/";
 
 const PYRAMETRIC_AIFT_FEATURES = [
   {
@@ -166,7 +166,7 @@ export default function PyrametricBox({ onExploreInternal }: PyrametricBoxProps)
   return (
     <>
       <div 
-        className="relative rounded-2xl border border-blue-400/40 dark:border-blue-900/60 bg-gradient-to-r from-[#0B132B] via-[#0F1C3F] to-[#0A1020] p-3.5 sm:p-4 text-white overflow-hidden shadow-lg transition-all duration-300"
+        className="relative rounded-2xl border border-sky-400/40 bg-gradient-to-r from-[#0B132B] via-[#0F1C3F] to-[#0A1020] p-3.5 sm:p-4 text-white overflow-hidden shadow-lg transition-all duration-300"
         id="pyrametric-showcase-box"
       >
         {/* Subtle ambient lighting */}
@@ -285,7 +285,7 @@ export default function PyrametricBox({ onExploreInternal }: PyrametricBoxProps)
                 rel="noopener noreferrer"
                 onClick={handleLaunchClick}
                 className="py-1.5 px-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-[11px] rounded-lg shadow-md shadow-blue-600/30 transition-all flex items-center gap-1.5 cursor-pointer uppercase tracking-wider font-mono hover:scale-102 active:scale-98 border border-blue-400/40"
-                title="Launch PyraMetric app at pyrametric.ai.studio"
+                title="Launch PyraMetric app at pyrametric.vercel.app"
                 id="go-to-pyrametric-direct-btn"
               >
                 <Flame className="w-3 h-3 text-amber-300 fill-amber-300" />
@@ -446,7 +446,7 @@ export default function PyrametricBox({ onExploreInternal }: PyrametricBoxProps)
                     </div>
 
                     <div className="text-[10px] text-amber-300/90 font-mono bg-amber-500/10 p-1.5 rounded border border-amber-500/20">
-                      ⚠️ Zero discount applied. For statutory FEA discounts & risk add-ons, visit <a href={PYRAMETRIC_APP_URL} target="_blank" rel="noopener noreferrer" className="underline font-bold text-amber-200">pyrametric.ai.studio</a>.
+                      ⚠️ Zero discount applied. For statutory FEA discounts & risk add-ons, visit <a href={PYRAMETRIC_APP_URL} target="_blank" rel="noopener noreferrer" className="underline font-bold text-amber-200">pyrametric.vercel.app</a>.
                     </div>
                   </div>
 
@@ -482,7 +482,7 @@ export default function PyrametricBox({ onExploreInternal }: PyrametricBoxProps)
 
               {/* Direct launch link */}
               <div className="flex items-center justify-between text-[10.5px] font-mono text-slate-400 pt-1">
-                <span className="truncate">Embedded Link: <strong className="text-blue-300">https://pyrametric.ai.studio</strong></span>
+                <span className="truncate">Embedded Link: <strong className="text-blue-300">https://pyrametric.vercel.app/</strong></span>
                 <div className="flex items-center gap-3 shrink-0 ml-2">
                   <button
                     onClick={() => setShowEmbeddedModal(true)}
@@ -520,7 +520,7 @@ export default function PyrametricBox({ onExploreInternal }: PyrametricBoxProps)
                   <div className="flex items-center gap-2">
                     <span className="font-extrabold text-sm text-white">PyraMetric™ Actuarial Platform</span>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-900/60 text-blue-300 border border-blue-700/50">
-                      https://pyrametric.ai.studio
+                      https://pyrametric.vercel.app/
                     </span>
                   </div>
                 </div>

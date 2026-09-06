@@ -21,8 +21,6 @@ import {
   Flame,
   ChevronDown,
   ChevronUp,
-  Sun,
-  Moon,
   Map,
   Lock,
   Unlock,
@@ -72,15 +70,21 @@ export default function App() {
 
   // Automated release logging telemetry state (SF-TMI client receiver)
   const [releaseLogs, setReleaseLogs] = useState<ReleaseLogItem[]>([]);
-  const [currentAppVersion, setCurrentAppVersion] = useState<string>("1.9.0");
+  const [currentAppVersion, setCurrentAppVersion] = useState<string>("2.0.0");
   const [lastBuildHash, setLastBuildHash] = useState<number | null>(null);
 
   useEffect(() => {
+    // Ensure dark mode class is completely purged and cleaned from DOM and storage
+    if (typeof window !== "undefined") {
+      document.documentElement.classList.remove("dark");
+      localStorage.removeItem("bima_dark_mode");
+    }
+
     const fetchLatestReleases = async () => {
       try {
         const response = await fetch("/api/release");
         let fetchedLogs: ReleaseLogItem[] = [];
-        let currentVer = "1.0.0";
+        let currentVer = "2.0.0";
         if (response.ok) {
           const data = await response.json();
           fetchedLogs = data.releases || [];
@@ -113,28 +117,6 @@ export default function App() {
 
     fetchLatestReleases();
   }, []);
-
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("bima_dark_mode");
-      if (saved !== null) {
-        return saved === "true";
-      }
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    }
-    return false;
-  });
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-    if (isDarkMode) {
-      root.classList.add("dark");
-      localStorage.setItem("bima_dark_mode", "true");
-    } else {
-      root.classList.remove("dark");
-      localStorage.setItem("bima_dark_mode", "false");
-    }
-  }, [isDarkMode]);
 
   useEffect(() => {
     const checkAdminSession = () => {
@@ -370,49 +352,34 @@ export default function App() {
 
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#09090B] text-zinc-900 dark:text-zinc-100 flex flex-col font-sans antialiased relative overflow-hidden" id="app-container">
+    <div className="min-h-screen bg-[#F1F5F9] text-slate-900 flex flex-col font-sans antialiased relative overflow-hidden" id="app-container">
       
-      {/* Minimalist Corporate Header */}
-      <header className="sticky top-0 z-30 backdrop-blur-md bg-white/95 dark:bg-[#09090B]/95 border-b border-zinc-200 dark:border-zinc-800 py-3.5 px-6 shadow-xs transition-all duration-200">
+      {/* Minimalist Corporate Header in Cool Arctic Shades */}
+      <header className="sticky top-0 z-30 backdrop-blur-md bg-white/95 border-b border-slate-200/90 py-3.5 px-6 shadow-xs transition-all duration-200">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 items-start md:items-center justify-between animate-fade-in relative z-10">
           
           <div className="space-y-0.5">
             <div className="flex items-center gap-3.5">
               <BimaIconLogo className="w-12 h-12 transition duration-200" />
               <div>
-                <h1 className="text-xl md:text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 font-sans flex flex-col sm:flex-row sm:items-center gap-1.5">
+                <h1 className="text-xl md:text-2xl font-extrabold tracking-tight text-slate-900 font-sans flex flex-col sm:flex-row sm:items-center gap-1.5">
                   <span>BimaCompass:</span>
-                  <span className="text-zinc-600 dark:text-zinc-400 font-bold text-base md:text-lg">Your Shield in the Fine Print</span>
+                  <span className="text-sky-700 font-bold text-base md:text-lg">Your Shield in the Fine Print</span>
                 </h1>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                <p className="text-xs text-slate-600 font-medium">
                   Making Insurance Simple • No Jargon • Honest Guides for Everyone
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Theme Switcher and Project Credit Container */}
+          {/* Project Credit Container */}
           <div className="flex items-center gap-3 self-stretch md:self-auto shrink-0 justify-between md:justify-end">
-            <button
-              type="button"
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-200 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 transition flex items-center justify-center cursor-pointer shadow-xs"
-              style={{ minWidth: "40px", minHeight: "40px" }}
-              title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-              id="theme-mode-toggle"
-            >
-              {isDarkMode ? (
-                <Sun className="w-4.5 h-4.5 text-zinc-200 transition duration-200" />
-              ) : (
-                <Moon className="w-4.5 h-4.5 text-zinc-700 transition duration-200" />
-              )}
-            </button>
-
-            <div className="bg-zinc-100/80 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-2.5 px-4 flex items-center justify-between md:justify-start gap-4">
+            <div className="bg-sky-50/80 border border-sky-200/80 rounded-xl p-2.5 px-4 flex items-center justify-between md:justify-start gap-4 shadow-2xs">
               <div className="space-y-0.5">
-                <span className="text-[9px] font-bold font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-widest block">Project Credit</span>
-                <p className="text-xs text-zinc-800 dark:text-zinc-200 leading-normal font-semibold">
-                  A free to use non profit tool created by <a href="https://www.linkedin.com/in/kalyanjit-naik/" target="_blank" rel="noopener noreferrer" className="text-zinc-900 dark:text-zinc-100 hover:underline font-extrabold inline-flex items-center gap-0.5 transition">Kalyanjit Naik <ExternalLink className="w-3 h-3 text-zinc-500 shrink-0" /></a>
+                <span className="text-[9px] font-bold font-mono text-sky-700 uppercase tracking-widest block">Project Credit</span>
+                <p className="text-xs text-slate-800 leading-normal font-semibold">
+                  A free to use non profit tool created by <a href="https://www.linkedin.com/in/kalyanjit-naik/" target="_blank" rel="noopener noreferrer" className="text-sky-800 hover:text-sky-950 hover:underline font-extrabold inline-flex items-center gap-0.5 transition">Kalyanjit Naik <ExternalLink className="w-3 h-3 text-sky-600 shrink-0" /></a>
                 </p>
               </div>
             </div>
@@ -430,11 +397,11 @@ export default function App() {
             <motion.div 
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white dark:bg-[#121215] border border-zinc-200 dark:border-zinc-800 rounded-xl p-3 px-4 flex items-center justify-between gap-4 text-xs shadow-xs"
+              className="bg-white border border-sky-200/90 rounded-xl p-3 px-4 flex items-center justify-between gap-4 text-xs shadow-xs"
             >
-              <span className="text-zinc-600 dark:text-zinc-400 font-semibold flex items-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-zinc-900 dark:bg-zinc-100"></span>
-                Active Section: <strong className="text-zinc-900 dark:text-zinc-100 font-bold">
+              <span className="text-slate-700 font-semibold flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-sky-600"></span>
+                Active Section: <strong className="text-slate-950 font-extrabold">
                   {activeTab === "retail_health" 
                     ? "Retail Health Insurance" 
                     : activeTab === "marine" 
@@ -460,14 +427,14 @@ export default function App() {
               </span>
               <button
                 onClick={() => setActiveTab("home")}
-                className="px-3 py-1.5 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 rounded-lg font-bold transition flex items-center gap-1.5 cursor-pointer text-[11px]"
+                className="px-3 py-1.5 bg-sky-50 hover:bg-sky-100 border border-sky-200 text-sky-800 rounded-lg font-bold transition flex items-center gap-1.5 cursor-pointer text-[11px]"
               >
                 ← Back to Dashboard
               </button>
             </motion.div>
           )}
 
-          <div className="bg-white dark:bg-[#121215] border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 md:p-8 shadow-xs min-h-[500px] transition-all duration-200">
+          <div className="bg-white border border-slate-200/90 rounded-2xl p-6 md:p-8 shadow-xs min-h-[500px] transition-all duration-200">
             {activeTab === "home" && <HomeDashboard setActiveTab={setActiveTab} isAdminLoggedIn={isAdminLoggedIn} />}
             {activeTab === "dictionary" && <BookDictionary isAdminLoggedIn={isAdminLoggedIn} />}
             {activeTab === "handbook" && <FireMarineHandbook />}
@@ -482,34 +449,34 @@ export default function App() {
             {activeTab === "parametric" && <ParametricRepository />}
           </div>
 
-          {/* Bottom Utility Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+          {/* Bottom Utility Grid in Cool Shades */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pt-8 border-t border-slate-200">
             
             {/* Secure Admin Hub Sidebar Card */}
-            <div className="bg-white dark:bg-[#121215] border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-xs space-y-3 transition duration-200 flex flex-col justify-between" id="sidebar-admin-secure-hub">
+            <div className="bg-white border border-slate-200/90 rounded-xl p-4 shadow-xs space-y-3 transition duration-200 flex flex-col justify-between" id="sidebar-admin-secure-hub">
               <div>
-                <span className="font-bold text-zinc-900 dark:text-zinc-100 block flex items-center gap-1.5 font-sans border-b border-zinc-100 dark:border-zinc-800/80 pb-2 text-xs">
-                  <Lock className="w-3.5 h-3.5 text-zinc-700 dark:text-zinc-300 shrink-0" />
+                <span className="font-bold text-slate-900 block flex items-center gap-1.5 font-sans border-b border-slate-100 pb-2 text-xs">
+                  <Lock className="w-3.5 h-3.5 text-sky-700 shrink-0" />
                   <span>🔐 Admin Settings Hub</span>
                 </span>
 
                 {!isAdminLoggedIn ? (
                   <div className="space-y-2 pt-1">
-                    <p className="text-[10px] text-zinc-500 leading-normal font-sans">
+                    <p className="text-[10.5px] text-slate-600 leading-normal font-sans">
                       Unlock dictionary edit mode, simple stats, and check app releases safely.
                     </p>
                   </div>
                 ) : (
                   <div className="space-y-3 pt-1">
-                    <div className="p-2.5 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg space-y-1">
-                      <div className="flex items-center gap-1.5 text-[9px] font-mono text-zinc-700 dark:text-zinc-300 font-extrabold uppercase tracking-wider">
-                        <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 dark:bg-zinc-100 animate-pulse"></span>
+                    <div className="p-2.5 bg-sky-50/70 border border-sky-200/80 rounded-lg space-y-1">
+                      <div className="flex items-center gap-1.5 text-[9px] font-mono text-sky-800 font-extrabold uppercase tracking-wider">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                         <span>Session Verified Active</span>
                       </div>
-                      <p className="text-[11px] text-zinc-800 dark:text-zinc-200 font-semibold font-sans truncate font-sans">
+                      <p className="text-[11px] text-slate-900 font-bold font-sans truncate">
                         🤵 Kalyanjit Naik
                       </p>
-                      <p className="text-[9px] text-zinc-500 font-medium font-sans">
+                      <p className="text-[9px] text-slate-500 font-medium font-sans">
                         Advocate / Creator
                       </p>
                     </div>
@@ -518,23 +485,23 @@ export default function App() {
                     {(() => {
                       const sessionPct = (sessionRemaining / SESSION_DURATION) * 100;
                       return (
-                        <div className="p-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 space-y-1.5">
-                          <div className="flex items-center justify-between text-[10px] font-bold text-zinc-700 dark:text-zinc-300">
+                        <div className="p-2.5 rounded-lg border border-slate-200 bg-slate-50/80 space-y-1.5">
+                          <div className="flex items-center justify-between text-[10px] font-bold text-slate-700">
                             <span className="flex items-center gap-1 uppercase font-mono tracking-wider">
-                              <Timer className="w-3.5 h-3.5 shrink-0" />
+                              <Timer className="w-3.5 h-3.5 text-sky-600 shrink-0" />
                               <span>Session Time Left</span>
                             </span>
-                            <span className="font-mono font-extrabold text-xs text-zinc-900 dark:text-zinc-100">
+                            <span className="font-mono font-extrabold text-xs text-slate-900">
                               {formatTime(sessionRemaining)}
                             </span>
                           </div>
-                          <div className="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+                          <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
                             <div 
-                              className="h-full bg-zinc-800 dark:bg-zinc-200 transition-all duration-1000 ease-linear"
+                              className="h-full bg-sky-600 transition-all duration-1000 ease-linear"
                               style={{ width: `${sessionPct}%` }}
                             />
                           </div>
-                          <p className="text-[8.5px] font-medium text-zinc-500 block leading-tight text-right font-sans">
+                          <p className="text-[8.5px] font-medium text-slate-500 block leading-tight text-right font-sans">
                             Session auto-expires after 15 mins
                           </p>
                         </div>
@@ -552,7 +519,7 @@ export default function App() {
                       setShowAdminEntry(true);
                       setAdminError("");
                     }}
-                    className="w-full py-2 px-3 bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-zinc-100 dark:hover:bg-white dark:text-zinc-900 font-bold text-[10px] uppercase font-mono rounded-lg tracking-wider transition text-center cursor-pointer flex items-center justify-center gap-1.5"
+                    className="w-full py-2 px-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-[10px] uppercase font-mono rounded-lg tracking-wider transition text-center cursor-pointer flex items-center justify-center gap-1.5 shadow-xs"
                   >
                     <Key className="w-3.5 h-3.5 shrink-0" />
                     <span>Admin Passcode Login</span>
@@ -570,16 +537,16 @@ export default function App() {
                           }
                         }, 100);
                       }}
-                      className="flex-1 py-1.5 px-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 font-bold text-[10px] rounded-lg transition text-center cursor-pointer select-none font-sans flex items-center justify-center gap-1"
+                      className="flex-1 py-1.5 px-2 bg-sky-50 hover:bg-sky-100 border border-sky-200 text-sky-800 font-bold text-[10px] rounded-lg transition text-center cursor-pointer select-none font-sans flex items-center justify-center gap-1"
                     >
-                      <BookOpen className="w-3 h-3 text-zinc-700 dark:text-zinc-300 shrink-0" />
+                      <BookOpen className="w-3 h-3 text-sky-700 shrink-0" />
                       <span>Manage Tools</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={handleLogOutAdmin}
-                      className="py-1.5 px-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-bold text-[10px] rounded-lg transition text-center cursor-pointer select-none font-sans"
+                      className="py-1.5 px-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-bold text-[10px] rounded-lg transition text-center cursor-pointer select-none font-sans"
                     >
                       Sign Out
                     </button>
@@ -589,26 +556,26 @@ export default function App() {
             </div>
 
             {/* Advocacy Disclaimer Box */}
-            <div className="bg-white dark:bg-[#121215] border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 space-y-2 text-[11px] leading-relaxed text-zinc-700 dark:text-zinc-300 shadow-xs flex flex-col justify-between" id="sidebar-global-advocacy-disclaimer">
+            <div className="bg-white border border-slate-200/90 rounded-xl p-4 space-y-2 text-[11px] leading-relaxed text-slate-700 shadow-xs flex flex-col justify-between" id="sidebar-global-advocacy-disclaimer">
               <div className="space-y-2">
-                <div className="flex items-center gap-1.5 font-bold text-zinc-900 dark:text-zinc-100 uppercase tracking-wider font-sans">
-                  <Scale className="w-3.5 h-3.5 text-zinc-700 dark:text-zinc-300 shrink-0" />
+                <div className="flex items-center gap-1.5 font-bold text-slate-900 uppercase tracking-wider font-sans">
+                  <Scale className="w-3.5 h-3.5 text-sky-700 shrink-0" />
                   <span>Important Notice</span>
                 </div>
-                <p className="font-semibold text-zinc-800 dark:text-zinc-200 font-sans leading-normal">
+                <p className="font-semibold text-slate-800 font-sans leading-normal">
                   This platform is made to help consumers learn. Before buying any real insurance policy, please read the official documents of the insurance company carefully.
                 </p>
               </div>
-              <p className="text-zinc-500 font-sans font-medium text-[10.5px]">
+              <p className="text-slate-500 font-sans font-medium text-[10.5px]">
                 This is a helper tool. Always check with an insurance agent or support team before making final decisions or purchasing.
               </p>
             </div>
 
             {/* Useful Consumer Portals Link Reference Box */}
-            <div className="bg-white dark:bg-[#121215] border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-xs space-y-3.5 text-xs text-zinc-600 dark:text-zinc-400 flex flex-col justify-between">
+            <div className="bg-white border border-slate-200/90 rounded-xl p-4 shadow-xs space-y-3.5 text-xs text-slate-700 flex flex-col justify-between">
               <div>
-                <span className="font-bold text-zinc-900 dark:text-zinc-100 block flex items-center gap-1.5 font-sans border-b border-zinc-100 dark:border-zinc-800 pb-2">
-                  <Info className="w-4 h-4 text-zinc-700 dark:text-zinc-300 shrink-0" />
+                <span className="font-bold text-slate-900 block flex items-center gap-1.5 font-sans border-b border-slate-100 pb-2">
+                  <Info className="w-4 h-4 text-sky-700 shrink-0" />
                   Official Handbook Portals
                 </span>
                 
@@ -617,66 +584,66 @@ export default function App() {
                     href="https://www.irda.gov.in"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-zinc-800 dark:text-zinc-200 hover:underline flex items-center justify-between font-semibold transition text-[11px]"
+                    className="text-slate-800 hover:text-sky-700 hover:underline flex items-center justify-between font-semibold transition text-[11px]"
                   >
                     <span>IRDAI Regulatory Portal</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   </a>
                   <a
                     href="https://www.policyholder.gov.in"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-zinc-800 dark:text-zinc-200 hover:underline flex items-center justify-between font-semibold transition text-[11px]"
+                    className="text-slate-800 hover:text-sky-700 hover:underline flex items-center justify-between font-semibold transition text-[11px]"
                   >
                     <span>Policyholder Education</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   </a>
                   <a
                     href="https://www.igms.irda.gov.in"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-zinc-800 dark:text-zinc-200 hover:underline flex items-center justify-between font-semibold transition text-[11px]"
+                    className="text-slate-800 hover:text-sky-700 hover:underline flex items-center justify-between font-semibold transition text-[11px]"
                   >
                     <span>Grievance Central Portal</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   </a>
                 </div>
               </div>
-              <div className="text-[10px] text-zinc-400 pt-2 font-sans font-medium">
+              <div className="text-[10px] text-slate-500 pt-2 font-sans font-medium">
                 References are direct Indian government resources.
               </div>
             </div>
 
             {/* Latest App Updates Widget */}
-            <div className="bg-white dark:bg-[#121215] border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-xs space-y-3 text-xs text-zinc-700 dark:text-zinc-300 flex flex-col justify-between" id="sidebar-app-updates-widget">
+            <div className="bg-white border border-slate-200/90 rounded-xl p-4 shadow-xs space-y-3 text-xs text-slate-700 flex flex-col justify-between" id="sidebar-app-updates-widget">
               <div>
-                <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-2">
-                  <span className="font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5 font-sans">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                  <span className="font-bold text-slate-900 flex items-center gap-1.5 font-sans">
                     <span className="relative flex h-2 w-2">
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-zinc-500"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
                     </span>
                     <span>System Release Log</span>
                   </span>
-                  <span className="text-[9px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-extrabold px-1.5 py-0.5 rounded">
+                  <span className="text-[9px] font-mono bg-sky-50 text-sky-800 border border-sky-200 font-extrabold px-1.5 py-0.5 rounded">
                     v{currentAppVersion}
                   </span>
                 </div>
                 
                 <div className="space-y-2.5 max-h-[140px] overflow-y-auto pr-0.5 relative pt-1.5" id="release-log-container">
                   {releaseLogs.length === 0 ? (
-                    <div className="text-[10px] text-zinc-400 py-4 text-center font-sans tracking-wide">
+                    <div className="text-[10px] text-slate-500 py-4 text-center font-sans tracking-wide">
                       Querying server-side telemetry registry...
                     </div>
                   ) : (
                     releaseLogs.slice(0, 3).map((log, idx) => (
-                      <div key={log.label} className={`text-[10px] space-y-1 ${idx > 0 ? "pt-2 border-t border-zinc-100 dark:border-zinc-800" : ""}`}>
+                      <div key={log.label} className={`text-[10px] space-y-1 ${idx > 0 ? "pt-2 border-t border-slate-100" : ""}`}>
                         <div className="flex items-start justify-between gap-1">
-                          <span className="text-zinc-900 dark:text-zinc-100 font-bold font-sans leading-tight">{log.label}</span>
-                          <span className="text-[8px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-1 py-0.2 rounded shrink-0">
+                          <span className="text-slate-900 font-bold font-sans leading-tight">{log.label}</span>
+                          <span className="text-[8px] font-mono bg-slate-100 text-slate-700 border border-slate-200 px-1 py-0.2 rounded shrink-0">
                             {log.version}
                           </span>
                         </div>
-                        <p className="text-zinc-500 leading-tight font-normal text-[9px]">
+                        <p className="text-slate-600 leading-tight font-normal text-[9.5px]">
                           {log.desc}
                         </p>
                       </div>
@@ -685,61 +652,61 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="border-t border-zinc-100 dark:border-zinc-800 pt-1.5 text-[8px] text-zinc-400 leading-relaxed font-sans">
+              <div className="border-t border-slate-100 pt-1.5 text-[8.5px] text-slate-500 leading-relaxed font-sans">
                 ⚖️ Sourced under Sec 43A of India's IT Act.
               </div>
             </div>
 
           </div>
 
-          {/* Clean Minimalist Footer Block */}
-          <footer className="space-y-5 pt-6 border-t border-zinc-200 dark:border-zinc-800">
-            <div className="bg-white dark:bg-[#121215] rounded-xl border border-zinc-200 dark:border-zinc-800 p-5 md:p-6 text-xs text-zinc-600 dark:text-zinc-400 font-sans leading-relaxed space-y-4">
+          {/* Clean Minimalist Footer Block in Cool Arctic Palette */}
+          <footer className="space-y-5 pt-6 border-t border-slate-200">
+            <div className="bg-white rounded-xl border border-slate-200/90 p-5 md:p-6 text-xs text-slate-700 font-sans leading-relaxed space-y-4 shadow-xs">
               <div className="text-center space-y-1">
-                <p className="font-extrabold text-zinc-900 dark:text-zinc-100 text-sm">BimaCompass — Consumer Advocacy Project</p>
-                <p className="max-w-2xl mx-auto text-zinc-500 leading-normal">
+                <p className="font-extrabold text-slate-900 text-sm">BimaCompass — Consumer Advocacy Project</p>
+                <p className="max-w-2xl mx-auto text-slate-600 leading-normal">
                   Directly synthesized in alignment with regulatory advice in public interest from the official IRDA handbook.
                 </p>
               </div>
 
               {/* Two-Column Legal Desk and Sources Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 text-left">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-slate-200 text-left">
                 
                 {/* Column 1: Lawyer's Copyright & Fair Use Statement */}
-                <div className="space-y-2 bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-lg p-4">
-                  <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100 font-bold font-sans text-[11px] uppercase tracking-wider">
-                    <Scale className="w-3.5 h-3.5 text-zinc-700 dark:text-zinc-300 shrink-0" />
+                <div className="space-y-2 bg-slate-50/80 border border-slate-200 rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-slate-900 font-bold font-sans text-[11px] uppercase tracking-wider">
+                    <Scale className="w-3.5 h-3.5 text-sky-700 shrink-0" />
                     <span>Legal Disclosures & Privacy Statement</span>
                   </div>
-                  <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
+                  <p className="text-[11px] text-slate-700 leading-relaxed font-normal">
                     This platform is a 100% free, non-monetized consumer literacy index operating with a serverless static architecture. All calculations, choices, and definitions are compiled completely on-device. No PII is collected.
                   </p>
-                  <p className="text-[11px] text-zinc-500 leading-relaxed font-normal font-sans">
-                    Guarded under <strong className="text-zinc-700 dark:text-zinc-300 font-semibold">Section 52 of the Indian Copyright Act, 1957</strong> and <strong className="text-zinc-700 dark:text-zinc-300 font-semibold">17 U.S. Code § 107</strong>. View our Legal tab for full details.
+                  <p className="text-[11px] text-slate-600 leading-relaxed font-normal font-sans">
+                    Guarded under <strong className="text-slate-800 font-semibold">Section 52 of the Indian Copyright Act, 1957</strong> and <strong className="text-slate-800 font-semibold">17 U.S. Code § 107</strong>. View our Legal tab for full details.
                   </p>
                 </div>
 
                 {/* Column 2: Sources of the Tool */}
-                <div className="space-y-2 bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-lg p-4">
-                  <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100 font-bold font-sans text-[11px] uppercase tracking-wider">
-                    <Info className="w-3.5 h-3.5 text-zinc-700 dark:text-zinc-300 shrink-0" />
+                <div className="space-y-2 bg-slate-50/80 border border-slate-200 rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-slate-900 font-bold font-sans text-[11px] uppercase tracking-wider">
+                    <Info className="w-3.5 h-3.5 text-sky-700 shrink-0" />
                     <span>Official Sources of Information</span>
                   </div>
-                  <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
+                  <p className="text-[11px] text-slate-700 leading-relaxed font-normal">
                     Sourced directly from authenticated public-domain documents:
                   </p>
-                  <ul className="space-y-1.5 text-[11px] text-zinc-600 dark:text-zinc-400 font-medium">
+                  <ul className="space-y-1.5 text-[11px] text-slate-700 font-medium">
                     <li className="flex items-start gap-1.5">
-                      <span className="text-zinc-400 shrink-0 select-none">•</span>
-                      <span><strong className="text-zinc-800 dark:text-zinc-200 font-bold font-sans">IRDAI Handbook:</strong> Consumer Education Series booklets.</span>
+                      <span className="text-sky-600 shrink-0 select-none">•</span>
+                      <span><strong className="text-slate-900 font-bold font-sans">IRDAI Handbook:</strong> Consumer Education Series booklets.</span>
                     </li>
                     <li className="flex items-start gap-1.5">
-                      <span className="text-zinc-400 shrink-0 select-none">•</span>
-                      <span><strong className="text-zinc-800 dark:text-zinc-200 font-bold font-sans">Corporate Policy Downloads:</strong> Standard commercial policy wordings and SFSP clauses.</span>
+                      <span className="text-sky-600 shrink-0 select-none">•</span>
+                      <span><strong className="text-slate-900 font-bold font-sans">Corporate Policy Downloads:</strong> Standard commercial policy wordings and SFSP clauses.</span>
                     </li>
                     <li className="flex items-start gap-1.5">
-                      <span className="text-zinc-400 shrink-0 select-none">•</span>
-                      <span><strong className="text-zinc-800 dark:text-zinc-200 font-bold font-sans">Consumer Precedents:</strong> Official judicial orders and reports from consumer forums.</span>
+                      <span className="text-sky-600 shrink-0 select-none">•</span>
+                      <span><strong className="text-slate-900 font-bold font-sans">Consumer Precedents:</strong> Official judicial orders and reports from consumer forums.</span>
                     </li>
                   </ul>
                 </div>
@@ -747,7 +714,7 @@ export default function App() {
               </div>
 
               {/* Sub-footer note */}
-              <div className="pt-2 text-center text-[10px] text-zinc-400 font-mono font-semibold tracking-wider">
+              <div className="pt-2 text-center text-[10px] text-slate-500 font-mono font-semibold tracking-wider">
                 NON-PROFIT CIVIL INITIATIVE • OPEN ACCESS CONSUMER PROJECT
               </div>
             </div>
@@ -762,13 +729,13 @@ export default function App() {
         <motion.div
           initial={{ opacity: 0, y: 35, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          className="fixed bottom-20 left-6 z-50 bg-zinc-950 border border-zinc-700 text-white rounded-xl shadow-2xl p-3.5 max-w-xs sm:max-w-sm font-sans flex items-start gap-2.5 overflow-hidden"
+          className="fixed bottom-20 left-6 z-50 bg-slate-900 border border-slate-700 text-white rounded-xl shadow-2xl p-3.5 max-w-xs sm:max-w-sm font-sans flex items-start gap-2.5 overflow-hidden"
           id="security-integrity-toast"
         >
-          <div className="text-zinc-300 font-extrabold text-base shrink-0 select-none">🛡️</div>
+          <div className="text-sky-400 font-extrabold text-base shrink-0 select-none">🛡️</div>
           <div className="space-y-0.5">
-            <span className="text-[9px] font-extrabold font-mono text-zinc-400 uppercase tracking-widest leading-none block">System Shield</span>
-            <p className="text-[10.5px] text-zinc-200 leading-normal font-medium font-sans">
+            <span className="text-[9px] font-extrabold font-mono text-sky-400 uppercase tracking-widest leading-none block">System Shield</span>
+            <p className="text-[10.5px] text-slate-200 leading-normal font-medium font-sans">
               {securityToast}
             </p>
           </div>
@@ -777,25 +744,25 @@ export default function App() {
 
       {/* Dynamic Immersive Admin Login Overlay */}
       {showAdminEntry && !isAdminLoggedIn && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-fade-in" id="admin-login-overlay-backdrop">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4 animate-fade-in" id="admin-login-overlay-backdrop">
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            className="w-full max-w-md bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 rounded-2xl shadow-2xl relative overflow-hidden p-6 sm:p-7 space-y-5"
+            className="w-full max-w-md bg-white border border-slate-200 text-slate-900 rounded-2xl shadow-2xl relative overflow-hidden p-6 sm:p-7 space-y-5"
             id="admin-login-overlay-modal"
           >
             {/* Header Lock Icon & Titles */}
             <div className="text-center space-y-2">
-              <div className="mx-auto w-10 h-10 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl flex items-center justify-center text-zinc-700 dark:text-zinc-300">
+              <div className="mx-auto w-10 h-10 bg-sky-50 border border-sky-200 rounded-xl flex items-center justify-center text-sky-700">
                 <Lock className="w-5 h-5" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-sm font-bold tracking-tight text-zinc-900 dark:text-zinc-100 font-sans">ADMINISTRATOR AUTHENTICATION</h3>
-                <span className="text-[9px] font-mono font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-2 py-0.5 rounded-full inline-block">
+                <h3 className="text-sm font-bold tracking-tight text-slate-900 font-sans">ADMINISTRATOR AUTHENTICATION</h3>
+                <span className="text-[9px] font-mono font-bold text-sky-800 uppercase tracking-widest bg-sky-50 border border-sky-200 px-2 py-0.5 rounded-full inline-block">
                   Protected Sandbox
                 </span>
               </div>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400 max-w-xs mx-auto font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 max-w-xs mx-auto font-sans leading-relaxed">
                 Enter your administrative passcode to unlock editing modes and tool settings.
               </p>
             </div>
@@ -804,10 +771,10 @@ export default function App() {
             <form onSubmit={handleAdminVerify} className="space-y-4">
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <label className="text-[10px] font-bold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider font-mono">
+                  <label className="text-[10px] font-bold text-slate-700 uppercase tracking-wider font-mono">
                     Passcode:
                   </label>
-                  <span className="text-[9px] text-zinc-400 font-mono">(default: adminbima)</span>
+                  <span className="text-[9px] text-slate-500 font-mono">(default: adminbima)</span>
                 </div>
                 <input
                   type="password"
@@ -818,8 +785,8 @@ export default function App() {
                   onChange={(e) => setPasscode(e.target.value)}
                   className={`w-full p-2.5 border rounded-lg text-xs font-mono outline-hidden tracking-widest transition-colors ${
                     lockoutTime > Date.now()
-                      ? "bg-zinc-100 dark:bg-zinc-800 border-zinc-300 text-zinc-400 select-none cursor-not-allowed"
-                      : "bg-white dark:bg-zinc-950 border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 focus:border-zinc-900 dark:focus:border-zinc-100"
+                      ? "bg-slate-100 border-slate-300 text-slate-400 select-none cursor-not-allowed"
+                      : "bg-white border-slate-300 text-slate-900 focus:border-sky-600"
                   }`}
                   autoFocus
                 />
@@ -827,8 +794,8 @@ export default function App() {
 
               {/* Countdown lock representation */}
               {lockoutTime > Date.now() && (
-                <div className="p-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg space-y-1.5">
-                  <div className="flex items-center justify-between text-[10px] font-mono text-zinc-700 dark:text-zinc-300">
+                <div className="p-3 bg-rose-50 border border-rose-200 rounded-lg space-y-1.5">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-rose-700">
                     <span className="font-bold uppercase">Lockout Active</span>
                     <span>Remaining: {Math.max(0, Math.ceil((lockoutTime - Date.now()) / 1000))}s</span>
                   </div>
@@ -837,7 +804,7 @@ export default function App() {
 
               {/* Password credentials reject warning */}
               {adminError && !lockoutTime && (
-                <div className="p-2.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 text-[10px] font-mono text-center font-bold tracking-wide rounded-lg">
+                <div className="p-2.5 bg-rose-50 border border-rose-200 text-rose-800 text-[10px] font-mono text-center font-bold tracking-wide rounded-lg">
                   {adminError}
                 </div>
               )}
@@ -851,7 +818,7 @@ export default function App() {
                     setAdminError("");
                     setPasscode("");
                   }}
-                  className="px-3.5 py-2 text-xs font-bold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition cursor-pointer"
+                  className="px-3.5 py-2 text-xs font-bold text-slate-500 hover:text-slate-900 transition cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -860,8 +827,8 @@ export default function App() {
                   disabled={lockoutTime > Date.now()}
                   className={`px-4 py-2 text-xs font-bold rounded-lg transition flex items-center gap-1.5 select-none ${
                     lockoutTime > Date.now()
-                      ? "bg-zinc-300 text-zinc-500 cursor-not-allowed"
-                      : "bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white cursor-pointer"
+                      ? "bg-slate-200 text-slate-400 cursor-not-allowed"
+                      : "bg-sky-700 text-white hover:bg-sky-800 cursor-pointer shadow-xs"
                   }`}
                 >
                   <Unlock className="w-3.5 h-3.5" />

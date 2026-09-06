@@ -384,13 +384,13 @@ app.get("/api/release", (req: Request, res: Response) => {
     }
 
     const filesToTrack = [
+      { path: "src/App.tsx", label: "❄️ Major v2.0 Upgrade: Cool Shades Aesthetic & Zero Dark Mode", desc: "Completely retired dark mode in favor of an ultra-legible, crisp cool-shade palette (Arctic ice-blue canvas #F1F5F9, deep oceanic navy #0F172A typography for WCAG AAA legibility, and ocean sapphire accents) across the entire platform." },
+      { path: "src/index.css", label: "🎨 Cool Shades Global Style & Contrast Overhaul", desc: "Redesigned global color system to cool tones (#F1F5F9 ice canvas, #0F172A text, #0284C7 sapphire accents) with optimized contrast for all cards, badges, and tables." },
+      { path: "src/components/HomeDashboard.tsx", label: "✨ Arctic Oceanic Hero & Cool Category Matrix", desc: "Revitalized dashboard with deep arctic navy hero, ocean-tinted interactive cards, and high-contrast typography across all insurance exploration modules." },
       { path: "src/components/PyrametricBox.tsx", label: "🔥 PyraMetric™ AIFT Actuarial Gateway", desc: "Integrated authentic PyraMetric Fire & NATCAT Actuarial Precision Suite (AIFT) gateway box with Shield & Flame logo, statutory rate engine, and direct launch portal link." },
-      { path: "src/components/HomeDashboard.tsx", label: "📰 Indian Insurance & InsurTech News Section", desc: "Added real-time auto-syncing Indian Insurance & InsurTech Industry News feed directly above the Interactive Insurance Tip box." },
       { path: "server.ts", label: "🌐 Live News & Web Terms Sync Protocol", desc: "Deployed search-grounded Gemini 3.5 live news and regulatory terms sync endpoints with automatic background polling support." },
       { path: "src/components/BookDictionary.tsx", label: "📖 Web-Sync Terms & Admin Sync Guard", desc: "Automated internet terms synchronization with admin-only manual trigger controls." },
-      { path: "src/App.tsx", label: "🎨 Appealing Canvas Palette & Theme", desc: "Transformed application background from cool blue to warm alabaster (#FAF9F5) in light mode and deep obsidian (#0E1117) in dark mode with ambient glows." },
       { path: "src/components/LegalSafeguards.tsx", label: "⚖️ Legal & Privacy Policy Suite", desc: "Dynamic on-device privacy agreements, trademark safe-harbor clauses, and 72-hour direct email legal adjustment covenants." },
-      { path: "src/components/FraudCampaignHeatmap.tsx", label: "📊 National Threat Spectrum Heatmap", desc: "Interactive D3.js consumer threat dataset rendering, layout staggers, and hover metrics prefilled into crime forms." },
       { path: "src/components/FireMarineHandbook.tsx", label: "🚢 Marine Cargo & SFSP Handbook", desc: "Statutory Workmen's Compensation liability indices and marine General Average salvage protections." },
       { path: "src/components/RetailHealthHandbook.tsx", label: "🚑 Retail Health Coinsurance Suite", desc: "Simulations of PED statutory definitions, room rent capping, and medical proportional deductions." },
       { path: "src/components/PolicyPlanner.tsx", label: "📋 Bima Unified Policy Planner", desc: "Interactive advisor recommendations for cargo lines, SFSP properties, and statutory workforce structures." },

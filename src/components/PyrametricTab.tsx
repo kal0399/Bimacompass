@@ -20,7 +20,7 @@ import {
   RefreshCw
 } from "lucide-react";
 
-const PYRAMETRIC_APP_URL = "https://pyrametric.ai.studio";
+const PYRAMETRIC_APP_URL = "https://pyrametric.vercel.app/";
 const BIMACOMPASS_APP_URL = "https://bimacompass.ai.studio";
 
 const AIFT_SECTIONS = [
@@ -220,7 +220,7 @@ export default function PyrametricTab() {
               className="py-2.5 px-4.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-black text-xs rounded-xl shadow-lg shadow-orange-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider font-mono hover:scale-105 active:scale-95 border border-amber-300"
             >
               <Flame className="w-4 h-4 fill-slate-950" />
-              <span>Launch pyrametric.ai.studio</span>
+              <span>Launch pyrametric.vercel.app</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
@@ -430,7 +430,7 @@ export default function PyrametricTab() {
                           Indicative Statutory Tariff (Zero Discount Applied)
                         </span>
                         <p className="text-[10.5px] text-slate-300 font-sans leading-relaxed">
-                          This preview displays the baseline statutory tariff rate without commercial discounts or FEA allowances. To unlock up to 25% Fire Extinguishing Appliance (FEA) rebates, voluntary deductibles, IIB loss cost benchmarking, and custom add-on covers (STFI, Earthquake, Terrorism, Deterioration of Stock, Flop / BI), open the dedicated platform at <a href={PYRAMETRIC_APP_URL} target="_blank" rel="noopener noreferrer" className="text-amber-300 underline font-bold hover:text-amber-200">pyrametric.ai.studio</a>.
+                          This preview displays the baseline statutory tariff rate without commercial discounts or FEA allowances. To unlock up to 25% Fire Extinguishing Appliance (FEA) rebates, voluntary deductibles, IIB loss cost benchmarking, and custom add-on covers (STFI, Earthquake, Terrorism, Deterioration of Stock, Flop / BI), open the dedicated platform at <a href={PYRAMETRIC_APP_URL} target="_blank" rel="noopener noreferrer" className="text-amber-300 underline font-bold hover:text-amber-200">pyrametric.vercel.app</a>.
                         </p>
                       </div>
                     </div>

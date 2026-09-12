@@ -21,7 +21,7 @@ import {
   Waves
 } from "lucide-react";
 
-type TabId = "dictionary" | "handbook" | "retail_health" | "marine" | "ear_car" | "helplines" | "planner" | "legal" | "sitemap" | "pyrametric" | "parametric";
+type TabId = "dictionary" | "handbook" | "retail_health" | "marine" | "ear_car" | "helplines" | "legal" | "sitemap" | "pyrametric" | "parametric";
 
 interface SitemapPageProps {
   setActiveTab: (tab: TabId) => void;
@@ -103,15 +103,6 @@ export default function SitemapPage({ setActiveTab, currentAppVersion = "1.0.0" 
       category: "Statutory Resolution Portals",
       description: "Directory of Bima Lokpal (Insurance Ombudsman) across Indian jurisdictions, dynamic claim escalation forms, and contact phone databases.",
       sections: ["Ombudsman Regional Directory", "IRDAI Grievance Call Center", "Grievance Redressal Officer (GRO) rules", "Sample Appeal Templates"]
-    },
-    {
-      id: "planner" as TabId,
-      name: "Need-Based Matchmaker",
-      icon: Compass,
-      color: "text-sky-600 bg-sky-50",
-      category: "Interactive Diagnostic Assessment App",
-      description: "On-device dynamic policy advisor recommending structural coverages based on age, lifestyle segment, or business profile risk index.",
-      sections: ["Commercial Coverage Diagnostic", "Retail Premium Planner", "Asset Protection Rating Profile", "Dynamic Coverage Summary Export"]
     },
     {
       id: "dictionary" as TabId,

@@ -393,7 +393,8 @@ app.get("/api/release", (req: Request, res: Response) => {
       { path: "src/components/LegalSafeguards.tsx", label: "⚖️ Legal & Privacy Policy Suite", desc: "Dynamic on-device privacy agreements, trademark safe-harbor clauses, and 72-hour direct email legal adjustment covenants." },
       { path: "src/components/FireMarineHandbook.tsx", label: "🚢 Marine Cargo & SFSP Handbook", desc: "Statutory Workmen's Compensation liability indices and marine General Average salvage protections." },
       { path: "src/components/RetailHealthHandbook.tsx", label: "🚑 Retail Health Coinsurance Suite", desc: "Simulations of PED statutory definitions, room rent capping, and medical proportional deductions." },
-      { path: "src/components/PolicyPlanner.tsx", label: "📋 Bima Unified Policy Planner", desc: "Interactive advisor recommendations for cargo lines, SFSP properties, and statutory workforce structures." },
+      { path: "src/components/MarineInsurance.tsx", label: "🚢 Marine Cargo & Transit Suite", desc: "Comprehensive Inland Transit Clauses (ITC A/B/C), ocean freight ICC rules, carrier liability notices, and public Indian insurer policies." },
+      { path: "src/components/ParametricRepository.tsx", label: "🌊 Swiss Re Parametric Solutions Repository", desc: "Interactive index-triggered parametric insurance models for cyclones, earthquakes, rainfall deficits, and solar revenue protections." },
       { path: "index.html", label: "🧭 Compass Core Shell & Favicon", desc: "Updated SVG high-contrast compass token of trust header reference inside index layout." }
     ];
 

@@ -32,7 +32,6 @@ import BookDictionary from "./components/BookDictionary";
 import MarineInsurance from "./components/MarineInsurance";
 import EarCarInsurance from "./components/EarCarInsurance";
 import BookHelplineHub from "./components/BookHelplineHub";
-import PolicyPlanner from "./components/PolicyPlanner";
 import BimaIconLogo from "./components/BimaIconLogo";
 import FireMarineHandbook from "./components/FireMarineHandbook";
 import LegalSafeguards from "./components/LegalSafeguards";
@@ -50,7 +49,7 @@ interface ReleaseLogItem {
   dateStr: string;
 }
 
-type TabId = "home" | "dictionary" | "handbook" | "retail_health" | "marine" | "ear_car" | "helplines" | "planner" | "legal" | "sitemap" | "pyrametric" | "parametric";
+type TabId = "home" | "dictionary" | "handbook" | "retail_health" | "marine" | "ear_car" | "helplines" | "legal" | "sitemap" | "pyrametric" | "parametric";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>("home");
@@ -410,8 +409,6 @@ export default function App() {
                     ? "EAR & CAR Engineering Insurance" 
                     : activeTab === "helplines" 
                     ? "Redressal Helplines" 
-                    : activeTab === "planner" 
-                    ? "Need-Based Matchmaker" 
                     : activeTab === "dictionary" 
                     ? "Policy Glossary" 
                     : activeTab === "legal" 
@@ -442,7 +439,6 @@ export default function App() {
             {activeTab === "marine" && <MarineInsurance />}
             {activeTab === "ear_car" && <EarCarInsurance />}
             {activeTab === "helplines" && <BookHelplineHub />}
-            {activeTab === "planner" && <PolicyPlanner />}
             {activeTab === "legal" && <LegalSafeguards />}
             {activeTab === "sitemap" && <SitemapPage setActiveTab={setActiveTab} currentAppVersion={currentAppVersion} />}
             {activeTab === "pyrametric" && <PyrametricTab />}

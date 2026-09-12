@@ -214,16 +214,6 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
       actionText: "Find Contacts"
     },
     {
-      id: "planner",
-      title: "Find the Right Policy",
-      desc: "Answer simple questions about your property, cargo, project, or health risk profile to discover fitting indemnity insurances.",
-      icon: Compass,
-      color: "from-sky-50/80 to-blue-100/40 hover:border-sky-300 hover:shadow-sky-100/40",
-      iconColor: "text-sky-700 bg-sky-100/90",
-      badge: "Policy Matcher",
-      actionText: "Check My Needs"
-    },
-    {
       id: "dictionary",
       title: "Easy Word Dictionary",
       desc: "Search hard insurance terms and get them translated from complex policy language into plain, simple English words.",
@@ -302,11 +292,11 @@ export default function HomeDashboard({ setActiveTab, isAdminLoggedIn }: HomeDas
 
           <div className="w-full md:w-auto shrink-0 flex flex-col sm:flex-row md:flex-col gap-2.5 relative z-10">
             <button
-              onClick={() => setActiveTab("planner")}
-              className="py-3 px-5.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl shadow-md hover:shadow-emerald-500/20 transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer uppercase tracking-wider font-mono hover:scale-105"
+              onClick={() => setActiveTab("handbook")}
+              className="py-3 px-5.5 bg-sky-600 hover:bg-sky-500 text-white font-extrabold text-xs rounded-xl shadow-md hover:shadow-sky-500/20 transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer uppercase tracking-wider font-mono hover:scale-105"
             >
-              <Compass className="w-4 h-4 animate-spin-slow" />
-              <span>Find Right Plan</span>
+              <Flame className="w-4 h-4" />
+              <span>Commercial Handbook</span>
             </button>
             <button
               onClick={() => setActiveTab("dictionary")}
